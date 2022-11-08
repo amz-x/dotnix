@@ -8,7 +8,7 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_0;
   boot.kernelModules = [ "plymouth" "kvm-amd" ];
   boot.extraModulePackages = [ ];
 

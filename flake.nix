@@ -14,13 +14,14 @@
   outputs = inputs @ { self, nixpkgs, home-manager, ... }:
     let 
       user = "amz";
+      hostname = "AMZ-Linux";
       location = "$HOME/Workspace/amz/nixos-config";
     in
     {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager user location;
+          inherit inputs nixpkgs home-manager user hostname location;
         }
       );
     };    

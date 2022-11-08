@@ -15,7 +15,7 @@
 #       ├─ ./virtualisation.nix
 #       └─ ./xdg.nix
 
-{ lib, pkgs, user, ... }:
+{ lib, pkgs, user, hostname, ... }:
 
 {
   imports =                                              
@@ -104,6 +104,7 @@
       nano
       ntfs3g
       pciutils
+      screenfetch
       starship
       util-linux
       wget
@@ -171,14 +172,14 @@
   networking = {
     
     # Hostname
-    hostName = "AMZ-Linux";
+    hostName = "${hostname}";
 
     # Default Gateway
     defaultGateway = "192.168.50.1";
 
     # Hosts
     hosts = {
-      "127.0.0.1" = [ "AMZ-Linux" ];
+      "127.0.0.1" = [ "${hostname}" ];
       "1.1.1.1"   = [ "cloudflare-dns.com" ];
       "9.9.9.9"   = [ "dns.quad9.net" ];
       "9.9.9.11"  = [ "dns11.quad9.net" ];

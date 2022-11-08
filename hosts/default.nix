@@ -1,5 +1,5 @@
 
-{ lib, inputs, nixpkgs, home-manager, user, location, ... }:
+{ lib, inputs, nixpkgs, home-manager, user, hostname, location, ... }:
 
 let
   system = "x86_64-linux";
@@ -12,9 +12,9 @@ let
   lib = nixpkgs.lib;
 in
 {
-  AMZ-Linux = lib.nixosSystem {
+  ${hostname} = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs pkgs user location; };
+    specialArgs = { inherit inputs pkgs user hostname location; };
     modules = [
       # System / Desktop
       ./desktop 

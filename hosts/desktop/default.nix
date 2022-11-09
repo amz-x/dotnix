@@ -208,7 +208,12 @@
     # Settings
     settings = {
       # Optimise syslinks
-      auto-optimise-store = true;           
+      auto-optimise-store = true;
+      # Enable nix flakes on system
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
 
     # Automatic garbage collection

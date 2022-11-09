@@ -27,7 +27,6 @@ sudo nixos-rebuild switch --flake /path/to/folder/#<hostname>
 sudo nixos-rebuild switch --flake /path/to/folder/#<hostname> --upgrade
 ```
 
-
 ## Nix Store Maintenance
 
 ```bash

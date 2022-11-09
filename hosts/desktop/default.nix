@@ -125,10 +125,12 @@
       discord
       rustdesk
       simplenote
+      slack
       spotify
       mailspring
       monitor      
       torrential
+      zoom-us
       # Development
       docker-compose
       docker-buildx

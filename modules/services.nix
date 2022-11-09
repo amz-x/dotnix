@@ -98,37 +98,37 @@
     # wg-netmanager.enable = true;
 
     # Unbound
-    unbound = {
-      enable = true;
+    # unbound = {
+    #   enable = true;
 
-      # Use and update root trust anchor for DNSSEC validation
-      enableRootTrustAnchor = true;
+    #   # Use and update root trust anchor for DNSSEC validation
+    #   enableRootTrustAnchor = true;
 
-      # Resolve local queries (i.e. add 127.0.0.1 to /etc/resolv.conf)
-      resolveLocalQueries = true;
+    #   # Resolve local queries (i.e. add 127.0.0.1 to /etc/resolv.conf)
+    #   resolveLocalQueries = true;
     
-      # Local DNS caching
-      settings = {
-        server = {
-          interface = "127.0.0.1";
-          access-control = [
-            "127.0.0.0/8 allow"
-            "192.168.0.0/16 allow"
-          ];
-          do-not-query-localhost = false;
-        };
+    #   # Local DNS caching
+    #   settings = {
+    #     server = {
+    #       interface = "127.0.0.1";
+    #       access-control = [
+    #         "127.0.0.0/8 allow"
+    #         "192.168.0.0/16 allow"
+    #       ];
+    #       do-not-query-localhost = false;
+    #     };
         
-        forward-zone = [
-          {
-            name = ".";
-            forward-addr = [
-              "9.9.9.9@53#dns.quad9.net"
-              "9.9.9.11@53#dns11.quad9.net"
-            ];
-          }
-        ];
-      };
-    };    
+    #     forward-zone = [
+    #       {
+    #         name = ".";
+    #         forward-addr = [
+    #           "9.9.9.9@53#dns.quad9.net"
+    #           "9.9.9.11@53#dns11.quad9.net"
+    #         ];
+    #       }
+    #     ];
+    #   };
+    # };    
 
     # Samba
     # samba = {

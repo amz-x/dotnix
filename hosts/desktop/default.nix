@@ -118,11 +118,13 @@
       nixos-icons
       # Applications
       appeditor
-      firefox
-      google-chrome
       bitwarden
-      vscode-fhs
       discord
+      firefox
+      gimp-with-plugins
+      google-chrome
+      libreoffice
+      vscode-fhs
       rustdesk
       simplenote
       slack
@@ -163,7 +165,7 @@
   # Internationalisation
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    supportedLocales = [ "en_ZA.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
+    supportedLocales = [ "en_US.UTF-8/UTF-8" "en_ZA.UTF-8/UTF-8" ];
     extraLocaleSettings = {
       LC_TIME = "en_ZA.UTF-8";
       LC_MONETARY = "en_ZA.UTF-8";

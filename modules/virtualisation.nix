@@ -4,7 +4,7 @@
   # Virtualisation
   virtualisation = {
     # Docker
-    docker.rootless = {
+    docker = {
       enable = true;
       package = pkgs.docker;
     };

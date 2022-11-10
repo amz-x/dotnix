@@ -134,6 +134,7 @@
       torrential
       zoom-us
       # Development
+      bundix
       docker-compose
       docker-buildx
       # System utilities

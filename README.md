@@ -27,6 +27,13 @@ sudo nixos-rebuild switch --flake /path/to/folder/#<hostname>
 sudo nixos-rebuild switch --flake /path/to/folder/#<hostname> --upgrade
 ```
 
+## Nix Flakes
+
+```bash
+# Updates flake.lock
+sudo nix flake update
+```
+
 ## Nix Store Maintenance
 
 ```bash

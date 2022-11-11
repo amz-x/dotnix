@@ -223,15 +223,6 @@
       dates = "weekly";
       options = "--delete-older-than 2d";
     };
-    
-    # Enable nixFlakes on system
-    # package = pkgs.nixVersions.unstable;
-    # registry.nixpkgs.flake = inputs.nixpkgs;
-    # extraOptions = ''
-    #   experimental-features = nix-command flakes
-    #   keep-outputs          = true
-    #   keep-derivations      = true
-    # '';
   };
 
   # Allow proprietary software
@@ -239,10 +230,7 @@
 
   # NixOS Settings
   system = {
-    # NixOS System Version
-    stateVersion = "22.11";
-
-    # Allow auto update (not useful in flakes)
-    autoUpgrade.enable = true;    
+    # System Version
+    stateVersion = "22.11"; 
   };  
 }

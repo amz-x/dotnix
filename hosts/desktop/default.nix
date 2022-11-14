@@ -137,6 +137,9 @@
       bundix
       docker-compose
       docker-buildx
+      # Databases
+      pgcli
+      postgresql
       # System utilities
       gst_all_1.gstreamer
       dconf

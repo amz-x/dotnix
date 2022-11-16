@@ -46,14 +46,15 @@
     starship = {
       enable = true;
       settings = {
-        #
-        # @TODO
-        #
+        add_newline = true;
       };
     };
 
     # DirEnv
-    direnv.enable = true;
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
   };
 
   # Services

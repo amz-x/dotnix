@@ -48,15 +48,11 @@
       };
     };
 
-    # PulseAudio
-    pulseaudio.enable = false;
-
-    # Remove???
-    # 
-    # pulseaudio = {
-    #   enable = true;
-    #   support32Bit = true;
-    #   package = pkgs.pulseaudioFull;
-    # };
+    # PulseAudio 
+    pulseaudio = {
+      enable = true;
+      support32Bit = true;
+      package = pkgs.pulseaudioFull;
+    };
   };
 }

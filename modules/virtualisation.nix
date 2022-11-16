@@ -3,10 +3,10 @@
 {
   # Virtualisation
   virtualisation = {
-    # Docker
-    docker = {
+    # Docker (Rootless - Works similar to Podman)
+    docker.rootless = {
       enable = true;
-      package = pkgs.docker;
+      setSocketVariable = true;
     };
   };
 }

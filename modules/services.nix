@@ -31,15 +31,15 @@
       };
     };
 
-    # Sound
-    pipewire = {
-      enable = true;
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
-      pulse.enable = true;
-    };
+    # Pipewire
+    # pipewire = {
+    #   enable = true;
+    #   alsa = {
+    #     enable = true;
+    #     support32Bit = true;
+    #   };
+    #   pulse.enable = true;
+    # };
 
     # Flatpak
     flatpak.enable = true;

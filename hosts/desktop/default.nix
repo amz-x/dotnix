@@ -135,6 +135,7 @@
       zoom-us
       # Development
       bundix
+      docker
       docker-compose
       docker-buildx
       # Databases

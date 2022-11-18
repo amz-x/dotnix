@@ -134,6 +134,7 @@
       torrential
       zoom-us
       # Development
+      android-studio
       bundix
       docker
       docker-compose

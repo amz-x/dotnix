@@ -17,7 +17,7 @@
     };
 
     # ADB
-    # adb.enable = true;
+    adb.enable = true;
 
     # Gnome Disks
     gnome-disks.enable = true;

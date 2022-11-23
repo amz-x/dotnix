@@ -76,22 +76,17 @@
       interval = "weekly";
     };
 
-    # Firewall
-    opensnitch = {
-      enable = true;
-      settings = {
-        DefaultAction = "deny";
-        DefaultDuration = "until restart";
-        Firewall = "iptables";
-        LogLevel = 2;
-        ProcMonitorMethod = "ebpf";
-      };
-    };
-
-    # Mullvad (VPN)
-    # mullvad-vpn = {
-    #  enable = true;
-    #  package = pkgs.mullvad-vpn;
+    # Opensnitch is broken at the moment
+    #
+    # opensnitch = {
+    #   enable = true;
+    #   settings = {
+    #     DefaultAction = "deny";
+    #     DefaultDuration = "until restart";
+    #     Firewall = "iptables";
+    #     LogLevel = 2;
+    #     ProcMonitorMethod = "ebpf";
+    #   };
     # };
 
     # Wireguard Netmanager

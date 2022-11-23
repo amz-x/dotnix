@@ -24,6 +24,8 @@
       # Applications
       firefox
       google-chrome
+      # VPN
+      mullvad-vpn
     ];
   };
 
@@ -60,6 +62,6 @@
   # Services
   services = {
     # Opensnitch UI
-    opensnitch-ui.enable = true;
+    # opensnitch-ui.enable = true;
   };
 }

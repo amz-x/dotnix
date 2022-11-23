@@ -13,6 +13,7 @@
 #       ├─ ./security.nix
 #       ├─ ./services.nix
 #       ├─ ./virtualisation.nix
+#       ├─ ./vpn.nix
 #       └─ ./xdg.nix
 
 { lib, pkgs, user, hostname, ... }:
@@ -25,6 +26,7 @@
     [(import ../../modules/security.nix)] ++
     [(import ../../modules/services.nix)] ++
     [(import ../../modules/virtualisation.nix)] ++
+    [(import ../../modules/vpn.nix)] ++
     [(import ../../modules/xdg.nix)];
 
   # Boot configuration
@@ -205,6 +207,13 @@
     resolvconf = {
       enable = true;
       dnsSingleRequest = true;
+    };
+
+    # Firewall
+    firewall = {
+      enable = true;
+      extraPackages = with pkgs; [ ipset ];
+      autoLoadConntrackHelpers = true;
     };
   };
 

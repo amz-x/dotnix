@@ -61,10 +61,9 @@
     # Printing (CUPS)
     printing = {
       enable = true;
-      drivers = with pkgs; [ hplip ];
+      drivers = with pkgs; [ gutenprint hplip ];
       startWhenNeeded = true;
-      webInterface = false;
-      listenAddresses = [];    
+      webInterface = false; 
     };
 
     # Scanning

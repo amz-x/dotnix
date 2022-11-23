@@ -24,8 +24,6 @@
       # Applications
       firefox
       google-chrome
-      # VPN
-      mullvad-vpn
     ];
   };
 

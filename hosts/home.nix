@@ -21,9 +21,6 @@
       direnv
       docker-compose
       docker-buildx
-      # Applications
-      firefox
-      google-chrome
     ];
   };
 

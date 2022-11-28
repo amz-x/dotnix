@@ -90,11 +90,12 @@
     shells = with pkgs; [
       bashInteractive
       nushell
+      zsh
     ];
 
     # Default packages install system-wide
     systemPackages = with pkgs; [
-      # Utilities
+      # System Tools
       bashInteractive
       coreutils
       gcc
@@ -219,6 +220,15 @@
 
   # Nix Package Manager
   nix = {    
+    # Nix Package
+    package = pkgs.nix;
+
+    # Automatic garbage collection
+    gc = {                                  
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 2d";
+    };
 
     # Settings
     settings = {
@@ -230,19 +240,12 @@
         "flakes"
       ];
     };
-
-    # Automatic garbage collection
-    gc = {                                  
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 2d";
-    };
   };
 
   # Allow proprietary software
   nixpkgs.config.allowUnfree = true;
 
-  # NixOS Settings
+  # NixOS System Settings
   system = {
     # System Version
     stateVersion = "22.11"; 

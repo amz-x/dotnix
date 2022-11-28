@@ -3,7 +3,14 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    
+    # Darwin
+    darwin = {
+      url = "github:lnl7/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs"
+    };
+
     # Home Manager
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -11,17 +18,23 @@
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, darwin, ... }:
     let 
       user = "amz";
-      hostname = "AMZ-Linux";
       location = "$HOME/Workspace/amz/nixos-config";
     in
     {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager user hostname location;
+          inherit inputs nixpkgs home-manager user location;
+        }
+      );
+
+      darwinConfigurations = (
+        import ./darwin {
+          inherit (nixpkgs) lib;
+          inherit inputs nixpkgs home-manager user location darwin;
         }
       );
     };    

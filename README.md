@@ -19,12 +19,24 @@
 
 Inside the root of the project directory execute the following
 
+### NixOS
+
 ```bash
 # Basic switch
 sudo nixos-rebuild switch --flake /path/to/folder/#<hostname>
 
 # Switch with upgrade
 sudo nixos-rebuild switch --flake /path/to/folder/#<hostname> --upgrade
+```
+
+### MacOS
+
+```bash
+# Basic switch
+sudo darwin-rebuild switch --flake /path/to/folder/#<hostname>
+
+# Switch with upgrade
+sudo darwin-rebuild switch --flake /path/to/folder/#<hostname> --upgrade
 ```
 
 ## Nix Flakes

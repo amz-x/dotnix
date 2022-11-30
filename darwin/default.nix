@@ -12,6 +12,7 @@
 
 let
   # Darwin Architecture
+  # System Options: [ "aarch64-darwin" "x86_64-darwin" ]
   system = "x86_64-darwin";
 
   # Hostname

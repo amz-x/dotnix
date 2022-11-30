@@ -11,10 +11,10 @@
 {
 
   # Imports
-  imports = 
-    [(import ../../modules/fonts.nix)] ++
-    [(import ../../modules/virtualisation.nix)] ++
-    [(import ../../modules/vpn.nix)];
+  # imports = 
+  #   [(import ../../modules/fonts.nix)] ++
+  #   [(import ../../modules/virtualisation.nix)] ++
+  #   [(import ../../modules/vpn.nix)];
 
 
   # MacOS User & Shell
@@ -45,13 +45,9 @@
   # Environment Configuration
   environment = {
 
-    # Include ~/.local/bin/ in $PATH
-    localBinInPath = true;
-
     # Environment Shells
     shells = with pkgs; [ 
       bashInteractive
-      nushell
       zsh
     ];
 
@@ -74,21 +70,21 @@
       nixfmt
       nixpkgs-fmt
       # System Applications
-      bitwarden
-      firefox
-      google-chrome
-      libreoffice
-      vscode-fhs
-      rustdesk
-      simplenote
-      slack
-      spotify
-      mailspring
-      zoom-us
+      # bitwarden
+      # firefox
+      # google-chrome
+      # libreoffice
+      # vscode-fhs
+      # rustdesk
+      # simplenote
+      # slack
+      # spotify
+      # mailspring
+      # zoom-us
       # Development
-      docker
-      docker-compose
-      docker-buildx
+      # docker
+      # docker-compose
+      # docker-buildx
     ];
   };
 

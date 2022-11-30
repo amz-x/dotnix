@@ -1,8 +1,9 @@
 
-{ lib, inputs, nixpkgs, home-manager, user, hostname, location, ... }:
+{ lib, inputs, nixpkgs, home-manager, user, location, ... }:
 
 let
-  # System Options: [ "aarch64-linux" "x86_64-linux" "aarch64-darwin" "x86_64-darwin" ]
+  # Linux Architecture
+  # System Options: [ "aarch64-linux" "x86_64-linux" ]
   system = "x86_64-linux";
 
   hostname = "AMZ-Linux"; 

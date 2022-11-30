@@ -42,9 +42,7 @@
     # Starship Prompt
     starship = {
       enable = true;
-      settings = {
-        add_newline = true;
-      };
+      settings = {};
     };
 
     # DirEnv

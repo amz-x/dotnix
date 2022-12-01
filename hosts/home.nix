@@ -21,6 +21,7 @@
       direnv
       docker-compose
       docker-buildx
+      jq
     ];
   };
 
@@ -37,12 +38,40 @@
     };
 
     # Nushell
-    nushell.enable = true;
+    # nushell.enable = true;
+    
+    # ZSH
+    zsh = {
+      # ZSH - Enable
+      enable = true;
+
+      # ZSH - Configuration
+      autocd = true;
+      dotDir = ".config/zsh";
+
+      # ZSH - Initialize Extra
+      initExtra = "source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh";
+
+      # ZSH - Additional Shell Integrations
+      enableAutosuggestions = true;
+      enableSyntaxHighlighting = true;
+
+      # ZSH - Plugin Manager (@TODO)
+      
+      # ZSH - Configuration History
+      history = {
+        path = "${config.xdg.dataHome}/zsh/zsh_history";
+        save = 10000;
+        size = 10000;
+      };
+    };
+     
 
     # Starship Prompt
     starship = {
       enable = true;
-      settings = {};
+      enableBashIntegration = true;
+      enableZshIntegration = true;
     };
 
     # DirEnv

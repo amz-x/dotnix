@@ -67,7 +67,7 @@
      "adbusers"
      "users"
     ];
-    shell = pkgs.nushell;
+    shell = pkgs.zsh;
   };
 
   # Environment settings
@@ -80,11 +80,16 @@
     variables = {
       # MESA AMD's RADV
       AMD_VULKAN_ICD = "RADV";
-      # TERMINAL
-      TERM = "io.elementary.terminal";
       # EDITOR
       EDITOR = "nano";
+      # TERMINAL
+      TERM = "io.elementary.terminal";
     };
+
+    # Additional Paths To Link
+    # pathsToLink = [
+    #   "/share/zsh"
+    # ];
 
     # Shells
     shells = with pkgs; [
@@ -111,7 +116,10 @@
       starship
       util-linux
       wget
-      xdg-user-dirs      
+      xdg-user-dirs
+      # ZSH shell
+      zsh
+      zsh-nix-shell     
       # Nix utilities
       rnix-lsp
       nix-direnv

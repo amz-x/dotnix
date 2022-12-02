@@ -8,6 +8,8 @@
 #       └─ ./home.nix * 
 #
 
+{ pkgs, ... }:
+
 {
   # Home Manager
   home = {
@@ -32,10 +34,27 @@
       enable = true;
     };
 
+    # ZSH
+    zsh = {
+      enable = true;
+
+      # ZSH - Configuration
+      autocd = true;
+      dotDir = ".config/zsh";
+
+      # ZSH - Initialize Extra
+      initExtra = "source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh";
+
+      # ZSH - Additional Shell Integrations
+      enableAutosuggestions = true;
+      enableSyntaxHighlighting = true;
+    };
+
     # Starship Prompt
     starship = {
       enable = true;
-      settings = {};
+      enableBashIntegration = true;
+      enableZshIntegration = true;
     };
 
     # DirEnv

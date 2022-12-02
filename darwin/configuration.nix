@@ -58,12 +58,12 @@
 
     systemPackages = with pkgs; [         # Installed Nix packages
       # System Tools
-      bashInteractive
       coreutils
       nano
       wget
       git
       starship
+      jq
       # Nix utilities
       rnix-lsp
       nix-direnv
@@ -80,7 +80,8 @@
       # slack
       # spotify
       # mailspring
-      # zoom-us
+      dbeaver
+      zoom-us
       # Development
       # docker
       # docker-compose
@@ -92,9 +93,6 @@
   programs = {
     # ZSH Shell
     zsh.enable = true;
-
-    # ADB 
-    adb.enable = true;
   };
 
   # System Services
@@ -110,7 +108,8 @@
     # Automatic garbage collection
     gc = {                                  
       automatic = true;
-      dates = "weekly";
+      user = "root";
+      # interval.days = 7;
       options = "--delete-older-than 2d";
     };
 

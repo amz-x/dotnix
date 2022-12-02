@@ -11,14 +11,7 @@
 {
 
   # Imports
-  imports = [(import ../../modules/fonts.nix)];
-
-  # Additional Imports
-  #  
-  #   [(import ../../modules/fonts.nix)] ++
-  #   [(import ../../modules/virtualisation.nix)] ++
-  #   [(import ../../modules/vpn.nix)];
-
+  imports = [(import ../modules/fonts.nix)];
 
   # MacOS User & Shell
   users.users."${user}" = {
@@ -57,6 +50,9 @@
       git
       starship
       jq
+      # ZSH shell
+      zinit
+      zsh-nix-shell     
       # Nix utilities
       rnix-lsp
       nix-direnv
@@ -65,6 +61,8 @@
       # Icons
       nixos-icons
       # System Applications
+      dbeaver
+      zoom-us
       # bitwarden
       # firefox
       # google-chrome
@@ -74,9 +72,7 @@
       # simplenote
       # slack
       # spotify
-      # mailspring
-      dbeaver
-      zoom-us
+      # mailspring     
       # Development
       # docker
       # docker-compose

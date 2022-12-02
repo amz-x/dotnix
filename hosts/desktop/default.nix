@@ -86,15 +86,9 @@
       TERM = "io.elementary.terminal";
     };
 
-    # Additional Paths To Link
-    # pathsToLink = [
-    #   "/share/zsh"
-    # ];
-
     # Shells
     shells = with pkgs; [
       bashInteractive
-      nushell
       zsh
     ];
 
@@ -117,7 +111,7 @@
       wget
       xdg-user-dirs
       # ZSH shell
-      zsh
+      zinit
       zsh-nix-shell     
       # Nix utilities
       rnix-lsp

@@ -23,7 +23,7 @@ in
     specialArgs = { inherit inputs pkgs user hostname location; };
     modules = [
       # System / Desktop
-      ./desktop 
+      ./desktop
 
       # Home Manager
       home-manager.nixosModules.home-manager {

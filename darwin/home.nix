@@ -45,7 +45,9 @@
       # ZSH - Initialize Extra
       initExtra = "source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh";
 
-      # ZSH - Additional Shell Integrations
+      # ZSH - Additional Shell Plugins & Integrations
+      enableCompletion = true;
+      enableBashCompletion = true;
       enableAutosuggestions = true;
       enableSyntaxHighlighting = true;
     };
@@ -53,6 +55,8 @@
     # Starship Prompt
     starship = {
       enable = true;
+
+      # Bash & ZSH Integration
       enableBashIntegration = true;
       enableZshIntegration = true;
     };

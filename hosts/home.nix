@@ -70,6 +70,8 @@
     # Starship Prompt
     starship = {
       enable = true;
+
+      # Bash & ZSH Integration
       enableBashIntegration = true;
       enableZshIntegration = true;
     };

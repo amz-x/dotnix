@@ -3,35 +3,6 @@
 {
   # Fonts
   fonts = {
-    # Enable default fonts
-    enableDefaultFonts = true;
-    enableGhostscriptFonts = true;
-
-    # Font configuration
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        emoji = [
-         "Noto Color Emoji"
-        ];
-        monospace = [
-          "Hack"
-          "Inconsolata"
-          "Source Sans Mono"
-          "Liberation Mono"
-          "DejaVu Mono"
-        ];
-        sansSerif = [
-          "Inter"
-          "Liberation Sans"
-          "Source Sans"
-        ];
-        serif = [
-          "Liberation Serif"
-          "Source Serif"
-        ];
-      };
-    };
 
     # Font Directory
     fontDir.enable = true;

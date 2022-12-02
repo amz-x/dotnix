@@ -11,7 +11,10 @@
 {
 
   # Imports
-  # imports = 
+  imports = [(import ../../modules/fonts.nix)];
+
+  # Additional Imports
+  #  
   #   [(import ../../modules/fonts.nix)] ++
   #   [(import ../../modules/virtualisation.nix)] ++
   #   [(import ../../modules/vpn.nix)];
@@ -29,19 +32,6 @@
     hostName = "${hostname}";
   };
 
-  # fonts = {                               # Fonts
-  #   fontDir.enable = true;
-  #   fonts = with pkgs; [
-  #     source-code-pro
-  #     font-awesome
-  #     (nerdfonts.override {
-  #       fonts = [
-  #         "FiraCode"
-  #       ];
-  #     })
-  #   ];
-  # };
-
   # Environment Configuration
   environment = {
 
@@ -53,7 +43,10 @@
 
     # Environment Variables
     variables = {
+      # EDITOR
       EDITOR = "nano";
+      # LANAGUAGE
+      LANG = "en_ZA.UTF-8";
     };
 
     systemPackages = with pkgs; [         # Installed Nix packages
@@ -69,6 +62,8 @@
       nix-direnv
       nixfmt
       nixpkgs-fmt
+      # Icons
+      nixos-icons
       # System Applications
       # bitwarden
       # firefox

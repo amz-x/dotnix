@@ -101,7 +101,6 @@
     # Default packages install system-wide
     systemPackages = with pkgs; [
       # System Tools
-      bashInteractive
       coreutils
       gcc
       gdb
@@ -165,7 +164,6 @@
     # Pantheon Excluded Packages
     pantheon.excludePackages = with pkgs.pantheon; [
       elementary-mail
-      epiphany
     ];
 
     # Unix ODBC Drivers
@@ -186,6 +184,39 @@
     extraLocaleSettings = {
       LC_TIME = "en_ZA.UTF-8";
       LC_MONETARY = "en_ZA.UTF-8";
+    };
+  };
+
+  # Font Configuration
+  fonts = {
+    # Enable Defaults
+    enableDefaultFonts = true;
+    enableGhostscriptFonts = true;
+
+    # Font configuration
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        emoji = [
+         "Noto Color Emoji"
+        ];
+        monospace = [
+          "Hack"
+          "Inconsolata"
+          "Source Sans Mono"
+          "Liberation Mono"
+          "DejaVu Mono"
+        ];
+        sansSerif = [
+          "Inter"
+          "Liberation Sans"
+          "Source Sans"
+        ];
+        serif = [
+          "Liberation Serif"
+          "Source Serif"
+        ];
+      };
     };
   };
 

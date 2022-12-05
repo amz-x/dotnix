@@ -9,6 +9,7 @@
 #   └─ ./modules
 #       ├─ ./fonts.nix
 #       ├─ ./home.nix
+#       ├─ ./pantheon.nix
 #       ├─ ./programs.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
@@ -22,6 +23,7 @@
   imports =                                              
     [(import ./hardware.nix)] ++
     [(import ../../modules/fonts.nix)] ++
+    [(import ../../modules/pantheon.nix)] ++
     [(import ../../modules/programs.nix)] ++
     [(import ../../modules/security.nix)] ++
     [(import ../../modules/services.nix)] ++
@@ -123,6 +125,7 @@
       # Applications
       appeditor
       bitwarden
+      dconf
       discord
       firefox
       gimp-with-plugins
@@ -137,6 +140,9 @@
       monitor      
       torrential
       zoom-us
+      # Applications - Gnome
+      gnome.dconf-editor
+      gnome.simple-scan
       # Development
       android-studio
       bundix
@@ -148,18 +154,11 @@
       postgresql
       # System utilities
       gst_all_1.gstreamer
-      dconf
-      gnome.dconf-editor
-      gnome.simple-scan
       vulnix
       wireguard-tools
     ];
 
-    # Pantheon Excluded Packages
-    pantheon.excludePackages = with pkgs.pantheon; [
-      elementary-mail
-    ];
-
+    
     # Unix ODBC Drivers
     unixODBCDrivers = with pkgs.unixODBCDrivers; [ 
       psql
@@ -241,13 +240,6 @@
     resolvconf = {
       enable = true;
       dnsSingleRequest = true;
-    };
-
-    # Firewall
-    firewall = {
-      enable = true;
-      extraPackages = with pkgs; [ ipset ];
-      autoLoadConntrackHelpers = true;
     };
   };
 

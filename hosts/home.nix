@@ -233,7 +233,7 @@
 
   # Services
   services = {
-    # Opensnitch UI
-    # opensnitch-ui.enable = true;
+    # Firewall - Opensnitch UI
+    opensnitch-ui.enable = true;
   };
 }

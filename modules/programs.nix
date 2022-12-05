@@ -3,8 +3,8 @@
 {
   # Programs
   programs = {
-    # Pantheon Tweaks
-    pantheon-tweaks.enable = true;
+    # ADB
+    adb.enable = true;
 
     # Dconf
     dconf.enable = true;
@@ -15,9 +15,6 @@
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
     };
-
-    # ADB
-    adb.enable = true;
 
     # Gnome Disks
     gnome-disks.enable = true;

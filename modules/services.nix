@@ -3,33 +3,6 @@
 {
   # System Services
   services = {
-    # X11
-    xserver = {
-      # Enable the X11 windowing system.
-      enable = true;
-
-      # Video Drivers
-      videoDrivers = [ "amdgpu" ];
-
-      # Desktop Manager
-      desktopManager = {
-
-        # Pantheon Desktop Environment
-        pantheon = {
-          enable = true;
-          
-          # Pantheon Switchboard Plugs
-          extraSwitchboardPlugs = with pkgs; [ 
-            pantheon-tweaks
-          ];
-
-          # Pantheon Wingpanel Indicators
-          extraWingpanelIndicators = with pkgs; [
-            wingpanel-indicator-ayatana
-          ];
-        };
-      };
-    };
 
     # Pipewire
     # pipewire = {
@@ -46,9 +19,6 @@
 
     # Firmware Update Service
     fwupd.enable = true;
-
-    # Touchegg
-    touchegg.enable = false;
 
     # Avahi
     avahi = {
@@ -74,19 +44,6 @@
       enable = true;
       interval = "weekly";
     };
-
-    # Opensnitch is broken at the moment
-    #
-    # opensnitch = {
-    #   enable = true;
-    #   settings = {
-    #     DefaultAction = "deny";
-    #     DefaultDuration = "until restart";
-    #     Firewall = "iptables";
-    #     LogLevel = 2;
-    #     ProcMonitorMethod = "ebpf";
-    #   };
-    # };
 
     # Wireguard Netmanager
     # wg-netmanager.enable = true;

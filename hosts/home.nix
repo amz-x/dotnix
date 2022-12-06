@@ -52,6 +52,12 @@
       # ZSH - Enable
       enable = true;
 
+      # ZSH - Local Variables
+      localVariables = {
+        # VDB (Vulnerability Database)
+        VDB_HOME = "${config.xdg.configHome}/vdb";
+      };
+
       # ZSH - Configuration
       autocd = true;
       dotDir = ".config/zsh";

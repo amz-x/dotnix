@@ -143,6 +143,8 @@
       # Applications - Gnome
       gnome.dconf-editor
       gnome.simple-scan
+      # Gstreamer
+      gst_all_1.gstreamer
       # Development
       android-studio
       bundix
@@ -153,7 +155,7 @@
       pgcli
       postgresql
       # System utilities
-      gst_all_1.gstreamer
+      appthreat-depscan
       vulnix
       wireguard-tools
     ];

@@ -131,14 +131,15 @@
       gimp-with-plugins
       google-chrome
       libreoffice
-      vscode-fhs
+      mailspring
+      monitor
+      onlyoffice-bin
       rustdesk
       simplenote
       slack
       spotify
-      mailspring
-      monitor      
       torrential
+      vscode-fhs
       zoom-us
       # Applications - Gnome
       gnome.dconf-editor
@@ -154,6 +155,13 @@
       # Databases
       pgcli
       postgresql
+      # Infrastructure As Code
+      terraform
+      terraform-docs
+      terraform-landscape
+      terraform-ls
+      terrascan
+      tflint
       # System utilities
       appthreat-depscan
       vulnix

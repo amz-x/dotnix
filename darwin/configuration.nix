@@ -62,6 +62,10 @@
       nixos-icons
       # System Applications
       dbeaver
+      firefox
+      gimp-with-plugins
+      slack
+      vscode-fhs
       zoom-us
       # bitwarden
       # firefox

@@ -29,7 +29,7 @@
     info.enable = true;
 
     # Nix-Index
-    nix-index.enable = true;
+    # nix-index.enable = true;
 
     # GIT
     git = {

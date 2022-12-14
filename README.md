@@ -6,11 +6,11 @@
 
 | Component             | Feature                   |
 |-----------------------|---------------------------|
-| Distro                | NixOS 22.11 (unstable)    |
-| Linux Kernel          | Linux Kernel 6.0.X        |
+| Distro                | NixOS 23.05 (unstable)    |
+| Linux Kernel          | Linux Kernel 6.1.X        |
 | Display Manager       | LightDM                   |
 | Desktop Environment   | Pantheon                  |
-| Shell                 | Nushell                   |
+| Shell                 | ZSH + Zinit               |
 | Prompt                | Starship                  |
 | Editor                | Nano + VS Code (FHS)      |
 | Firewall              | IPTables + Opensnitch     |

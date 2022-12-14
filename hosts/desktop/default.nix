@@ -95,34 +95,26 @@
     ];
 
     # Default packages install system-wide
+    # https://search.nixos.org/packages?channel=unstable
     systemPackages = with pkgs; [
-      # System Tools
-      coreutils
-      gcc
-      gdb
-      git
-      glib
-      ldns
-      traceroute
-      nano
+      # System Tools & Utilities
+      coreutils      
       ntfs3g
-      pciutils
-      screenfetch
-      starship
-      util-linux
-      wget
+      pciutils      
+      util-linux      
       xdg-user-dirs
-      # ZSH shell
+      # Shell - Prompt
+      starship
+      # Shell - ZSH Package Manager & Plugins
       zinit
       zsh-nix-shell     
-      # Nix utilities
-      rnix-lsp
-      nix-direnv
-      nixfmt
-      nixpkgs-fmt
       # Icons
       nixos-icons
-      # Applications
+      # Applications - CLI
+      nano
+      screenfetch
+      wget
+      # Applications - GUI
       appeditor
       bitwarden
       dconf
@@ -144,28 +136,48 @@
       # Applications - Gnome
       gnome.dconf-editor
       gnome.simple-scan
-      # Gstreamer
+      # Libraries
+      glib
       gst_all_1.gstreamer
-      # Development
+      # Development - Core
+      gitFull
+      # Development - Clang, GCC & LLVM
+      clang
+      clang-ocl
+      clang-tools
+      gcc
+      gdb
+      llvm
+      # Development - Android
       android-studio
+      # Development - Nix
+      rnix-lsp
+      nix-direnv
+      nixfmt
+      nixpkgs-fmt
+      # Development - Ruby
       bundix
+      # Development - Docker
       docker
       docker-compose
       docker-buildx
-      # Databases
+      # Development - Databases
       pgcli
       postgresql
-      # Infrastructure As Code
+      # Development - Terraform
       terraform
       terraform-docs
       terraform-landscape
       terraform-ls
       terrascan
       tflint
-      # System utilities
-      appthreat-depscan
-      vulnix
+      # Tools - Networking
+      dig
+      ldns
+      traceroute
       wireguard-tools
+      # Tools - Security
+      vulnix
     ];
 
     
@@ -267,6 +279,8 @@
 
     # Settings
     settings = {
+      # Trusted Users
+      trusted-users = [ "root" "${user}" ];
       # Optimise syslinks
       auto-optimise-store = true;
       # Enable nix flakes on system
@@ -277,8 +291,25 @@
     };
   };
 
-  # Allow proprietary software
-  nixpkgs.config.allowUnfree = true;
+  # Nixpkgs
+  nixpkgs = {
+    # Local System Optimizations
+    # localSystem = {
+    #   # GCC (GNU C Compiler)
+    #   # https://github.com/NixOS/nixpkgs/blob/master/lib/systems/architectures.nix
+    #   system = "x86_64-linux";
+    #   gcc = {
+    #     arch = "znver3";
+    #     tune = "znver3";
+    #   };
+    # };
+
+    # Nixpkgs Configuration
+    config = {
+      # Allow proprietary software
+      allowUnfree = true;
+    };
+  };
 
   # NixOS System Settings
   system = {

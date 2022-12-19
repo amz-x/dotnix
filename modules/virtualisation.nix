@@ -8,5 +8,14 @@
       enable = true;
       setSocketVariable = true;
     };
+
+    # Libvirt (KVM / QEMU)
+    libvirtd = {
+      enable = true;
+      qemu = {
+        swtpm.enable = true;
+        ovmf.enable =  true;
+      };
+    };
   };
 }

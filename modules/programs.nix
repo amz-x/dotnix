@@ -3,7 +3,7 @@
 {
   # Programs
   programs = {
-    # ADB
+    # ADB (Android Debug Bridge)
     adb.enable = true;
 
     # Dconf

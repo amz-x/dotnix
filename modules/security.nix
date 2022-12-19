@@ -23,7 +23,6 @@
     opensnitch = {
       enable = true;
       settings = {
-        InterceptUnknown = true;
         DefaultAction = "deny";
         DefaultDuration = "5m";
         Firewall = "iptables";

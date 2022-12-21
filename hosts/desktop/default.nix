@@ -171,6 +171,8 @@
       terraform-ls
       terrascan
       tflint
+      # Tools - GUI
+      glxinfo
       # Tools - Networking
       dig
       ldns

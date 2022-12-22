@@ -54,6 +54,7 @@
   users.users.${user} = {
     isNormalUser = true;
     description = "AMZ";
+    shell = pkgs.nushell;
     extraGroups = [
      "wheel"
      "networkmanager"
@@ -69,7 +70,6 @@
      "adbusers"
      "users"
     ];
-    shell = pkgs.zsh;
   };
 
   # Environment settings
@@ -91,7 +91,7 @@
     # Shells
     shells = with pkgs; [
       bashInteractive
-      zsh
+      nushell
     ];
 
     # Default packages install system-wide
@@ -114,6 +114,7 @@
       nano
       screenfetch
       wget
+      jq
       # Applications - GUI
       appeditor
       bitwarden

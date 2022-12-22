@@ -1,3 +1,22 @@
+#
+#  Specific system security configuration settings module
+#
+#  flake.nix
+#   ├─ ./hosts
+#   │   └─ ./desktop
+#   │        ├─ default.nix
+#   │        └─ hardware.nix
+#   └─ ./modules
+#       ├─ ./fonts.nix
+#       ├─ ./home.nix
+#       ├─ ./pantheon.nix
+#       ├─ ./programs.nix
+#       ├─ ./security.nix *
+#       ├─ ./services.nix
+#       ├─ ./virtualisation.nix
+#       ├─ ./vpn.nix
+#       └─ ./xdg.nix
+
 { config, lib, pkgs, ... }:
 
 {
@@ -24,8 +43,7 @@
       enable = true;
       settings = {
         DefaultAction = "deny";
-        DefaultDuration = "5m";
-        Firewall = "iptables";
+        DefaultDuration = "until restart";
         LogLevel = 2;
         ProcMonitorMethod = "ebpf";
         Stats = {

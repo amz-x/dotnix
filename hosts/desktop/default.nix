@@ -3,12 +3,14 @@
 #
 #  flake.nix
 #   ├─ ./hosts
+#   │   ├─ ./default.nix
+#   │   ├─ ./home.nix
 #   │   └─ ./desktop
 #   │        ├─ default.nix *
 #   │        └─ hardware.nix
 #   └─ ./modules
+#       ├─ ./audio.nix
 #       ├─ ./fonts.nix
-#       ├─ ./home.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./programs.nix
 #       ├─ ./security.nix
@@ -22,6 +24,7 @@
 {
   imports =                                              
     [(import ./hardware.nix)] ++
+    [(import ../../modules/audio.nix)] ++
     [(import ../../modules/fonts.nix)] ++
     [(import ../../modules/pantheon.nix)] ++
     [(import ../../modules/programs.nix)] ++
@@ -62,6 +65,8 @@
      "audio"
      "sound"
      "video"
+     "pipewire"
+     "warp"
      "input"
      "tty"
      "camera"

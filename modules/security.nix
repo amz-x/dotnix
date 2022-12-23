@@ -3,12 +3,14 @@
 #
 #  flake.nix
 #   ├─ ./hosts
+#   │   ├─ ./default.nix
+#   │   ├─ ./home.nix
 #   │   └─ ./desktop
 #   │        ├─ default.nix
 #   │        └─ hardware.nix
 #   └─ ./modules
+#       ├─ ./audio.nix
 #       ├─ ./fonts.nix
-#       ├─ ./home.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./programs.nix
 #       ├─ ./security.nix *
@@ -21,14 +23,24 @@
 
 {
   # Security - System
+  # https://search.nixos.org/options?channel=unstable&show=security
   security = {
+
+    # Security - Polkit
+    # https://search.nixos.org/options?channel=unstable&show=security.polkit
     polkit.enable = true;
+
+    # Security - Rootkit
+    # https://search.nixos.org/options?channel=unstable&show=security.rtkit
     rtkit.enable = true;
   };
 
   # Security - Networking
+  # https://search.nixos.org/options?channel=unstable&show=networking
   networking = {
-   # Firewall - IP tables
+
+    # Firewall - Defaults
+    # https://search.nixos.org/options?channel=unstable&show=networking.firewall
     firewall = {
       enable = true;
       extraPackages = with pkgs; [ ipset ];
@@ -39,6 +51,7 @@
   # Security - Services
   services = {
     # Firewall - Opensnitch
+    # https://search.nixos.org/options?channel=unstable&show=services.opensnitch
     opensnitch = {
       enable = true;
       settings = {

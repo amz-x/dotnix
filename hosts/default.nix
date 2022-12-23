@@ -22,6 +22,9 @@ in
     inherit system;
     specialArgs = { inherit inputs pkgs user hostname location; };
     modules = [
+      # Custom
+      # ../modules/cloudflare-warp.nix
+
       # System / Desktop
       ./desktop
 

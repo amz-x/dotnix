@@ -1,3 +1,23 @@
+#
+#  Specific system XDG configuration settings module
+#
+#  flake.nix
+#   ├─ ./hosts
+#   │   ├─ ./default.nix
+#   │   ├─ ./home.nix
+#   │   └─ ./desktop
+#   │        ├─ default.nix
+#   │        └─ hardware.nix
+#   └─ ./modules
+#       ├─ ./audio.nix
+#       ├─ ./fonts.nix
+#       ├─ ./pantheon.nix
+#       ├─ ./programs.nix
+#       ├─ ./security.nix
+#       ├─ ./services.nix
+#       ├─ ./virtualisation.nix
+#       ├─ ./vpn.nix
+#       └─ ./xdg.nix *
 
 { config, lib, pkgs, ... }:
 

@@ -37,12 +37,14 @@
       # GIT - Username & Email
       userName = "Christopher Crouse";
       userEmail = "mail@amz-x.com";
-      
+
       # GIT - Package
       package = pkgs.gitFull;
 
       # GIT - Default Ignores
-      ignores = [ ".DS_Store" ];
+      ignores = [
+        ".DS_Store"
+      ];
     };
 
     # Nushell
@@ -51,8 +53,8 @@
       # Nushell - Enable
       enable = true;
       # Nushell - Package
-      package = pkgs.nushell;      
-    
+      package = pkgs.nushell;
+
       # Nushell - Extra Configuration
       extraConfig = ''
         let-env config = {
@@ -265,15 +267,15 @@
 
       # Direnv - Nushell Integration (not available yet)
       # enableNushellIntegration = true;
-      
+
       # Direnv - Nix Direnv
       nix-direnv.enable = true;
     };
   };
 
   # Services
-  services = {
-    # Firewall - Opensnitch UI
-    opensnitch-ui.enable = true;
-  };
+  # services = {
+  #  # Firewall - Opensnitch UI
+  #  opensnitch-ui.enable = true;
+  # };
 }

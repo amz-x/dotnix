@@ -33,6 +33,10 @@
       # https://search.nixos.org/options?channel=unstable&show=services.xserver.enable
       enable = true;
 
+      # Keyboard Layout
+      # # https://search.nixos.org/options?channel=unstable&show=services.xserver.layout
+      layout = "za";
+
       # Video Drivers
       # https://search.nixos.org/options?channel=unstable&show=services.xserver.videoDrivers
       videoDrivers = [ "amdgpu" ];
@@ -48,7 +52,7 @@
           # Pantheon - Enable
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.enable
           enable = true;
-          
+
           # Pantheon - Extra Switchboard Plugs
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.extraSwitchboardPlugs
           extraSwitchboardPlugs = with pkgs; [ 

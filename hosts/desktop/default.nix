@@ -22,7 +22,7 @@
 { lib, pkgs, user, hostname, ... }:
 
 {
-  imports =                                              
+  imports =
     [(import ./hardware.nix)] ++
     [(import ../../modules/audio.nix)] ++
     [(import ../../modules/fonts.nix)] ++
@@ -31,15 +31,18 @@
     [(import ../../modules/security.nix)] ++
     [(import ../../modules/services.nix)] ++
     [(import ../../modules/virtualisation.nix)] ++
-    [(import ../../modules/vpn.nix)] ++
     [(import ../../modules/xdg.nix)];
+
+    # Disabled 
+    # [(import ../../modules/vpn.nix)] ++
+
 
   # Boot configuration
   boot = {
 
     # Plymouth
     plymouth.enable = true;
-    
+
     # EFI boot loader
     loader = {
       efi = {
@@ -103,27 +106,31 @@
     # https://search.nixos.org/packages?channel=unstable
     systemPackages = with pkgs; [
       # System Tools & Utilities
-      coreutils      
+      coreutils
       ntfs3g
-      pciutils      
-      util-linux      
+      pciutils
+      util-linux
       xdg-user-dirs
       # Shell - Prompt
       starship
+
       # Shell - ZSH Package Manager & Plugins
-      zinit
-      zsh-nix-shell     
+      # zinit
+      # zsh-nix-shell 
+
       # Icons
       nixos-icons
       # Applications - CLI
+      jq
       nano
+      restic
       screenfetch
       wget
-      jq
       # Applications - GUI
       appeditor
       bitwarden
       dconf
+      deja-dup
       discord
       firefox
       gimp-with-plugins
@@ -188,7 +195,7 @@
       vulnix
     ];
 
-    
+
     # Unix ODBC Drivers
     unixODBCDrivers = with pkgs.unixODBCDrivers; [ 
       psql
@@ -245,7 +252,7 @@
 
   # Networking
   networking = {
-    
+
     # Hostname
     hostName = "${hostname}";
 
@@ -274,12 +281,12 @@
   };
 
   # Nix Package Manager
-  nix = {    
+  nix = {
     # Nix Package
     package = pkgs.nix;
 
     # Automatic garbage collection
-    gc = {                                  
+    gc = {
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 2d";
@@ -301,6 +308,7 @@
 
   # Nixpkgs
   nixpkgs = {
+
     # Local System Optimizations
     # localSystem = {
     #   # GCC (GNU C Compiler)
@@ -323,5 +331,5 @@
   system = {
     # System Version
     stateVersion = "22.11"; 
-  };  
+  };
 }

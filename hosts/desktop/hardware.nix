@@ -14,17 +14,20 @@
 
   # Root Parition
   fileSystems."/" = { 
-    device = "/dev/disk/by-uuid/1c9e2517-c157-43a9-b961-402277d2ca3a";
+    device = "/dev/disk/by-uuid/4e8f9cfc-9a2c-40e7-ad01-00a575e85c77";
     fsType = "ext4";
   };
 
   # ESP Partition
   fileSystems."/boot/efi" = {
-    device = "/dev/disk/by-uuid/7633-BF04";
+    device = "/dev/disk/by-uuid/140D-841F";
     fsType = "vfat";
   };
 
-  swapDevices = [ ];
+  # Swap Parition(s)
+  swapDevices = [{
+    device = "/dev/disk/by-uuid/961d33dc-893a-4661-b8eb-77528d78f022";
+  }];
 
 
   # Hardware

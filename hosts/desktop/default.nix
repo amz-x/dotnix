@@ -31,10 +31,8 @@
     [(import ../../modules/security.nix)] ++
     [(import ../../modules/services.nix)] ++
     [(import ../../modules/virtualisation.nix)] ++
+    [(import ../../modules/vpn.nix)] ++
     [(import ../../modules/xdg.nix)];
-
-    # Disabled 
-    # [(import ../../modules/vpn.nix)] ++
 
 
   # Boot configuration
@@ -129,8 +127,8 @@
       # Applications - GUI
       appeditor
       bitwarden
+      dbeaver
       dconf
-      deja-dup
       discord
       firefox
       gimp-with-plugins

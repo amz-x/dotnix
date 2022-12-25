@@ -4,16 +4,26 @@
 
 ## Features
 
+### NixOS
+
 | Component             | Feature                   |
 |-----------------------|---------------------------|
-| Distro                | NixOS 23.05 (unstable)    |
+| Linux Distro          | NixOS 23.05 (Stoat)       |
 | Linux Kernel          | Linux Kernel 6.1.X        |
 | Display Manager       | LightDM                   |
 | Desktop Environment   | Pantheon                  |
-| Shell                 | ZSH + Zinit               |
+| Shell                 | Nushell                   |
 | Prompt                | Starship                  |
 | Editor                | Nano + VS Code (FHS)      |
 | Firewall              | IPTables + Opensnitch     |
+
+### Nix Darwin
+| Component             | Feature                   |
+|-----------------------|---------------------------|
+| OS                    | Mac OSX (latest)          |
+| Shell                 | Nushell                   |
+| Prompt                | Starship                  |
+| Editor                | Nano + VS Code (FHS)      |
 
 ---
 
@@ -129,7 +139,11 @@ sudo nix-collect-garbage -d
 - [NixOS - Options Search](https://search.nixos.org/options)
 - [NixOS - Channel Status](https://status.nixos.org/)
 
+### Home Manager (Home Directory Management)
+
+- [Home Manager - Github](https://github.com/nix-community/home-manager)
+- [Home Manager - Options Search](https://mipmip.github.io/home-manager-option-search)
+
 ### Projects Built With Nix
 
-- [Home Manager - Home Directory Management](https://github.com/nix-community/home-manager)
-- [Devenv - Developer Environments](https://devenv.sh/)
+- [Devenv - Developer Environments](https://devenv.sh)

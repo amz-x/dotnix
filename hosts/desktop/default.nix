@@ -188,6 +188,8 @@
       dig
       ldns
       traceroute
+      netbird
+      netbird-ui
       wireguard-tools
       # Tools - Security
       vulnix

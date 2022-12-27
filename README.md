@@ -2,30 +2,48 @@
 
 ![Screenshot](./data/nixos-screenshot.png "NixOS - Pantheon Desktop")
 
-## Features
+## NixOS Features
 
-### NixOS
+- NixOS 23.05 (Stoat)
+- Home Manager
+- Linux Kernel 6.1.X (XanMod Variant)
+- LightDM (Display Manager)
+- Pantheon Deskop Environment
+- Bash & Nushell
+- Starship Prompt
+- Nano CLI Editor
+- Visual Studio Code (FHS)
+- Opensnitch
+- Steam
 
-| Component             | Feature                   |
-|-----------------------|---------------------------|
-| Linux Distro          | NixOS 23.05 (Stoat)       |
-| Linux Kernel          | Linux Kernel 6.1.X        |
-| Display Manager       | LightDM                   |
-| Desktop Environment   | Pantheon                  |
-| Shell                 | Nushell                   |
-| Prompt                | Starship                  |
-| Editor                | Nano + VS Code (FHS)      |
-| Firewall              | IPTables + Opensnitch     |
+___
 
-### Nix Darwin
-| Component             | Feature                   |
-|-----------------------|---------------------------|
-| OS                    | Mac OSX (latest)          |
-| Shell                 | Nushell                   |
-| Prompt                | Starship                  |
-| Editor                | Nano + VS Code (FHS)      |
+## Applications - NixOS vs Nix Darwin
 
----
+System applications and their platform support comparison table:
+
+| Application           | NixOS 23.05 (Stoat)       | Nix Darwin                |
+|-----------------------|---------------------------|---------------------------|
+| Bitwarden             | ✅ Working                | ❓ Unknown Status         |
+| DBeaver CE            | ✅ Working                | ✅ Working                |
+| Discord               | ✅ Working                | ❓ Unknown Status         |
+| Docker                | ✅ Working                | ⚡ WIP                    |
+| Firefox               | ✅ Working                | ⚡ WIP                    |
+| Google Chrome (Stable)| ✅ Working                | ❓ Unknown Status         |
+| GIMP                  | ✅ Working                | ✅ Working                |
+| GIT                   | ✅ Working                | ✅ Working                |
+| Mailspring            | ✅ Working                | ❓ Unknown Status         |
+| Nano                  | ✅ Working                | ✅ Working                |
+| Nushell               | ✅ Working                | ✅ Working                |
+| Starship              | ✅ Working                | ✅ Working                |
+| Simplenote            | ✅ Working                | ❓ Unknown Status         |
+| Slack                 | ✅ Working                | ✅ Working                |
+| Spotify               | ✅ Working                | ❓ Unknown Status         |
+| Visual Studio Code    | ✅ Working                | ✅ Working                |
+| Zoom                  | ✅ Working                | ✅ Working                |
+
+[Looking for more applications / packages?](https://search.nixos.org/packages?channel=unstable)
+___
 
 ## Setup
 
@@ -40,7 +58,7 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 # Mac
 sh <(curl -L https://nixos.org/nix/install)
 
-# Windows (run in WSL)
+# Windows (run NixOS in WSL - following line is for non-NixOS distros)
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 ```
 
@@ -54,7 +72,7 @@ Edit **/etc/nix/nix.conf** and add/modify the following line:
 experimental-features = nix-command flakes
 ```
 
----
+___
 
 ## NixOS
 
@@ -71,7 +89,7 @@ sudo nixos-rebuild switch --flake /path/to/folder/#<hostname> --upgrade
 sudo nixos-rebuild switch --flake ./#AMZ-Linux
 ```
 
----
+___
 
 ## Mac (Nix Darwin)
 
@@ -100,7 +118,7 @@ sudo darwin-rebuild switch --flake /path/to/folder/#<hostname> --upgrade
 sudo darwin-rebuild switch --flake ./#AMZ-MacBook
 ```
 
----
+___
 
 ## Nix Flakes Commands
 
@@ -120,7 +138,7 @@ Execute the following, if you would like to run garbage collection:
 sudo nix-collect-garbage -d
 ```
 
----
+___
 
 ## Resources & Manuals
 

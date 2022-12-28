@@ -119,6 +119,7 @@
       # Icons
       nixos-icons
       # Applications - CLI
+      cabextract
       jq
       nano
       restic

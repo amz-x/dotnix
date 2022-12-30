@@ -34,12 +34,16 @@
       enable = true;
 
       # Keyboard Layout
-      # # https://search.nixos.org/options?channel=unstable&show=services.xserver.layout
+      # https://search.nixos.org/options?channel=unstable&show=services.xserver.layout
       layout = "za";
 
       # Video Drivers
       # https://search.nixos.org/options?channel=unstable&show=services.xserver.videoDrivers
       videoDrivers = [ "amdgpu" ];
+
+      # Exclude Packages
+      # https://search.nixos.org/options?channel=unstable&show=services.xserver.excludePackages
+      excludePackages = with pkgs; [ xterm ];
 
       # Desktop Manager
       # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager
@@ -63,10 +67,6 @@
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.extraWingpanelIndicators
           extraWingpanelIndicators = with pkgs; [ ];
         };
-
-        # Xterm
-        # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.xterm.enable
-        xterm.enable = false;
       };
     };
 

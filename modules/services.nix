@@ -5,10 +5,21 @@
   services = {
 
     # Flatpak
+    # https://search.nixos.org/options?channel=unstable&show=services.flatpak.enable
     flatpak.enable = true;
 
-    # Firmware Update Service
-    fwupd.enable = true;
+    # FWUPD - Firmware Update Service
+    # https://search.nixos.org/options?channel=unstable&show=services.fwupd
+    fwupd = {
+
+      # FWUPD - Enable
+      # https://search.nixos.org/options?channel=unstable&show=services.fwupd.enable
+      enable = true;
+
+      # FWUPD - Package
+      # https://search.nixos.org/options?channel=unstable&show=services.fwupd.package
+      package = pkgs.fwupd;
+    };
 
     # Avahi
     avahi = {
@@ -29,25 +40,45 @@
     # Scanning
     saned.enable = true;
 
-    # SSD TRIM
+    # FSTRIM (SSD TRIM)
+    # https://search.nixos.org/options?channel=unstable&show=services.fstrim
     fstrim = {
+
+      # FSTRIM - Enable
+      # https://search.nixos.org/options?channel=unstable&show=services.fstrim.enable
       enable = true;
+
+      # FSTRIM
+      # https://search.nixos.org/options?channel=unstable&show=services.fstrim.interval
       interval = "weekly";
+    };
+
+    # OpenRGB
+    # https://search.nixos.org/options?channel=unstable&show=services.hardware.openrgb
+    hardware.openrgb = {
+
+      # OpenRGB - Enable
+      # https://search.nixos.org/options?channel=unstable&show=services.hardware.openrgb.enable
+      enable = true;
+
+      # OpenRGB - Motherboard (AMD / Intel)
+      # https://search.nixos.org/options?channel=unstable&show=services.hardware.openrgb.motherboard
+      motherboard = "amd";
+
+      # OpenRGB - Server Port
+      # https://search.nixos.org/options?channel=unstable&show=services.hardware.openrgb.server.port
+      server.port = 6742;
     };
 
     # Wireguard Netmanager
     # wg-netmanager.enable = true;
-
     # Unbound
     # unbound = {
     #   enable = true;
-
     #   # Use and update root trust anchor for DNSSEC validation
     #   enableRootTrustAnchor = true;
-
     #   # Resolve local queries (i.e. add 127.0.0.1 to /etc/resolv.conf)
     #   resolveLocalQueries = true;
-    
     #   # Local DNS caching
     #   settings = {
     #     server = {
@@ -69,7 +100,9 @@
     #       }
     #     ];
     #   };
-    # };    
+    # };
+
+  
 
     # Samba
     # samba = {

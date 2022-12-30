@@ -182,9 +182,7 @@
       terraform-landscape
       terraform-ls
       terrascan
-      tflint
-      # Tools - GUI
-      glxinfo
+      tflint      
       # Tools - Networking
       dig
       ldns

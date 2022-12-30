@@ -31,19 +31,37 @@
 
 
   # Hardware
+  # https://search.nixos.org/options?channel=unstable&show=hardware
   hardware = {
 
-    # CPU / AMD Microcode
-    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    # Hardware - Enable all the firmware with a license allowing redistribution.
+    # https://search.nixos.org/options?channel=unstable&show=hardware.enableRedistributableFirmware
+    enableRedistributableFirmware = true;
+
+    # Hardware - CPU - AMD Microcode
+    # https://search.nixos.org/options?channel=unstable&show=hardware.cpu.amd.updateMicrocode
+    cpu.amd.updateMicrocode = lib.mkDefault true;
 
     # Video (high-resolution display)
+    # https://search.nixos.org/options?channel=unstable&show=hardware.video.hidpi.enable
     video.hidpi.enable = lib.mkDefault true;
 
-    # Bluetooth
+    # Hardware - Bluetooth
     bluetooth = {
+      # Hardware - Bluetooth Enable
+      # https://search.nixos.org/options?channel=unstable&show=hardware.bluetooth.enable
       enable = true;
+
+      # Hardware - Bluetooth Package
+      # https://search.nixos.org/options?channel=unstable&show=hardware.bluetooth.package
       package = pkgs.bluezFull;
+
+      # Hardware - Bluetooth Power On The Controller At Boot
+      # https://search.nixos.org/options?channel=unstable&show=hardware.bluetooth.powerOnBoot 
       powerOnBoot = true;
+
+      # Hardware - Bluetooth Settings
+      # https://search.nixos.org/options?channel=unstable&show=hardware.bluetooth.settings
       settings = {
         General = {
           Enable = "Source,Sink,Media,Socket";
@@ -51,10 +69,48 @@
       };
     };
 
-    # Pulseaudio
+    # Hardware - OpenGL
+    # https://search.nixos.org/options?channel=unstable&show=hardware.opengl
+    opengl = {
+      # OpenGL - Enable
+      # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.enable
+      enable = true;
+      
+      # Hardware - OpenGL - Enable accelerated OpenGL rendering through the Direct Rendering Interface (DRI)
+      # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.driSupport
+      driSupport = true;
+      driSupport32Bit = true;
+
+      # Hardware - OpenGL - Additional packages to add to OpenGL drivers.
+      # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.extraPackages
+      extraPackages = with pkgs; [
+        glxinfo
+        mesa
+      ];
+
+      # Hardware - OpenGL - Additional packages to add to 32-bit OpenGL drivers on 64-bit systems.
+      # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.extraPackages32
+      # https://search.nixos.org/packages?channel=unstable&show=driversi686Linux
+      extraPackages32 = with pkgs.driversi686Linux; [
+        glxinfo
+        mesa
+      ];
+    };
+
+    # Hardware - Pulseaudio
+    # https://search.nixos.org/options?channel=unstable&show=hardware.pulseaudio.enable
     pulseaudio = {
+
+      # Hardware - Pulseaudio - Enable
+      # https://search.nixos.org/options?channel=unstable&show=hardware.pulseaudio.enable
       enable = false;
+
+      # Hardware - Pulseaudio - Support for 32-bit on 64-bit systems.
+      # https://search.nixos.org/options?channel=unstable&show=hardware.pulseaudio.support32Bit
       support32Bit = true;
+
+      # Hardware - Pulseaudio - Package
+      # https://search.nixos.org/options?channel=unstable&show=hardware.pulseaudio.package
       package = pkgs.pulseaudioFull;
     };
   };

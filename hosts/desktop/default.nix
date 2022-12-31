@@ -120,6 +120,7 @@
       nixos-icons
       # Applications - CLI
       cabextract
+      glxinfo
       jq
       nano
       restic

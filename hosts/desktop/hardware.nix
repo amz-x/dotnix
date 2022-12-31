@@ -6,25 +6,64 @@
 {
   imports = [(modulesPath + "/installer/scan/not-detected.nix")];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [];
+  # Boot
+  # https://search.nixos.org/options?channel=unstable&show=boot
+  boot = {
+
+    # Boot - Initrd
+    # https://search.nixos.org/options?channel=unstable&show=boot.initrd
+    initrd = {
+
+      # Boot - Initrd - Available Kernel Modules 
+      # https://search.nixos.org/options?channel=unstable&show=boot.initrd.availableKernelModules
+      availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+
+      # Boot - Initrd - Kernel Modules
+      # https://search.nixos.org/options?channel=unstable&show=boot.initrd.kernelModules
+      kernelModules = [ "amdgpu" ];
+    };
+
+    # Boot - Plymouth
+    # https://search.nixos.org/options?channel=unstable&show=boot.plymouth.enable
+    plymouth.enable = true;
+
+    # Boot - Console Logging Level
+    # https://search.nixos.org/options?channel=unstable&show=boot.consoleLogLevel
+    consoleLogLevel = 0;
+
+    # Boot - Kernel Params
+    # https://search.nixos.org/options?channel=unstable&show=boot.kernelParams
+    kernelParams = [ "quiet" "udev.log_level=3" "splash" ];
+
+    # # Boot - Kernel Packages
+    # https://search.nixos.org/options?channel=unstable&show=boot.kernelPackages
+    kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
+    
+    # Boot - Kernel Modules
+    # https://search.nixos.org/options?channel=unstable&show=boot.kernelModules
+    kernelModules = [ "kvm-amd" ];
+    
+    # Boot - Extra Module Packages
+    # https://search.nixos.org/options?channel=unstable&show=boot.extraModulePackages
+    extraModulePackages = [ ];
+  };
 
   # Root Parition
+  # https://search.nixos.org/options?channel=unstable&show=fileSystems
   fileSystems."/" = { 
     device = "/dev/disk/by-uuid/4e8f9cfc-9a2c-40e7-ad01-00a575e85c77";
     fsType = "ext4";
   };
 
   # ESP Partition
+  # https://search.nixos.org/options?channel=unstable&show=fileSystems
   fileSystems."/boot/efi" = {
     device = "/dev/disk/by-uuid/140D-841F";
     fsType = "vfat";
   };
 
-  # Swap Parition(s)
+  # Swap Device(s) / Parition(s)
+  # https://search.nixos.org/options?channel=unstable&show=swapDevices
   swapDevices = [{
     device = "/dev/disk/by-uuid/961d33dc-893a-4661-b8eb-77528d78f022";
   }];

@@ -26,6 +26,7 @@
   xdg = {
     # XDG Meta
     autostart.enable = true;
+    menus.enable = true;
     mime.enable = true;
     icons.enable = true;
 

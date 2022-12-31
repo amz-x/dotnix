@@ -37,15 +37,56 @@
       # https://search.nixos.org/options?channel=unstable&show=services.xserver.layout
       layout = "za";
 
-      # Video Drivers
-      # https://search.nixos.org/options?channel=unstable&show=services.xserver.videoDrivers
-      videoDrivers = [ "amdgpu" ];
+      # XServer - LibInput
+      # https://search.nixos.org/options?channel=unstable&show=services.xserver.libinput
+      libinput = {
 
-      # Exclude Packages
+        # XServer - LibInput - Enable
+        # https://search.nixos.org/options?channel=unstable&show=services.xserver.libinput.enable
+        enable = true;
+
+        # XServer - LibInput - Mouse & Mousepad Configuration
+        # https://search.nixos.org/options?channel=unstable&show=services.xserver.libinput.mouse
+        mouse = {
+
+          # XServer - LibInput - Mouse - Tapping
+          # https://search.nixos.org/options?channel=unstable&show=services.xserver.libinput.mouse.tapping
+          tapping = true;
+
+          # XServer - LibInput - Mouse - Scroll Method
+          # https://search.nixos.org/options?channel=unstable&show=services.xserver.libinput.mouse.scrollMethod
+          scrollMethod = "twofinger";
+
+          # XServer - LibInput - Mouse - Enable Horizontal Scrolling
+          # https://search.nixos.org/options?channel=unstable&show=services.xserver.libinput.mouse.horizontalScrolling
+          horizontalScrolling = true;
+          
+          # XServer - LibInput - Mouse - Disable Left Handed Configuration
+          # https://search.nixos.org/options?channel=unstable&show=services.xserver.libinput.mouse.leftHanded
+          leftHanded = false;
+        };
+      };
+
+      # XServer - Video Drivers
+      # https://search.nixos.org/options?channel=unstable&show=services.xserver.videoDrivers
+      videoDrivers = [ 
+        "amdgpu"
+        "modesetting"
+      ];
+
+      # XServer - Modules
+      # https://search.nixos.org/options?channel=unstable&show=services.xserver.modules
+      # https://search.nixos.org/packages?channel=unstable&type=packages&query=xorg
+      modules = with pkgs.xorg; [ 
+        xf86videoamdgpu
+        xf86inputlibinput
+      ];
+
+      # XServer - Exclude Packages
       # https://search.nixos.org/options?channel=unstable&show=services.xserver.excludePackages
       excludePackages = with pkgs; [ xterm ];
 
-      # Desktop Manager
+      # XServer - Desktop Manager
       # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager
       desktopManager = {
 
@@ -75,11 +116,11 @@
     touchegg.enable = false;
   };
 
-  # Pantheon Tweaks
+  # Programs - Pantheon Tweaks
   # https://search.nixos.org/options?channel=unstable&show=programs.pantheon-tweaks
   programs.pantheon-tweaks.enable = true;
 
-  # Pantheon Excluded Packages
+  # Environment - Pantheon Excluded Packages
   # https://search.nixos.org/options?channel=unstable&show=environment.pantheon.excludePackages
   environment.pantheon.excludePackages = with pkgs.pantheon; [
     elementary-mail

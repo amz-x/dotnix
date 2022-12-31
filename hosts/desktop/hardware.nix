@@ -21,6 +21,10 @@
       # Boot - Initrd - Kernel Modules
       # https://search.nixos.org/options?channel=unstable&show=boot.initrd.kernelModules
       kernelModules = [ "amdgpu" ];
+
+      # Boot - Initrd - Verbose
+      # https://search.nixos.org/options?channel=unstable&show=boot.initrd.verbose
+      verbose = false;
     };
 
     # Boot - Plymouth
@@ -33,7 +37,7 @@
 
     # Boot - Kernel Params
     # https://search.nixos.org/options?channel=unstable&show=boot.kernelParams
-    kernelParams = [ "quiet" "udev.log_level=3" "splash" ];
+    kernelParams = [ "quiet" "udev.log_level=3" ];
 
     # # Boot - Kernel Packages
     # https://search.nixos.org/options?channel=unstable&show=boot.kernelPackages

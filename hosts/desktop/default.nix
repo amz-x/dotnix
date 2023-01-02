@@ -156,19 +156,17 @@
       gst_all_1.gstreamer
       # Development - Core
       gitFull
-      # Development - Clang 14
-      clang_14
-      clang-tools_14
+      # Development - Clang
       clang-ocl
+      clang-tools
       # Development - GCC & GDB
       gcc12
       gdb
+      # Development - OpenCL
+      opencl-info
       # Development - LLVM ROCm Stack (ADMGPU)
       llvmPackages_rocm.clang
-      llvmPackages_rocm.llvm      
-      # Development - OpenCL ROCm Stack (ADMGPU)
-      rocm-opencl-runtime
-      rocm-opencl-icd
+      llvmPackages_rocm.llvm
       # Development - Android
       android-studio
       # Development - Nix

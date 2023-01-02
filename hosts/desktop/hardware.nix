@@ -129,6 +129,8 @@
       extraPackages = with pkgs; [
         glxinfo
         mesa
+        rocm-opencl-icd
+        rocm-opencl-runtime
       ];
 
       # Hardware - OpenGL - Additional packages to add to 32-bit OpenGL drivers on 64-bit systems.

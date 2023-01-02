@@ -123,6 +123,8 @@
       glxinfo
       jq
       nano
+      protonup-ng
+      protontricks
       restic
       screenfetch
       wget
@@ -154,13 +156,19 @@
       gst_all_1.gstreamer
       # Development - Core
       gitFull
-      # Development - Clang, GCC & LLVM
-      clang
+      # Development - Clang 14
+      clang_14
+      clang-tools_14
       clang-ocl
-      clang-tools
-      gcc
+      # Development - GCC & GDB
+      gcc12
       gdb
-      llvm
+      # Development - LLVM ROCm Stack (ADMGPU)
+      llvmPackages_rocm.clang
+      llvmPackages_rocm.llvm      
+      # Development - OpenCL ROCm Stack (ADMGPU)
+      rocm-opencl-runtime
+      rocm-opencl-icd
       # Development - Android
       android-studio
       # Development - Nix
@@ -261,10 +269,11 @@
 
     # Hosts
     hosts = {
-      "127.0.0.1" = [ "${hostname}" ];
-      "1.1.1.1"   = [ "cloudflare-dns.com" ];
-      "9.9.9.9"   = [ "dns.quad9.net" ];
-      "9.9.9.11"  = [ "dns11.quad9.net" ];
+      "127.0.0.1" = [ "${hostname}"       ];
+      "1.1.1.1"   = [ "one.one.one.one"   ];
+      "1.0.0.1"   = [ "one.zero.zero.one" ];
+      "9.9.9.9"   = [ "dns.quad9.net"     ];
+      "9.9.9.11"  = [ "dns11.quad9.net"   ];
     };
 
     # Network Manager

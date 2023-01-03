@@ -11,6 +11,7 @@
 #   └─ ./modules
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix
+#       ├─ ./networking.nix
 #       ├─ ./pantheon.nix *
 #       ├─ ./programs.nix
 #       ├─ ./security.nix 
@@ -90,13 +91,17 @@
       # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager
       desktopManager = {
 
-        # Pantheon Desktop Environment
+        #  XServer - Desktop Manager - Pantheon Desktop Environment (DE)
         # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon
         pantheon = {
 
           # Pantheon - Enable
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.enable
           enable = true;
+
+          # XServer - Desktop Manager - Pantheon DE - Debugging
+          # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.debug
+          debug = true;
 
           # Pantheon - Extra Switchboard Plugs
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.extraSwitchboardPlugs
@@ -123,4 +128,11 @@
   # Environment - Pantheon Excluded Packages
   # https://search.nixos.org/options?channel=unstable&show=environment.pantheon.excludePackages
   environment.pantheon.excludePackages = with pkgs.pantheon; [ ];
+
+  # Enviroment - System Packages
+  # https://search.nixos.org/options?channel=unstable&show=environment.systemPackages
+  # https://search.nixos.org/packages?channel=unstable&show=pantheon.elementary-tasks
+  environment.systemPackages = with pkgs.pantheon; [
+    elementary-tasks
+  ];
 }

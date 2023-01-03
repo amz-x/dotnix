@@ -13,7 +13,6 @@
     # Boot - Initrd
     # https://search.nixos.org/options?channel=unstable&show=boot.initrd
     initrd = {
-
       # Boot - Initrd - Available Kernel Modules 
       # https://search.nixos.org/options?channel=unstable&show=boot.initrd.availableKernelModules
       availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
@@ -27,6 +26,37 @@
       verbose = false;
     };
 
+    # Boot - Loader
+    # https://search.nixos.org/options?channel=unstable&show=boot.loader
+    loader = {
+      
+      # Boot - Loader - EFI
+      # https://search.nixos.org/options?channel=unstable&show=boot.loader.efi
+      efi = {
+
+        # Boot - Loader - EFI - Allow installation process to modify EFI boot variables
+        # https://search.nixos.org/options?channel=unstable&show=boot.loader.efi.canTouchEfiVariables
+        canTouchEfiVariables = true;
+        
+        # Boot - Loader - EFI - Partition Mount Point
+        # https://search.nixos.org/options?channel=unstable&show=boot.loader.efi.efiSysMountPoint
+        efiSysMountPoint = "/boot/efi";
+      };
+
+      # Boot - Loader - EFI Boot Manager (systemd-boot)
+      # https://search.nixos.org/options?channel=unstable&show=boot.loader.systemd-boot
+      systemd-boot = {
+
+        # Boot - Loader - EFI Boot Manager - Enable
+        # https://search.nixos.org/options?channel=unstable&show=boot.loader.systemd-boot.enable
+        enable = true;
+
+        # Boot - Loader - EFI Boot Manager - Maximum Number Of Latest Generations Entries
+        # https://search.nixos.org/options?channel=unstable&show=boot.loader.systemd-boot.configurationLimit
+        configurationLimit = 5;
+      };
+    };
+
     # Boot - Plymouth
     # https://search.nixos.org/options?channel=unstable&show=boot.plymouth.enable
     plymouth.enable = true;
@@ -37,7 +67,12 @@
 
     # Boot - Kernel Params
     # https://search.nixos.org/options?channel=unstable&show=boot.kernelParams
-    kernelParams = [ "quiet" "udev.log_level=3" ];
+    kernelParams = [ 
+      "quiet"
+      "udev.log_level=3"
+      "video=DP-1:2560x1440@120"
+      "video=DP-2:2560x1440@120"
+    ];
 
     # # Boot - Kernel Packages
     # https://search.nixos.org/options?channel=unstable&show=boot.kernelPackages

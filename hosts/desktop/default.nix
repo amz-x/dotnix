@@ -11,6 +11,7 @@
 #   └─ ./modules
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix
+#       ├─ ./networking.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./programs.nix
 #       ├─ ./security.nix
@@ -26,6 +27,7 @@
     [(import ./hardware.nix)] ++
     [(import ../../modules/audio.nix)] ++
     [(import ../../modules/fonts.nix)] ++
+    [(import ../../modules/networking.nix)] ++
     [(import ../../modules/pantheon.nix)] ++
     [(import ../../modules/programs.nix)] ++
     [(import ../../modules/security.nix)] ++
@@ -33,26 +35,6 @@
     [(import ../../modules/virtualisation.nix)] ++
     [(import ../../modules/vpn.nix)] ++
     [(import ../../modules/xdg.nix)];
-
-
-  # Boot configuration
-  boot = {
-
-    # Plymouth
-    plymouth.enable = true;
-
-    # EFI boot loader
-    loader = {
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
-      };
-      systemd-boot = {
-        enable = true;
-        configurationLimit = 5;
-      };
-    };
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {
@@ -253,37 +235,6 @@
           "Source Serif"
         ];
       };
-    };
-  };
-
-  # Networking
-  networking = {
-
-    # Hostname
-    hostName = "${hostname}";
-
-    # Default Gateway
-    defaultGateway = "192.168.50.1";
-
-    # Hosts
-    hosts = {
-      "127.0.0.1" = [ "${hostname}"       ];
-      "1.1.1.1"   = [ "one.one.one.one"   ];
-      "1.0.0.1"   = [ "one.zero.zero.one" ];
-      "9.9.9.9"   = [ "dns.quad9.net"     ];
-      "9.9.9.11"  = [ "dns11.quad9.net"   ];
-    };
-
-    # Network Manager
-    # DNS options: [ "default", "dnsmasq", "unbound", "systemd-resolved", "none" ]
-    networkmanager = {
-      enable = true;
-    };
-
-    # Openresolv 
-    resolvconf = {
-      enable = true;
-      dnsSingleRequest = true;
     };
   };
 

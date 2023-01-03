@@ -11,6 +11,7 @@
 #   └─ ./modules
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix *
+#       ├─ ./networking.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./programs.nix
 #       ├─ ./security.nix 

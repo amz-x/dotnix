@@ -133,6 +133,7 @@
   # https://search.nixos.org/options?channel=unstable&show=environment.systemPackages
   # https://search.nixos.org/packages?channel=unstable&show=pantheon.elementary-tasks
   environment.systemPackages = with pkgs.pantheon; [
-    elementary-tasks
+    # Package is broken?
+    # elementary-tasks
   ];
 }

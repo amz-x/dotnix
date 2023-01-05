@@ -123,6 +123,7 @@
       mailspring
       monitor
       onlyoffice-bin
+      postman
       rustdesk
       simplenote
       slack

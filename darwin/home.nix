@@ -124,9 +124,9 @@
 
       # Starship - ZSH Integration
       # https://mipmip.github.io/home-manager-option-search/?programs.starship.enableZshIntegration
-      enableZshIntegration = true;
+      # enableZshIntegration = true;
     };
-`
+
     # Direnv
     # https://mipmip.github.io/home-manager-option-search/?programs.direnv
     direnv = {
@@ -141,7 +141,7 @@
 
       # Direnv - ZSH Integration
       # https://mipmip.github.io/home-manager-option-search/?programs.direnv.enableZshIntegration
-      enableZshIntegration = true;
+      # enableZshIntegration = true;
       
       # Direnv - Nix Direnv
       # https://mipmip.github.io/home-manager-option-search/?programs.direnv.nix-direnv.enable
@@ -303,8 +303,6 @@
 
     #     # file rename magick
     #     bindkey "^[m" copy-prev-shell-word
-
-
     #   '';
     # };
 

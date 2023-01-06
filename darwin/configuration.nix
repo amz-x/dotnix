@@ -31,12 +31,13 @@
     # Environment Shells
     shells = with pkgs; [ 
       bashInteractive
-      zsh
       nushell
     ];
 
     # Environment Variables
     variables = {
+      # SHELL
+      SHELL = "nu";
       # EDITOR
       EDITOR = "nano";
       # LANAGUAGE
@@ -63,11 +64,12 @@
       nixos-icons
       # System Applications
       dbeaver
-      # firefox
       gimp
       slack
       vscode
       zoom-us
+      # Networking
+      netbird-ui
       # bitwarden
       # firefox
       # google-chrome
@@ -86,13 +88,12 @@
   };
 
   # System Programs
-  programs = {
-    # Bash Shell
-    bash.enable = true;
-
-    # ZSH Shell
-    zsh.enable = true;
-  };
+  # programs = {
+  #   # Bash Shell
+  #   bash.enable = true;
+  #   # ZSH Shell
+  #   zsh.enable = true;
+  # };
 
   # System Services
   # # https://mynixos.com/nix-darwin/option/services
@@ -172,7 +173,7 @@
   # DawinOS System Settings
   system = {
     # Since it's not possible to declare default shell, run this command after build
-    # activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.zsh}/bin/zsh'';
+    # activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.nushell}/bin/nu'';
     
     # System Version
     stateVersion = 4;

@@ -16,7 +16,7 @@
   # MacOS User & Shell
   users.users."${user}" = {
     home = "/Users/${user}";
-    shell = pkgs.zsh;                     
+    shell = pkgs.nushell;                     
   };
 
   # Networking
@@ -32,6 +32,7 @@
     shells = with pkgs; [ 
       bashInteractive
       zsh
+      nushell
     ];
 
     # Environment Variables
@@ -51,8 +52,8 @@
       starship
       jq
       # ZSH shell
-      zinit
-      zsh-nix-shell     
+      # zinit
+      # zsh-nix-shell     
       # Nix utilities
       rnix-lsp
       nix-direnv
@@ -62,10 +63,10 @@
       nixos-icons
       # System Applications
       dbeaver
-      firefox
-      gimp-with-plugins
+      # firefox
+      gimp
       slack
-      vscode-fhs
+      vscode
       zoom-us
       # bitwarden
       # firefox
@@ -86,33 +87,76 @@
 
   # System Programs
   programs = {
+    # Bash Shell
+    bash.enable = true;
+
     # ZSH Shell
     zsh.enable = true;
   };
 
   # System Services
+  # # https://mynixos.com/nix-darwin/option/services
   services = {
+
+    # Netbird
+    # https://mynixos.com/nix-darwin/option/services.netbird
+    netbird = {
+      # Netbird - Enable
+      # https://mynixos.com/nix-darwin/option/services.netbird.enable
+      enable = true;
+
+      # Netbird - Package
+      # https://mynixos.com/nix-darwin/option/services.netbird.package
+      package = pkgs.netbird;
+    };
+
+    # Nix Deamon
+    # https://mynixos.com/nix-darwin/option/services.nix-daemon.enable
     nix-daemon.enable = true;
   };
 
   # Nix Package Manager
+  # https://mynixos.com/nix-darwin/option/nix
   nix = {
-    # Nix Package
+
+    # Nix - Package
+    # https://mynixos.com/nix-darwin/option/nix.package
     package = pkgs.nix;
 
-    # Automatic garbage collection
-    gc = {                                  
+    # Nix - GC (Garbage Collection)
+    # https://mynixos.com/nix-darwin/option/nix.gc
+    gc = {          
+      
+      # Nix - GC - Automatic Garbage Collection
+      # https://mynixos.com/nix-darwin/option/nix.gc.automatic                        
       automatic = true;
+
+      # Nix - GC - User
+      # https://mynixos.com/nix-darwin/option/nix.gc.user
       user = "root";
-      # interval.days = 7;
+
+      # Nix - GC
+      # https://mynixos.com/nix-darwin/option/nix.gc.interval
+      interval = { Hour = 3; Minute = 15; };
       options = "--delete-older-than 2d";
     };
 
-    # Settings
+    # Nix - Settings
+    # https://mynixos.com/nix-darwin/option/nix.settings
     settings = {
-      # Optimise syslinks
+      # Nix - Settings - Optimise Store
+      # https://mynixos.com/nix-darwin/option/nix.settings.auto-optimise-store
       auto-optimise-store = true;
-      # Enable nix flakes on system
+
+      # Nix - Settings - Trusted Users
+      # https://mynixos.com/nix-darwin/option/nix.settings.trusted-users
+      trusted-users = [
+        "root"
+        "${user}"
+      ];
+
+      # Nix - Settings - Experimental Features
+      # https://mynixos.com/nix-darwin/option/nix.settings.
       experimental-features = [
         "nix-command"
         "flakes"
@@ -121,12 +165,14 @@
   };
 
   # Allow proprietary software
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+  };
 
   # DawinOS System Settings
   system = {
     # Since it's not possible to declare default shell, run this command after build
-    activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.zsh}/bin/zsh'';
+    # activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.zsh}/bin/zsh'';
     
     # System Version
     stateVersion = 4;

@@ -39,6 +39,7 @@
       hack-font
       inconsolata
       inter
+      iosevka
       liberation_ttf
       nerdfonts
       noto-fonts

@@ -8,11 +8,18 @@
 #       └─ ./home.nix * 
 #
 
-{ config, pkgs, ... }:
+{ config, pkgs, user, ... }:
 
 {
   # Home Manager
   home = {
+
+    # Username
+    username = "${user}";
+    
+    # Home Directory
+    homeDirectory = "/Users/${user}";
+
     # Home Packages
     packages = with pkgs; [
       awscli2
@@ -49,7 +56,10 @@
       settings = {
         dynamic_title = true;
         decorations = "full";
-        renderer = "gles2";
+        renderer = "gles2_pure";
+        shell = {
+          program = "nu";
+        };
         padding = {
           x = 2;
           y = 1;
@@ -103,6 +113,21 @@
       # Nushell - Extra Configuration
       # https://mipmip.github.io/home-manager-option-search/?programs.nushell.extraConfig
       extraConfig = ''
+        # PATH
+        let-env PATH = "";
+        let-env PATH = ($env.PATH | append "/Users/${user}/.nix-profile/bin")
+        let-env PATH = ($env.PATH | append "/nix/var/nix/profiles/default/bin")
+        let-env PATH = ($env.PATH | append "/Users/${user}/.nix-profile/bin")
+        let-env PATH = ($env.PATH | append "/etc/profiles/per-user/${user}/bin")
+        let-env PATH = ($env.PATH | append "/run/current-system/sw/bin")
+        let-env PATH = ($env.PATH | append "/nix/var/nix/profiles/default/bin")
+        let-env PATH = ($env.PATH | append "/usr/local/bin")
+        let-env PATH = ($env.PATH | append "/usr/bin")
+        let-env PATH = ($env.PATH | append "/usr/sbin")
+        let-env PATH = ($env.PATH | append "/bin")
+        let-env PATH = ($env.PATH | append "/sbin")
+
+        # CONFIG
         let-env config = {
           # Hide Banner
           show_banner: false
@@ -122,7 +147,13 @@
           }
         }
       '';
+
+      # Nushell - Extra Vars
+      # https://mipmip.github.io/home-manager-option-search/?programs.nushell.extraConfig
+      # extraEnv = '''';
     };
+
+
 
     # Starship Prompt
     # https://mipmip.github.io/home-manager-option-search/?programs.starship

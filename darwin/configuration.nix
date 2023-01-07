@@ -19,6 +19,9 @@
     shell = pkgs.nushell;                     
   };
 
+  # Time Zone (TZ)
+  time.timeZone = "Africa/Johannesburg";
+
   # Networking
   networking = {
     computerName = "${hostname}";             # Host name
@@ -28,20 +31,27 @@
   # Environment Configuration
   environment = {
 
+    # Login Shell
+    loginShell = pkgs.zsh;
+
     # Environment Shells
     shells = with pkgs; [ 
       bashInteractive
       nushell
+      zsh
     ];
 
     # Environment Variables
     variables = {
       # SHELL
-      SHELL = "nu";
+      # SHELL = "nu";
       # EDITOR
       EDITOR = "nano";
       # LANAGUAGE
-      LANG = "en_ZA.UTF-8";
+      # LANG = "en_US.UTF-8";
+      # LC
+      # LC_MONETARY = "en_ZA.UTF-8";
+      # LC_TIME = "en_ZA.UTF-8";
     };
 
     systemPackages = with pkgs; [         # Installed Nix packages
@@ -54,7 +64,9 @@
       jq
       # ZSH shell
       # zinit
-      # zsh-nix-shell     
+      # zsh-nix-shell
+      # Development
+      direnv     
       # Nix utilities
       rnix-lsp
       nix-direnv
@@ -88,11 +100,17 @@
   };
 
   # System Programs
-  # programs = {
-  #   # Bash Shell
-  #   bash.enable = true;
-  #   # ZSH Shell
-  #   zsh.enable = true;
+  programs = {
+    # ZSH Shell
+    zsh.enable = true;
+  };
+
+  # Internationalisation
+  # defaultLocale = "en_US.UTF-8";
+  # supportedLocales = [ "en_US.UTF-8/UTF-8" "en_ZA.UTF-8/UTF-8" ];
+  # extraLocaleSettings = {
+  #   LC_TIME = "en_ZA.UTF-8";
+  #   LC_MONETARY = "en_ZA.UTF-8";
   # };
 
   # System Services
@@ -172,8 +190,21 @@
 
   # DawinOS System Settings
   system = {
+
+    # System Defaults
+    defaults = {
+
+      # System Global Configuration
+      NSGlobalDomain = {
+        AppleICUForce24HourTime = true;
+        KeyRepeat = 1;
+        NSAutomaticCapitalizationEnabled = false;
+        NSAutomaticSpellingCorrectionEnabled = false;
+      };
+    };
+    
     # Since it's not possible to declare default shell, run this command after build
-    # activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.nushell}/bin/nu'';
+    activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.zsh}/bin/zsh'';
     
     # System Version
     stateVersion = 4;

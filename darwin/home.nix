@@ -19,6 +19,7 @@
       coreutils
       wget
       jq
+      nushell
     ];
 
     # Home State Version
@@ -69,6 +70,11 @@
       # https://mipmip.github.io/home-manager-option-search/?programs.git.ignores
       ignores = [ ".DS_Store" ];
     };
+
+    # Bash
+    # bash = { 
+    #   enable = true;
+    # };
 
     # Nushell
     # https://mipmip.github.io/home-manager-option-search/?programs.nushell
@@ -124,7 +130,7 @@
 
       # Starship - ZSH Integration
       # https://mipmip.github.io/home-manager-option-search/?programs.starship.enableZshIntegration
-      # enableZshIntegration = true;
+      enableZshIntegration = true;
     };
 
     # Direnv
@@ -141,7 +147,7 @@
 
       # Direnv - ZSH Integration
       # https://mipmip.github.io/home-manager-option-search/?programs.direnv.enableZshIntegration
-      # enableZshIntegration = true;
+      enableZshIntegration = true;
       
       # Direnv - Nix Direnv
       # https://mipmip.github.io/home-manager-option-search/?programs.direnv.nix-direnv.enable

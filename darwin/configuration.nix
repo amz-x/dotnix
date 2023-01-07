@@ -31,8 +31,13 @@
   # Environment Configuration
   environment = {
 
+    # Launch Daemons
+    launchDaemons = {
+
+    };
+
     # Login Shell
-    loginShell = pkgs.zsh;
+    # loginShell = pkgs.zsh;
 
     # Environment Shells
     shells = with pkgs; [ 

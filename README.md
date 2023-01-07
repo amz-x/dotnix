@@ -6,13 +6,14 @@
 
 - NixOS 23.05 (Stoat)
 - Home Manager
-- Linux Kernel 6.1.X (XanMod Variant)
+- Linux Kernel 6.1.X (XanMod variant)
 - LightDM (Display Manager)
 - Pantheon Deskop Environment
 - Bash & Nushell
 - Starship Prompt
 - Nano CLI Editor
 - Visual Studio Code (FHS)
+- Netbird
 - Opensnitch
 - Steam
 
@@ -27,13 +28,14 @@ System applications and their platform support comparison table:
 | Bitwarden             | ✅ Working                | ❓ Unknown Status         |
 | DBeaver CE            | ✅ Working                | ✅ Working                |
 | Discord               | ✅ Working                | ❓ Unknown Status         |
-| Docker                | ✅ Working                | ⚡ WIP                    |
-| Firefox               | ✅ Working                | ⚡ WIP                    |
+| Docker                | ✅ Working                | ⚡ WIP                     |
+| Firefox               | ✅ Working                | ⚡ WIP                     |
 | Google Chrome (Stable)| ✅ Working                | ❓ Unknown Status         |
 | GIMP                  | ✅ Working                | ✅ Working                |
 | GIT                   | ✅ Working                | ✅ Working                |
 | Mailspring            | ✅ Working                | ❓ Unknown Status         |
 | Nano                  | ✅ Working                | ✅ Working                |
+| Netbird               | ✅ Working                | ✅ Working                |
 | Nushell               | ✅ Working                | ✅ Working                |
 | Starship              | ✅ Working                | ✅ Working                |
 | Simplenote            | ✅ Working                | ❓ Unknown Status         |

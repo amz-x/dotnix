@@ -19,8 +19,13 @@
       coreutils
       wget
       jq
-      nushell
     ];
+
+    # Session Variables
+    sessionVariables = {
+      EDITOR = "nano";
+      SHELL  = "nu";
+    };
 
     # Home State Version
     stateVersion = "22.11";
@@ -35,13 +40,23 @@
     # Firefox
     # firefox = {
     #   enable = true;
-    #   package = pkgs.firefox-bin;
+    #   package = pkgs.firefox-unwrapped-bin;
     # };
 
     # Terminal
     alacritty = {
       enable = true;
       settings = {
+        dynamic_title = true;
+        shell = {
+          program = "nu";
+        };
+        decorations = "full";
+        renderer = "gles2";
+        padding = {
+          x = 2;
+          y = 1;
+        };
         offset = {
           x = -1;
           y = 0;

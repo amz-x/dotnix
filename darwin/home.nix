@@ -31,7 +31,7 @@
     # Session Variables
     sessionVariables = {
       EDITOR = "nano";
-      SHELL  = "nu";
+      STARSHIP_SHELL = "nu";
     };
 
     # Home State Version
@@ -57,11 +57,9 @@
         dynamic_title = true;
         decorations = "full";
         renderer = "gles2_pure";
-        shell = {
-          program = "nu";
-        };
+        dynamic_padding = true;
         padding = {
-          x = 2;
+          x = 3;
           y = 1;
         };
         offset = {
@@ -93,11 +91,6 @@
       ignores = [ ".DS_Store" ];
     };
 
-    # Bash
-    # bash = { 
-    #   enable = true;
-    # };
-
     # Nushell
     # https://mipmip.github.io/home-manager-option-search/?programs.nushell
     nushell = {
@@ -114,10 +107,8 @@
       # https://mipmip.github.io/home-manager-option-search/?programs.nushell.extraConfig
       extraConfig = ''
         # PATH
-        let-env PATH = "";
-        let-env PATH = ($env.PATH | append "/Users/${user}/.nix-profile/bin")
+        let-env PATH = "/Users/${user}/.nix-profile/bin";
         let-env PATH = ($env.PATH | append "/nix/var/nix/profiles/default/bin")
-        let-env PATH = ($env.PATH | append "/Users/${user}/.nix-profile/bin")
         let-env PATH = ($env.PATH | append "/etc/profiles/per-user/${user}/bin")
         let-env PATH = ($env.PATH | append "/run/current-system/sw/bin")
         let-env PATH = ($env.PATH | append "/nix/var/nix/profiles/default/bin")

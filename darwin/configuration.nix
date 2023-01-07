@@ -24,7 +24,7 @@
 
   # Networking
   networking = {
-    computerName = "${hostname}";             # Host name
+    computerName = "${hostname}";
     hostName = "${hostname}";
   };
 
@@ -32,7 +32,7 @@
   environment = {
 
     # Login Shell
-    # loginShell = pkgs.zsh;
+    loginShell = pkgs.nushell;
 
     # Environment Shells
     shells = with pkgs; [ 
@@ -88,10 +88,10 @@
   };
 
   # System Programs
-  programs = {
-    # ZSH Shell
-    zsh.enable = true;
-  };
+  # programs = {
+  #   # ZSH Shell
+  #   # zsh.enable = true;
+  # };
 
   # System Services
   # # https://mynixos.com/nix-darwin/option/services
@@ -176,10 +176,21 @@
 
       # System Global Configuration
       NSGlobalDomain = {
+
+        # Locale Configuration
+        # AppleLanguages = [ "en" ];
+        # AppleLocale = "en_ZA";
+        AppleMeasurementUnits = "Centimeters";
+        AppleTemperatureUnit = "Celsius";
         AppleICUForce24HourTime = true;
+
+        # Typing Configurations
         KeyRepeat = 1;
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticSpellingCorrectionEnabled = false;
+        
+        # Extended Configurations
+        # "com.apple.menuextra.battery".ShowPercent = "YES";
       };
     };
     

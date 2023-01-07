@@ -48,9 +48,6 @@
       enable = true;
       settings = {
         dynamic_title = true;
-        shell = {
-          program = "nu";
-        };
         decorations = "full";
         renderer = "gles2";
         padding = {

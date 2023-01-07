@@ -33,6 +33,7 @@ System applications and their platform support comparison table:
 | Google Chrome (Stable)| ✅ Working                | ❓ Unknown Status         |
 | GIMP                  | ✅ Working                | ✅ Working                |
 | GIT                   | ✅ Working                | ✅ Working                |
+| Libre Office          | ✅ Working                | ✅ Working                |
 | Mailspring            | ✅ Working                | ❓ Unknown Status         |
 | Nano                  | ✅ Working                | ✅ Working                |
 | Netbird               | ✅ Working                | ✅ Working                |

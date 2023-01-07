@@ -31,11 +31,6 @@
   # Environment Configuration
   environment = {
 
-    # Launch Daemons
-    launchDaemons = {
-
-    };
-
     # Login Shell
     # loginShell = pkgs.zsh;
 
@@ -46,32 +41,16 @@
       zsh
     ];
 
-    # Environment Variables
-    variables = {
-      # SHELL
-      # SHELL = "nu";
-      # EDITOR
-      EDITOR = "nano";
-      # LANAGUAGE
-      # LANG = "en_US.UTF-8";
-      # LC
-      # LC_MONETARY = "en_ZA.UTF-8";
-      # LC_TIME = "en_ZA.UTF-8";
-    };
-
-    systemPackages = with pkgs; [         # Installed Nix packages
+    # Installed Nix Packages
+    systemPackages = with pkgs; [         
       # System Tools
       coreutils
       nano
       wget
       git
+      nushell
       starship
-      jq
-      # ZSH shell
-      # zinit
-      # zsh-nix-shell
-      # Development
-      direnv     
+      jq   
       # Nix utilities
       rnix-lsp
       nix-direnv
@@ -82,21 +61,25 @@
       # System Applications
       dbeaver
       gimp
+      libreoffice-bin
       slack
+      transmission
       vscode
       zoom-us
-      # Networking
-      netbird-ui
       # bitwarden
       # firefox
       # google-chrome
-      # libreoffice
-      # vscode-fhs
       # rustdesk
       # simplenote
-      # slack
       # spotify
-      # mailspring     
+      # mailspring
+
+      # Development
+      direnv
+
+      # Networking
+      netbird-ui
+         
       # Development
       # docker
       # docker-compose
@@ -109,14 +92,6 @@
     # ZSH Shell
     zsh.enable = true;
   };
-
-  # Internationalisation
-  # defaultLocale = "en_US.UTF-8";
-  # supportedLocales = [ "en_US.UTF-8/UTF-8" "en_ZA.UTF-8/UTF-8" ];
-  # extraLocaleSettings = {
-  #   LC_TIME = "en_ZA.UTF-8";
-  #   LC_MONETARY = "en_ZA.UTF-8";
-  # };
 
   # System Services
   # # https://mynixos.com/nix-darwin/option/services

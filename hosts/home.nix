@@ -73,8 +73,10 @@
     # Nushell
     # https://www.nushell.sh/
     nushell = {
+      
       # Nushell - Enable
       enable = true;
+
       # Nushell - Package
       package = pkgs.nushell;
 
@@ -297,8 +299,8 @@
   };
 
   # Services
-  # services = {
-  #  # Firewall - Opensnitch UI
-  #  opensnitch-ui.enable = true;
-  # };
+  services = {
+    # Firewall - Opensnitch UI
+    opensnitch-ui.enable = true;
+  };
 }

@@ -57,7 +57,7 @@
       # Networking - Network Manager - DNS
       # DNS options: [ "default", "dnsmasq", "unbound", "systemd-resolved", "none" ]
       # https://search.nixos.org/options?channel=unstable&show=networking.networkmanager.dns
-      # dns = "systemd-resolved";
+      # dns = "default";
     };
 
     # Networking - Resolvconf
@@ -67,10 +67,6 @@
       # Networking - Resolvconf - Enable
       # https://search.nixos.org/options?channel=unstable&show=networking.resolvconf.enable
       enable = true;
-
-      # Networking - Resolvconf - Package - Openresolve
-      # https://search.nixos.org/options?channel=unstable&show=networking.resolvconf.package
-      # package = pkgs.openresolv;
 
       # Networking - Resolvconf - DNS Single Request
       # https://search.nixos.org/options?channel=unstable&show=networking.resolvconf.dnsSingleRequest

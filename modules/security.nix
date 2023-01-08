@@ -26,6 +26,7 @@
   # Security - System
   # https://search.nixos.org/options?channel=unstable&show=security
   security = {
+
     # Security - Polkit
     # https://search.nixos.org/options?channel=unstable&show=security.polkit
     polkit.enable = true;
@@ -35,11 +36,11 @@
     rtkit.enable = true;
   };
 
-  # Security - Networking
+  # Networking
   # https://search.nixos.org/options?channel=unstable&show=networking
   networking = {
 
-    # Firewall - Defaults
+    # Networking - Firewall - Defaults
     # https://search.nixos.org/options?channel=unstable&show=networking.firewall
     firewall = {
       enable = true;
@@ -48,22 +49,30 @@
     };
   };
 
-  # Security - Services
-  # services = {
-  #  # Firewall - Opensnitch
-  #  # https://search.nixos.org/options?channel=unstable&show=services.opensnitch
-  #  opensnitch = {
-  #    enable = true;
-  #    settings = {
-  #      DefaultAction = "deny";
-  #      DefaultDuration = "until restart";
-  #      LogLevel = 2;
-  #      ProcMonitorMethod = "ebpf";
-  #      Stats = {
-  #        MaxEvents = 200;
-  #        MaxStats = 50;
-  #      };
-  #    };
-  #  };
-  # };
+  # Services
+  # https://search.nixos.org/options?channel=unstable&show=services
+  services = {
+
+    # Services - Opensnitch
+    # https://search.nixos.org/options?channel=unstable&show=services.opensnitch
+    opensnitch = {
+      
+      # Services - Opensnitch - Enable
+      # https://search.nixos.org/options?channel=unstable&show=services.opensnitch.enable
+      enable = true;
+
+      # Services - Opensnitch - Settings
+      # https://search.nixos.org/options?channel=unstable&show=services.opensnitch.settings
+      settings = {
+        DefaultAction = "deny";
+        DefaultDuration = "until restart";
+        LogLevel = 2;
+        ProcMonitorMethod = "ebpf";
+        Stats = {
+          MaxEvents = 200;
+          MaxStats = 50;
+        };
+      };
+    };
+  };
 }

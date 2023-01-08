@@ -57,7 +57,7 @@
       # Networking - Network Manager - DNS
       # DNS options: [ "default", "dnsmasq", "unbound", "systemd-resolved", "none" ]
       # https://search.nixos.org/options?channel=unstable&show=networking.networkmanager.dns
-      dns = "systemd-resolved";
+      # dns = "systemd-resolved";
     };
 
     # Networking - Resolvconf

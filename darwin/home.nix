@@ -69,28 +69,6 @@
       };
     };
 
-    # GIT
-    # https://mipmip.github.io/home-manager-option-search/?programs.git
-    git = {
-      # GIT - Enable
-      # https://mipmip.github.io/home-manager-option-search/?programs.git.enable
-      enable = true;
-
-      # GIT - Username & Email
-      # https://mipmip.github.io/home-manager-option-search/?programs.git.userName
-      # https://mipmip.github.io/home-manager-option-search/?programs.git.userEmail
-      userName = "Christopher Crouse";
-      userEmail = "mail@amz-x.com";
-      
-      # GIT - Package
-      # https://mipmip.github.io/home-manager-option-search/?programs.git.package
-      package = pkgs.gitFull;
-
-      # GIT - Default Ignores
-      # https://mipmip.github.io/home-manager-option-search/?programs.git.ignores
-      ignores = [ ".DS_Store" ];
-    };
-
     # Nushell
     # https://mipmip.github.io/home-manager-option-search/?programs.nushell
     nushell = {
@@ -144,28 +122,6 @@
       # extraEnv = '''';
     };
 
-
-
-    # Starship Prompt
-    # https://mipmip.github.io/home-manager-option-search/?programs.starship
-    starship = {
-
-      # Starship - Enable
-      # https://mipmip.github.io/home-manager-option-search/?programs.starship.enable
-      enable = true;
-
-      # Starship - Bash Integration
-      # https://mipmip.github.io/home-manager-option-search/?programs.starship.enableBashIntegration
-      enableBashIntegration = true;
-
-      # Starship - Nushell Integration
-      # https://mipmip.github.io/home-manager-option-search/?programs.starship.enableNushellIntegration
-      enableNushellIntegration = true;
-
-      # Starship - ZSH Integration
-      # https://mipmip.github.io/home-manager-option-search/?programs.starship.enableZshIntegration
-      enableZshIntegration = true;
-    };
 
     # Direnv
     # https://mipmip.github.io/home-manager-option-search/?programs.direnv

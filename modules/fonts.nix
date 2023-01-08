@@ -9,6 +9,9 @@
 #   │        ├─ default.nix
 #   │        └─ hardware.nix
 #   └─ ./modules
+#       ├─ ./home-manager
+#       │    ├─ git.nix
+#       │    └─ starship.nix
 #       ├─ ./android.nix
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix *

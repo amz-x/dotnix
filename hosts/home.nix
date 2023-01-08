@@ -52,24 +52,6 @@
     # Nix-Index
     # nix-index.enable = true;
 
-    # GIT
-    git = {
-      # GIT - Enable
-      enable = true;
-
-      # GIT - Username & Email
-      userName = "Christopher Crouse";
-      userEmail = "mail@amz-x.com";
-
-      # GIT - Package
-      package = pkgs.gitFull;
-
-      # GIT - Default Ignores
-      ignores = [
-        ".DS_Store"
-      ];
-    };
-
     # Nushell
     # https://www.nushell.sh/
     nushell = {
@@ -268,19 +250,6 @@
 
     #   '';
     # };
-
-    # Starship Prompt
-    # https://starship.rs/
-    starship = {
-      # Starship - Enable Management
-      enable = true;
-
-      # Starship - Bash Integration
-      enableBashIntegration = true;
-
-      # Starship - Nushell Integration
-      enableNushellIntegration = true;
-    };
 
     # Direnv
     direnv = {

@@ -2,6 +2,10 @@
 #  Specific system configuration settings for desktop
 #
 #  flake.nix
+#   ├─ ./darwin
+#   │   ├─ ./configuration.nix
+#   │   ├─ ./default.nix
+#   │   └─ ./home.nix
 #   ├─ ./hosts
 #   │   ├─ ./default.nix
 #   │   ├─ ./home.nix
@@ -9,6 +13,9 @@
 #   │        ├─ default.nix
 #   │        └─ hardware.nix *
 #   └─ ./modules
+#       ├─ ./home-manager
+#       │    ├─ git.nix
+#       │    └─ starship.nix
 #       ├─ ./android.nix
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix

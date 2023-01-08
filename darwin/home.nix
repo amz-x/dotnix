@@ -2,11 +2,31 @@
 #  Home-manager configuration for MacBook Pro
 #
 #  flake.nix
-#   └─ ./darwin
-#       ├─ ./default.nix
-#       ├─ ./configuration.nix
-#       └─ ./home.nix * 
-#
+#   ├─ ./darwin
+#   │   ├─ ./configuration.nix
+#   │   ├─ ./default.nix
+#   │   └─ ./home.nix *
+#   ├─ ./hosts
+#   │   ├─ ./default.nix
+#   │   ├─ ./home.nix
+#   │   └─ ./desktop
+#   │        ├─ default.nix
+#   │        └─ hardware.nix
+#   └─ ./modules
+#       ├─ ./home-manager
+#       │    ├─ git.nix
+#       │    └─ starship.nix
+#       ├─ ./android.nix
+#       ├─ ./audio.nix
+#       ├─ ./fonts.nix
+#       ├─ ./gaming.nix
+#       ├─ ./networking.nix
+#       ├─ ./pantheon.nix
+#       ├─ ./security.nix
+#       ├─ ./services.nix
+#       ├─ ./virtualisation.nix
+#       ├─ ./vpn.nix
+#       └─ ./xdg.nix
 
 { config, pkgs, user, ... }:
 

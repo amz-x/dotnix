@@ -2,6 +2,10 @@
 #  Specific system XDG configuration settings module
 #
 #  flake.nix
+#   ├─ ./darwin
+#   │   ├─ ./configuration.nix
+#   │   ├─ ./default.nix
+#   │   └─ ./home.nix
 #   ├─ ./hosts
 #   │   ├─ ./default.nix
 #   │   ├─ ./home.nix

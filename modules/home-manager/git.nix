@@ -2,6 +2,10 @@
 #  Specific system Android configuration settings for desktop
 #
 #  flake.nix
+#   ├─ ./darwin
+#   │   ├─ ./configuration.nix
+#   │   ├─ ./default.nix
+#   │   └─ ./home.nix
 #   ├─ ./hosts
 #   │   ├─ ./default.nix
 #   │   ├─ ./home.nix

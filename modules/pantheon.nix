@@ -2,6 +2,10 @@
 #  Specific system DE configuration settings module
 #
 #  flake.nix
+#   ├─ ./darwin
+#   │   ├─ ./configuration.nix
+#   │   ├─ ./default.nix
+#   │   └─ ./home.nix
 #   ├─ ./hosts
 #   │   ├─ ./default.nix
 #   │   ├─ ./home.nix

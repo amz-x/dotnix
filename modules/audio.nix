@@ -9,11 +9,12 @@
 #   │        ├─ default.nix
 #   │        └─ hardware.nix
 #   └─ ./modules
+#       ├─ ./android.nix
 #       ├─ ./audio.nix *
 #       ├─ ./fonts.nix
+#       ├─ ./gaming.nix
 #       ├─ ./networking.nix
 #       ├─ ./pantheon.nix
-#       ├─ ./programs.nix
 #       ├─ ./security.nix 
 #       ├─ ./services.nix
 #       ├─ ./virtualisation.nix

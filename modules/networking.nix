@@ -9,11 +9,12 @@
 #   │        ├─ default.nix
 #   │        └─ hardware.nix
 #   └─ ./modules
+#       ├─ ./android.nix
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix
+#       ├─ ./gaming.nix
 #       ├─ ./networking.nix *
 #       ├─ ./pantheon.nix
-#       ├─ ./programs.nix
 #       ├─ ./security.nix 
 #       ├─ ./services.nix
 #       ├─ ./virtualisation.nix
@@ -24,15 +25,19 @@
 
 {
   # Networking
+  # https://search.nixos.org/options?channel=unstable&show=networking
   networking = {
 
-    # Hostname
+    # Networking - Hostname
+    # https://search.nixos.org/options?channel=unstable&show=networking.networkmanager.enable
     hostName = "${hostname}";
 
-    # Default Gateway
+    # Networking - Default Gateway
+    # https://search.nixos.org/options?channel=unstable&show=networking.defaultGateway
     defaultGateway = "192.168.50.1";
 
-    # Hosts
+    # Networking - Hosts
+    # https://search.nixos.org/options?channel=unstable&show=networking.hosts
     hosts = {
       "127.0.0.1" = [ "${hostname}"       ];
       "1.1.1.1"   = [ "one.one.one.one"   ];
@@ -41,15 +46,34 @@
       "9.9.9.11"  = [ "dns11.quad9.net"   ];
     };
 
-    # Network Manager
-    # DNS options: [ "default", "dnsmasq", "unbound", "systemd-resolved", "none" ]
+    # Networking - Network Manager
+    # https://search.nixos.org/options?channel=unstable&show=networking.networkmanager
     networkmanager = {
+
+      # Networking - Network Manager - Enable
+      # https://search.nixos.org/options?channel=unstable&show=networking.networkmanager.enable
       enable = true;
+
+      # Networking - Network Manager - DNS
+      # DNS options: [ "default", "dnsmasq", "unbound", "systemd-resolved", "none" ]
+      # https://search.nixos.org/options?channel=unstable&show=networking.networkmanager.dns
+      dns = "systemd-resolved";
     };
 
-    # Openresolv 
+    # Networking - Resolvconf
+    # https://search.nixos.org/options?channel=unstable&show=networking.resolvconf
     resolvconf = {
+
+      # Networking - Resolvconf - Enable
+      # https://search.nixos.org/options?channel=unstable&show=networking.resolvconf.enable
       enable = true;
+
+      # Networking - Resolvconf - Package - Openresolve
+      # https://search.nixos.org/options?channel=unstable&show=networking.resolvconf.package
+      # package = pkgs.openresolv;
+
+      # Networking - Resolvconf - DNS Single Request
+      # https://search.nixos.org/options?channel=unstable&show=networking.resolvconf.dnsSingleRequest
       dnsSingleRequest = true;
     };
   };

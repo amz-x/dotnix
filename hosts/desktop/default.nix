@@ -9,11 +9,12 @@
 #   │        ├─ default.nix *
 #   │        └─ hardware.nix
 #   └─ ./modules
+#       ├─ ./android.nix
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix
+#       ├─ ./gaming.nix
 #       ├─ ./networking.nix
 #       ├─ ./pantheon.nix
-#       ├─ ./programs.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
 #       ├─ ./virtualisation.nix
@@ -25,11 +26,12 @@
 {
   imports =
     [(import ./hardware.nix)] ++
+    [(import ../../modules/android.nix)] ++
     [(import ../../modules/audio.nix)] ++
     [(import ../../modules/fonts.nix)] ++
+    [(import ../../modules/gaming.nix)] ++
     [(import ../../modules/networking.nix)] ++
     [(import ../../modules/pantheon.nix)] ++
-    [(import ../../modules/programs.nix)] ++
     [(import ../../modules/security.nix)] ++
     [(import ../../modules/services.nix)] ++
     [(import ../../modules/virtualisation.nix)] ++
@@ -68,8 +70,6 @@
 
     # Variables
     variables = {
-      # MESA AMD's RADV
-      AMD_VULKAN_ICD = "RADV";
       # EDITOR
       EDITOR = "nano";
       # TERMINAL
@@ -87,17 +87,16 @@
     systemPackages = with pkgs; [
       # System Tools & Utilities
       coreutils
+      gitFull
       ntfs3g
+      opencl-info
       pciutils
+      starship
       util-linux
       xdg-user-dirs
-      # Shell - Prompt
-      starship
-
-      # Shell - ZSH Package Manager & Plugins
-      # zinit
-      # zsh-nix-shell 
-
+      # Libraries
+      glib
+      gst_all_1.gstreamer
       # Icons
       nixos-icons
       # Applications - CLI
@@ -105,8 +104,6 @@
       glxinfo
       jq
       nano
-      protonup-ng
-      protontricks
       restic
       screenfetch
       wget
@@ -134,24 +131,23 @@
       # Applications - Gnome
       gnome.dconf-editor
       gnome.simple-scan
-      # Libraries
-      glib
-      gst_all_1.gstreamer
-      # Development - Core
-      gitFull
       # Development - Clang
       clang-ocl
       clang-tools
       # Development - GCC & GDB
       gcc12
       gdb
-      # Development - OpenCL
-      opencl-info
       # Development - LLVM ROCm Stack (ADMGPU)
       llvmPackages_rocm.clang
       llvmPackages_rocm.llvm
-      # Development - Android
-      android-studio
+      # Development - Vulkan
+      vulkan-headers
+      vulkan-loader
+      vulkan-tools
+      vulkan-tools-lunarg
+      # Development - Vulkan Extensions & Layers
+      vulkan-extension-layer
+      vulkan-validation-layers
       # Development - Nix
       rnix-lsp
       nix-direnv
@@ -183,7 +179,6 @@
       # Tools - Security
       vulnix
     ];
-
 
     # Unix ODBC Drivers
     unixODBCDrivers = with pkgs.unixODBCDrivers; [ 
@@ -247,8 +242,8 @@
     # Automatic garbage collection
     gc = {
       automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 2d";
+      dates     = "weekly";
+      options   = "--delete-older-than 2d";
     };
 
     # Settings

@@ -1,3 +1,26 @@
+#
+#  Specific system home configuration settings for desktop
+#
+#  flake.nix
+#   ├─ ./hosts
+#   │   ├─ ./default.nix
+#   │   ├─ ./home.nix *
+#   │   └─ ./desktop
+#   │        ├─ default.nix
+#   │        └─ hardware.nix
+#   └─ ./modules
+#       ├─ ./android.nix
+#       ├─ ./audio.nix
+#       ├─ ./fonts.nix
+#       ├─ ./gaming.nix
+#       ├─ ./networking.nix
+#       ├─ ./pantheon.nix
+#       ├─ ./security.nix
+#       ├─ ./services.nix
+#       ├─ ./virtualisation.nix
+#       ├─ ./vpn.nix
+#       └─ ./xdg.nix
+
 { config, pkgs, user, ... }:
 
 {

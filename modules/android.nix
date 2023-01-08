@@ -1,5 +1,5 @@
 #
-#  Specific system XDG configuration settings module
+#  Specific system Android configuration settings for desktop
 #
 #  flake.nix
 #   ├─ ./hosts
@@ -9,7 +9,7 @@
 #   │        ├─ default.nix
 #   │        └─ hardware.nix
 #   └─ ./modules
-#       ├─ ./android.nix
+#       ├─ ./android.nix *
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix
 #       ├─ ./gaming.nix
@@ -17,28 +17,21 @@
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
-#       ├─ ./virtualisation.nix *
+#       ├─ ./virtualisation.nix
 #       ├─ ./vpn.nix
 #       └─ ./xdg.nix
+
 
 { config, lib, pkgs, ... }:
 
 {
-  # Virtualisation
-  virtualisation = {
-    # Docker (Rootless - Works similar to Podman)
-    docker.rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
-
-    # Libvirt (KVM / QEMU)
-    libvirtd = {
-      enable = true;
-      qemu = {
-        swtpm.enable = true;
-        ovmf.enable =  true;
-      };
-    };
-  };
+  # ADB (Android Debug Bridge)
+  # https://search.nixos.org/options?channel=unstable&show=programs.adb.enable
+  programs.adb.enable = true;
+  
+  # Environment - System Packages - Android Studio (Development)
+  # https://search.nixos.org/options?channel=unstable&show=environment.systemPackages
+  environment.systemPackages = with pkgs; [
+    android-studio
+  ];
 }

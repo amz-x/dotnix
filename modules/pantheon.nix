@@ -9,11 +9,12 @@
 #   │        ├─ default.nix
 #   │        └─ hardware.nix
 #   └─ ./modules
+#       ├─ ./android.nix
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix
+#       ├─ ./gaming.nix
 #       ├─ ./networking.nix
 #       ├─ ./pantheon.nix *
-#       ├─ ./programs.nix
 #       ├─ ./security.nix 
 #       ├─ ./services.nix
 #       ├─ ./virtualisation.nix
@@ -121,9 +122,22 @@
     touchegg.enable = false;
   };
 
-  # Programs - Pantheon Tweaks
-  # https://search.nixos.org/options?channel=unstable&show=programs.pantheon-tweaks
-  programs.pantheon-tweaks.enable = true;
+  # Programs
+  # https://search.nixos.org/options?channel=unstable&show=programs
+  programs = {
+
+    # Programs - Dconf
+    # https://search.nixos.org/options?channel=unstable&show=programs.dconf.enable
+    dconf.enable = true;
+
+    # Programs - Gnome Disks (UDisks2 graphical front-end)
+    # https://search.nixos.org/options?channel=unstable&show=programs.gnome-disks.enable
+    gnome-disks.enable = true;
+
+    # Programs - Pantheon Tweaks
+    # https://search.nixos.org/options?channel=unstable&show=programs.pantheon-tweaks
+    pantheon-tweaks.enable = true;
+  };
 
   # Environment - Pantheon Excluded Packages
   # https://search.nixos.org/options?channel=unstable&show=environment.pantheon.excludePackages

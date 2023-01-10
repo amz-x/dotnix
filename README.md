@@ -9,7 +9,7 @@
 - Linux Kernel 6.1.X (XanMod variant)
 - LightDM (Display Manager)
 - Pantheon Deskop Environment
-- Bash & Nushell
+- Nushell
 - Starship Prompt
 - Nano CLI Editor
 - Visual Studio Code (FHS)
@@ -79,14 +79,14 @@ ___
 
 ## NixOS
 
-NixOS comes preinstalled with the Nix package manager, execute the following pointing to the project directory:
+NixOS comes preinstalled with the Nix package manager, execute the following within the project directory:
 
 ```bash
 # Basic switch
-sudo nixos-rebuild switch --flake /path/to/folder/#<hostname>
+sudo nixos-rebuild switch --flake ./#<hostname>
 
 # Switch with upgrade
-sudo nixos-rebuild switch --flake /path/to/folder/#<hostname> --upgrade
+sudo nixos-rebuild switch --flake ./#<hostname> --upgrade
 
 # Example
 sudo nixos-rebuild switch --flake ./#AMZ-Linux
@@ -108,17 +108,14 @@ nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
 ./result/bin/darwin-installer
 ```
 
-After Nix Darwin has been installed, execute the following pointing to the project directory:
+After Nix Darwin has been installed, execute the following within the project directory:
 
 ```bash
 # Basic switch
-sudo darwin-rebuild switch --flake /path/to/folder/#<hostname>
-
-# Switch with upgrade
-sudo darwin-rebuild switch --flake /path/to/folder/#<hostname> --upgrade
+darwin-rebuild switch --flake ./#<hostname>
 
 # Example (inside root of project)
-sudo darwin-rebuild switch --flake ./#AMZ-MacBook
+darwin-rebuild switch --flake ./#AMZ-MacBook
 ```
 
 ___
@@ -129,7 +126,7 @@ Inside the root of the project directory execute the following:
 
 ```bash
 # Updates flake.lock
-sudo nix flake update
+nix flake update
 ```
 
 ## Nix Store Maintenance
@@ -137,8 +134,11 @@ sudo nix flake update
 Execute the following, if you would like to run garbage collection:
 
 ```bash
-# Garbage Collection
+# NixOS
 sudo nix-collect-garbage -d
+
+# Nix Darwin
+nix-collect-garbage -d 
 ```
 
 ___

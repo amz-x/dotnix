@@ -5,16 +5,21 @@
 #   │   ├─ ./configuration.nix *
 #   │   ├─ ./default.nix
 #   │   └─ ./home.nix
+#   │
 #   ├─ ./hosts
 #   │   ├─ ./default.nix
 #   │   ├─ ./home.nix
 #   │   └─ ./desktop
 #   │        ├─ default.nix
 #   │        └─ hardware.nix
+#   │
 #   └─ ./modules
 #       ├─ ./home-manager
+#       │    ├─ direnv.nix
 #       │    ├─ git.nix
-#       │    └─ starship.nix
+#       │    ├─ starship.nix
+#       │    └─ zsh.nix
+#       │
 #       ├─ ./android.nix
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix

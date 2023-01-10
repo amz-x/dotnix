@@ -2,16 +2,25 @@
 #  Specific system configuration settings for desktop
 #
 #  flake.nix
+#   ├─ ./darwin
+#   │   ├─ ./configuration.nix
+#   │   ├─ ./default.nix
+#   │   └─ ./home.nix
+#   │
 #   ├─ ./hosts
 #   │   ├─ ./default.nix *
 #   │   ├─ ./home.nix
 #   │   └─ ./desktop
 #   │        ├─ default.nix
 #   │        └─ hardware.nix
+#   │
 #   └─ ./modules
 #       ├─ ./home-manager
+#       │    ├─ direnv.nix
 #       │    ├─ git.nix
-#       │    └─ starship.nix
+#       │    ├─ starship.nix
+#       │    └─ zsh.nix
+#       │
 #       ├─ ./android.nix
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix
@@ -57,6 +66,7 @@ in
         home-manager.extraSpecialArgs = { inherit user; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++
+                    [(import ../modules/home-manager/direnv.nix)] ++
                     [(import ../modules/home-manager/git.nix)] ++
                     [(import ../modules/home-manager/starship.nix)];
         };

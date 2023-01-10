@@ -1,5 +1,5 @@
 #
-#  Specific system XDG configuration settings module
+#  Specific system direnv configuration module for home manager
 #
 #  flake.nix
 #   ├─ ./darwin
@@ -16,7 +16,7 @@
 #   │
 #   └─ ./modules
 #       ├─ ./home-manager
-#       │    ├─ direnv.nix
+#       │    ├─ direnv.nix *
 #       │    ├─ git.nix
 #       │    ├─ starship.nix
 #       │    └─ zsh.nix
@@ -36,21 +36,24 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Virtualisation
-  virtualisation = {
-    # Docker (Rootless - Works similar to Podman)
-    docker.rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
+  # Direnv
+  # https://mipmip.github.io/home-manager-option-search/?programs.direnv
+  programs.direnv = {
 
-    # Libvirt (KVM / QEMU)
-    libvirtd = {
-      enable = true;
-      qemu = {
-        swtpm.enable = true;
-        ovmf.enable =  true;
-      };
-    };
+    # Direnv - Enable
+    # https://mipmip.github.io/home-manager-option-search/?programs.direnv.enable
+    enable = true;
+
+    # Direnv - Bash Integration
+    # https://mipmip.github.io/home-manager-option-search/?programs.direnv.enableBashIntegration
+    enableBashIntegration = true;
+
+    # Direnv - ZSH Integration
+    # https://mipmip.github.io/home-manager-option-search/?programs.direnv.enableZshIntegration
+    enableZshIntegration = true;
+    
+    # Direnv - Nix Direnv
+    # https://mipmip.github.io/home-manager-option-search/?programs.direnv.nix-direnv.enable
+    nix-direnv.enable = true;
   };
 }

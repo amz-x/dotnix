@@ -25,6 +25,7 @@
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix *
 #       ├─ ./gaming.nix
+#       ├─ ./homeassistant.nix
 #       ├─ ./networking.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix

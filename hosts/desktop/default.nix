@@ -25,6 +25,7 @@
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix
 #       ├─ ./gaming.nix
+#       ├─ ./homeassistant.nix
 #       ├─ ./networking.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
@@ -42,6 +43,7 @@
     [(import ../../modules/audio.nix)] ++
     [(import ../../modules/fonts.nix)] ++
     [(import ../../modules/gaming.nix)] ++
+    [(import ../../modules/homeassistant.nix)] ++
     [(import ../../modules/networking.nix)] ++
     [(import ../../modules/pantheon.nix)] ++
     [(import ../../modules/security.nix)] ++
@@ -56,21 +58,25 @@
     description = "AMZ";
     shell = pkgs.nushell;
     extraGroups = [
-     "wheel"
-     "networkmanager"
-     "docker"
-     "audio"
-     "sound"
-     "video"
-     "pipewire"
-     "warp"
-     "input"
-     "tty"
-     "camera"
-     "lp"
-     "scanner"
-     "adbusers"
-     "users"
+      # Default
+      "wheel"
+      "networkmanager"
+      "pipewire"
+      "tty"    
+      "users"
+      # Recommended
+      "audio"
+      "camera"
+      "input"
+      "lp"
+      "scanner"
+      "sound"      
+      "video"
+      # Addons
+      "adbusers"     
+      "docker"
+      "hass"
+      "warp"
     ];
   };
 

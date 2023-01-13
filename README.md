@@ -12,7 +12,7 @@
 - Nushell
 - Starship Prompt
 - Nano CLI Editor
-- Visual Studio Code (FHS)
+- Visual Studio Code
 - Netbird
 - Opensnitch
 - Steam
@@ -25,11 +25,12 @@ System applications and their platform support comparison table:
 
 | Application           | NixOS 23.05 (Stoat)       | Nix Darwin                |
 |-----------------------|---------------------------|---------------------------|
+| Beekeeper Studio      | ✅ Working                | ❓ Unknown Status         |
 | Bitwarden             | ✅ Working                | ❓ Unknown Status         |
 | DBeaver CE            | ✅ Working                | ✅ Working                |
 | Discord               | ✅ Working                | ❓ Unknown Status         |
-| Docker                | ✅ Working                | ⚡ WIP                     |
-| Firefox               | ✅ Working                | ⚡ WIP                     |
+| Docker                | ✅ Working                | ⚡ WIP                    |
+| Firefox               | ✅ Working                | ⚡ WIP                    |
 | Google Chrome (Stable)| ✅ Working                | ❓ Unknown Status         |
 | GIMP                  | ✅ Working                | ✅ Working                |
 | GIT                   | ✅ Working                | ✅ Working                |

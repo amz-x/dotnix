@@ -40,7 +40,7 @@
   # ZSH
   programs.zsh = {
     # ZSH - Enable
-    enable = true;
+    enable = false;
 
     # ZSH - Configuration
     autocd = true;

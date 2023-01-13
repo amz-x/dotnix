@@ -76,7 +76,6 @@
       "adbusers"     
       "docker"
       "hass"
-      "warp"
     ];
   };
 
@@ -127,6 +126,7 @@
       wget
       # Applications - GUI
       appeditor
+      beekeeper-studio
       bitwarden
       dbeaver
       dconf
@@ -149,9 +149,6 @@
       # Applications - Gnome
       gnome.dconf-editor
       gnome.simple-scan
-      # Development - Clang
-      clang-ocl
-      clang-tools
       # Development - GCC & GDB
       gcc12
       gdb

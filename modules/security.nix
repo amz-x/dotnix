@@ -89,4 +89,48 @@
       };
     };
   };
+
+  # Services
+  # https://search.nixos.org/options?channel=unstable&show=programs
+  programs = {
+
+    # Firejail
+    # https://search.nixos.org/options?channel=unstable&show=programs.firejail
+    firejail = {
+
+      # Firejail - Enable
+      # https://search.nixos.org/options?channel=unstable&show=programs.firejail.enable
+      enable = true;
+
+      # Firejail - Wrapped Binaries
+      # https://search.nixos.org/options?channel=unstable&show=programs.firejail.wrappedBinaries
+      wrappedBinaries = {
+
+        firefox = {
+          executable = "${lib.getBin pkgs.firefox}/bin/firefox";
+          profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
+        };
+
+        google-chrome = {
+          executable = "${lib.getBin pkgs.google-chrome}/bin/google-chrome-stable";
+          profile = "${pkgs.firejail}/etc/firejail/google-chrome.profile";
+        };
+
+        mailspring = {
+          executable = "${lib.getBin pkgs.mailspring}/bin/mailspring";
+          profile = "${pkgs.firejail}/etc/firejail/mailspring.profile";
+        };
+
+        slack = {
+          executable = "${lib.getBin pkgs.slack}/bin/slack";
+          profile = "${pkgs.firejail}/etc/firejail/slack.profile";
+        };
+
+        zoom-us = {
+          executable = "${lib.getBin pkgs.zoom-us}/bin/zoom-us";
+          profile = "${pkgs.firejail}/etc/firejail/zoom-us.profile";
+        };
+      };
+    };
+  };
 }

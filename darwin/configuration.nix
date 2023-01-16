@@ -27,6 +27,7 @@
 #       ├─ ./networking.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
+#       ├─ ./syncthing.nix
 #       ├─ ./services.nix
 #       ├─ ./virtualisation.nix
 #       ├─ ./vpn.nix

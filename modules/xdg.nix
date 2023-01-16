@@ -30,6 +30,7 @@
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
+#       ├─ ./syncthing.nix
 #       ├─ ./virtualisation.nix
 #       ├─ ./vpn.nix
 #       └─ ./xdg.nix *

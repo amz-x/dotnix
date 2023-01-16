@@ -30,6 +30,7 @@
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
+#       ├─ ./syncthing.nix
 #       ├─ ./virtualisation.nix
 #       ├─ ./vpn.nix
 #       └─ ./xdg.nix
@@ -48,6 +49,7 @@
     [(import ../../modules/pantheon.nix)] ++
     [(import ../../modules/security.nix)] ++
     [(import ../../modules/services.nix)] ++
+    [(import ../../modules/syncthing.nix)] ++
     [(import ../../modules/virtualisation.nix)] ++
     [(import ../../modules/vpn.nix)] ++
     [(import ../../modules/xdg.nix)];
@@ -123,6 +125,7 @@
       nano
       restic
       screenfetch
+      syncthing
       wget
       # Applications - GUI
       appeditor

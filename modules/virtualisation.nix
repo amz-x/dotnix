@@ -31,6 +31,7 @@
 #       ├─ ./security.nix
 #       ├─ ./services.nix
 #       ├─ ./virtualisation.nix
+#       ├─ ./syncthing.nix
 #       ├─ ./vpn.nix
 #       └─ ./xdg.nix
 

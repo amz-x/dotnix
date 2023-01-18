@@ -135,7 +135,7 @@
       dconf
       discord
       firefox
-      gimp-with-plugins
+      gimp
       google-chrome
       libreoffice
       mailspring
@@ -171,8 +171,6 @@
       nix-direnv
       nixfmt
       nixpkgs-fmt
-      # Development - Ruby
-      bundix
       # Development - Docker
       docker
       docker-compose

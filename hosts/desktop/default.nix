@@ -184,7 +184,11 @@
       terraform-landscape
       terraform-ls
       terrascan
-      tflint      
+      tflint
+      # Tools - Wine
+      wine
+      wine64
+      winetricks
       # Tools - Networking
       dig
       ldns

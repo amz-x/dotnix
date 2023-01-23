@@ -26,12 +26,14 @@
 #       ├─ ./fonts.nix
 #       ├─ ./gaming.nix
 #       ├─ ./networking.nix
+#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
 #       ├─ ./syncthing.nix
 #       ├─ ./virtualisation.nix
 #       ├─ ./vpn.nix
+#       ├─ ./wine.nix
 #       └─ ./xdg.nix
 
 { lib, inputs, nixpkgs, home-manager, user, location, ... }:
@@ -39,16 +41,11 @@
 let
   # Linux Architecture
   # System Options: [ "aarch64-linux" "x86_64-linux" ]
-  system = "x86_64-linux";
+  system    = "x86_64-linux";
 
-  hostname = "AMZ-Linux"; 
-
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-  };
-
-  lib = nixpkgs.lib;
+  hostname  = "AMZ-Linux"; 
+  pkgs      = import nixpkgs { inherit system; config.allowUnfree = true; };
+  lib       = nixpkgs.lib;
 in
 {
   # Linux Desktop

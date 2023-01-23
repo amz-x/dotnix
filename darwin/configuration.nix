@@ -25,12 +25,14 @@
 #       ├─ ./fonts.nix
 #       ├─ ./gaming.nix
 #       ├─ ./networking.nix
+#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./syncthing.nix
 #       ├─ ./services.nix
 #       ├─ ./virtualisation.nix
 #       ├─ ./vpn.nix
+#       ├─ ./wine.nix
 #       └─ ./xdg.nix
 
 { config, pkgs, user, hostname, ... }:

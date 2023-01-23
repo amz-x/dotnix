@@ -27,12 +27,14 @@
 #       ├─ ./gaming.nix
 #       ├─ ./homeassistant.nix
 #       ├─ ./networking.nix
+#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
 #       ├─ ./syncthing.nix
 #       ├─ ./virtualisation.nix
 #       ├─ ./vpn.nix
+#       ├─ ./wine.nix
 #       └─ ./xdg.nix
 
 { lib, pkgs, user, hostname, ... }:
@@ -52,6 +54,7 @@
     [(import ../../modules/syncthing.nix)] ++
     [(import ../../modules/virtualisation.nix)] ++
     [(import ../../modules/vpn.nix)] ++
+    [(import ../../modules/wine.nix)] ++
     [(import ../../modules/xdg.nix)];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

@@ -27,12 +27,14 @@
 #       ├─ ./gaming.nix
 #       ├─ ./homeassistant.nix
 #       ├─ ./networking.nix
+#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix *
 #       ├─ ./services.nix
 #       ├─ ./syncthing.nix
 #       ├─ ./virtualisation.nix
 #       ├─ ./vpn.nix
+#       ├─ ./wine.nix
 #       └─ ./xdg.nix
 
 { config, lib, pkgs, ... }:

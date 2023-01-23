@@ -1,5 +1,5 @@
 #
-#  Specific system syncthing configuration settings module for home manager
+#  Specific system VPN configuration settings module
 #
 #  flake.nix
 #   ├─ ./darwin
@@ -21,42 +21,31 @@
 #       │    ├─ starship.nix
 #       │    └─ zsh.nix
 #       │
-#       ├─ ./android.nix 
+#       ├─ ./android.nix
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix
 #       ├─ ./gaming.nix
+#       ├─ ./homeassistant.nix
 #       ├─ ./networking.nix
 #       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
-#       ├─ ./syncthing.nix *
+#       ├─ ./syncthing.nix
 #       ├─ ./virtualisation.nix
 #       ├─ ./vpn.nix
-#       ├─ ./wine.nix
+#       ├─ ./wine.nix *
 #       └─ ./xdg.nix
 
 { config, lib, pkgs, user, ... }:
 
 {
-  # Syncthing
-  # https://search.nixos.org/options?channel=unstable&show=services.syncthing
-  services.syncthing = {
-
-    # Syncthing - Enable
-    # https://search.nixos.org/options?channel=unstable&show=services.syncthing.enable
-    enable = true;
-
-    # Syncthing - User
-    # https://search.nixos.org/options?channel=unstable&show=services.syncthing.user
-    user = "${user}";
-
-    # Syncthing - Data Directory
-    # https://search.nixos.org/options?channel=unstable&show=services.syncthing.dataDir
-    dataDir = "/home/${user}";
-
-    # Syncthing - Open Default Ports
-    # https://search.nixos.org/options?channel=unstable&show=services.syncthing.openDefaultPorts
-    openDefaultPorts = false;    
-  };
+  # Enviroment - System Packages
+  # https://search.nixos.org/options?channel=unstable&show=environment.systemPackages
+  # https://search.nixos.org/packages?channel=unstable&show=wine
+  environment.systemPackages = with pkgs; [
+    wine
+    wine64
+    winetricks
+  ];
 }

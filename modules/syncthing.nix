@@ -45,7 +45,7 @@
 
     # Syncthing - Enable
     # https://search.nixos.org/options?channel=unstable&show=services.syncthing.enable
-    enable = true;
+    enable = false;
 
     # Syncthing - User
     # https://search.nixos.org/options?channel=unstable&show=services.syncthing.user

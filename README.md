@@ -6,7 +6,7 @@
 
 - NixOS 23.05 (Stoat - Unstable)
 - Home Manager
-- Linux Kernel 6.1.7-zen1
+- Linux Kernel 6.1.6-zen1
 - LightDM (Display Manager)
 - Pantheon Deskop Environment
 - Nushell

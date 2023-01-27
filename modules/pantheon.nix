@@ -118,7 +118,7 @@
 
           # XServer - Desktop Manager - Pantheon DE - Debugging
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.debug
-          debug = true;
+          debug = false;
 
           # Pantheon - Extra Switchboard Plugs
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.extraSwitchboardPlugs

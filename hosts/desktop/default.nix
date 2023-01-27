@@ -140,7 +140,7 @@
       firefox
       gimp
       google-chrome
-      libreoffice
+      # libreoffice
       mailspring
       monitor
       onlyoffice-bin
@@ -188,10 +188,6 @@
       terraform-ls
       terrascan
       tflint
-      # Tools - Wine
-      wine
-      wine64
-      winetricks
       # Tools - Networking
       dig
       ldns

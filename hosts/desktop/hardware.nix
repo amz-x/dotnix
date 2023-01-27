@@ -111,7 +111,7 @@
 
     # # Boot - Kernel Packages
     # https://search.nixos.org/options?channel=unstable&show=boot.kernelPackages
-    kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
+    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
     
     # Boot - Kernel Modules
     # https://search.nixos.org/options?channel=unstable&show=boot.kernelModules

@@ -4,9 +4,9 @@
 
 ## NixOS Features
 
-- NixOS 23.05 (Stoat)
+- NixOS 23.05 (Stoat - Unstable)
 - Home Manager
-- Linux Kernel 6.1.X (XanMod variant)
+- Linux Kernel 6.1.7-zen1
 - LightDM (Display Manager)
 - Pantheon Deskop Environment
 - Nushell
@@ -15,6 +15,7 @@
 - Visual Studio Code
 - Netbird
 - Opensnitch
+- Firejail
 - Steam
 
 ___

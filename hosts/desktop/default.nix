@@ -143,6 +143,7 @@
       # libreoffice
       mailspring
       monitor
+      obs-studio
       onlyoffice-bin
       postman
       rustdesk

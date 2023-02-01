@@ -53,6 +53,14 @@
       interval = "weekly";
     };
 
+    # RTSP Server
+    # https://search.nixos.org/options?channel=unstable&show=services.rtsp-simple-server
+    # rtsp-simple-server = {
+    #   # RTSP Server - Enable
+    #   # https://search.nixos.org/options?channel=unstable&show=services.rtsp-simple-server.enable
+    #   enable = false;
+    # };
+
     # Wireguard Netmanager
     # wg-netmanager.enable = true;
     # Unbound

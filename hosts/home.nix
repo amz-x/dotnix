@@ -80,22 +80,8 @@
       # Nushell - Extra Configuration
       extraConfig = ''
         let-env config = {
-          # Hide Banner
+          # Show / Hide Banner
           show_banner: false
-
-          # Direnv Hook
-          # https://www.nushell.sh/cookbook/direnv.html#configuring-direnv
-          hooks: {
-            env_change: {
-              PWD: [{
-                code: "
-                  let direnv = (direnv export json | from json)
-                  let direnv = if ($direnv | length) == 1 { $direnv } else { {} }
-                  $direnv | load-env
-                "
-              }]
-            }
-          }
         }
       '';
     };

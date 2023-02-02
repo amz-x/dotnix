@@ -140,6 +140,7 @@
       firefox
       gimp
       google-chrome
+      hydroxide
       # libreoffice
       mailspring
       monitor
@@ -151,7 +152,6 @@
       slack
       spotify
       torrential
-      tutanota-desktop
       vscode-fhs
       zoom-us
       # Applications - Gnome

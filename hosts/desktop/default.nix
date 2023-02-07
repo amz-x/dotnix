@@ -137,6 +137,7 @@
       dbeaver
       dconf
       discord
+      drawio
       firefox
       gimp
       google-chrome

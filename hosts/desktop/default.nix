@@ -191,6 +191,8 @@
       terraform-ls
       terrascan
       tflint
+      # Development - OpenAI
+      openai
       # Tools - Networking
       dig
       ldns

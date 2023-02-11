@@ -111,7 +111,6 @@
       coreutils
       gitFull
       ntfs3g
-      opencl-info
       pciutils
       starship
       util-linux
@@ -161,9 +160,16 @@
       # Development - GCC & GDB
       gcc12
       gdb
-      # Development - LLVM ROCm Stack (ADMGPU)
+      # Development - ROCm Stack
+      rocminfo
+      rocm-core
+      rocm-device-libs
+      rocm-runtime
+      # Development - LLVM
       llvmPackages_rocm.clang
       llvmPackages_rocm.llvm
+      # Development - OpenCL
+      opencl-info
       # Development - Vulkan
       vulkan-headers
       vulkan-loader

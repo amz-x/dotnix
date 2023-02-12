@@ -56,7 +56,7 @@
     
     # GIT - Package
     # https://mipmip.github.io/home-manager-option-search/?programs.git.package
-    package = pkgs.gitFull;
+    package = pkgs.git;
 
     # GIT - Default Ignores
     # https://mipmip.github.io/home-manager-option-search/?programs.git.ignores

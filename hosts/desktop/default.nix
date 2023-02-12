@@ -122,6 +122,7 @@
       nixos-icons
       # Applications - CLI
       cabextract
+      dcnnt
       glxinfo
       jq
       nano
@@ -130,7 +131,6 @@
       syncthing
       wget
       # Applications - GUI
-      appeditor
       beekeeper-studio
       bitwarden
       dbeaver
@@ -143,7 +143,6 @@
       hydroxide
       # libreoffice
       mailspring
-      monitor
       obs-studio
       onlyoffice-bin
       postman
@@ -151,7 +150,6 @@
       simplenote
       slack
       spotify
-      torrential
       vscode-fhs
       zoom-us
       # Applications - Gnome

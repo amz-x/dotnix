@@ -1,0 +1,6 @@
+builds:
+  default:
+    exclude: []
+    include:
+     - 'nixosConfigurations.*'
+     - 'darwinConfigurations.*'

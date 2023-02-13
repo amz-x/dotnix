@@ -155,9 +155,6 @@
       # Applications - Gnome
       gnome.dconf-editor
       gnome.simple-scan
-      # Development - GCC & GDB
-      gcc12
-      gdb
       # Development - ROCm Stack
       rocminfo
       rocm-core
@@ -263,11 +260,13 @@
   };
 
   # Nix Package Manager
+  # https://search.nixos.org/options?channel=unstable&show=nix
   nix = {
     # Nix Package
     package = pkgs.nix;
 
     # Automatic garbage collection
+    # https://search.nixos.org/options?channel=unstable&show=nix.gc
     gc = {
       automatic = true;
       dates     = "weekly";
@@ -275,6 +274,7 @@
     };
 
     # Settings
+    # https://search.nixos.org/options?channel=unstable&show=nix.settings
     settings = {
       # Trusted Users
       trusted-users = [ "root" "${user}" ];
@@ -284,6 +284,16 @@
       experimental-features = [
         "nix-command"
         "flakes"
+      ];
+      # Binary cache URLs
+      substituters = [
+        "https://cache.garnix.io"
+        "https://cache.nixos.org"
+      ];
+      # Trusted Public Keys
+      trusted-public-keys = [
+        "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       ];
     };
   };

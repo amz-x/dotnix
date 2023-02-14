@@ -57,12 +57,45 @@
   # https://search.nixos.org/options?channel=unstable&show=networking
   networking = {
 
-    # Networking - Firewall - Defaults
+    # Networking - Firewall
     # https://search.nixos.org/options?channel=unstable&show=networking.firewall
     firewall = {
+
+      # Networking - Firewall - Enable (Enabled by default)
+      # https://search.nixos.org/options?channel=unstable&show=networking.firewall.enable
       enable = true;
+      
+      # Networking - Firewall - Extra Packages
+      # https://search.nixos.org/options?channel=unstable&show=networking.firewall.extraPackages
       extraPackages = with pkgs; [ ipset ];
+      
+      # Networking - Firewall - Connection Track Helpers
+      # https://search.nixos.org/options?channel=unstable&show=networking.firewall.autoLoadConntrackHelpers
       autoLoadConntrackHelpers = true;
+
+      # Networking - Firewall - Connection Tracking Modules
+      # https://search.nixos.org/options?channel=unstable&show=networking.firewall.connectionTrackingModules
+      connectionTrackingModules = [ ];
+      
+      # Networking - Firewall - TCP Ports
+      # https://search.nixos.org/options?channel=unstable&show=networking.firewall.allowedTCPPorts
+      allowedTCPPorts = [
+        # Gnome Network Displays
+        7236
+        7250
+      ];
+
+      # Networking - Firewall - UDP Ports
+      # https://search.nixos.org/options?channel=unstable&show=networking.firewall.allowedUDPPorts
+      allowedUDPPorts = [
+        # Gnome Network Displays
+        7236
+        5353
+      ];
+
+      # Networking - Firewall - Logging - Refused Connections (Enabled by default)
+      # https://search.nixos.org/options?channel=unstable&show=networking.firewall.logRefusedConnections
+      logRefusedConnections = true;
     };
   };
 

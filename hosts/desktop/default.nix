@@ -153,6 +153,7 @@
       vscode-fhs
       zoom-us
       # Applications - Gnome
+      gnome-network-displays
       gnome.dconf-editor
       gnome.simple-scan
       # Development - ROCm Stack

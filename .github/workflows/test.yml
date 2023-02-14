@@ -8,6 +8,7 @@ on:
 jobs:
   # NixOS
   Linux:
+    name: 'NixOS (x86_64)'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -18,7 +19,8 @@ jobs:
     - run: ls -l result*
   
   # Nix Darwin
-  Darwin:
+  Mac:
+    name: 'Nix Darwin (x86_64)'
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v3

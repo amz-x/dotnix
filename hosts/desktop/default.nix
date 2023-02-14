@@ -126,7 +126,6 @@
       glxinfo
       jq
       nano
-      restic
       screenfetch
       syncthing
       wget
@@ -140,10 +139,7 @@
       firefox
       gimp
       google-chrome
-      hydroxide
-      # libreoffice
       mailspring
-      obs-studio
       onlyoffice-bin
       postman
       rustdesk
@@ -288,12 +284,10 @@
       ];
       # Binary cache URLs
       substituters = [
-        "https://cache.garnix.io"
         "https://cache.nixos.org"
       ];
       # Trusted Public Keys
       trusted-public-keys = [
-        "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       ];
     };

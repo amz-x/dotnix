@@ -45,7 +45,6 @@ sudo apt-get remove -y '^gfortran-.*'
 sudo apt-get remove -y '^ghc-8.*'
 sudo apt-get remove -y '^libclang-*'
 sudo apt-get remove -y '^liblldb.*'
-sudo apt-get remove -y '^libpython.*'
 sudo apt-get remove -y '^libruby.*'
 sudo apt-get remove -y '^libstdc++.*'
 sudo apt-get remove -y '^llvm-.*'
@@ -54,7 +53,7 @@ sudo apt-get remove -y '^mysql-.*'
 sudo apt-get remove -y '^temurin-.*'
 sudo apt-get remove -y 'php.*'
 sudo apt-get remove -y google-chrome-stable microsoft-edge-stable firefox
-sudo apt-get remove -y azure-cli hhvm powershell monodoc-manual msbuild snapd humanity-icon-theme
+sudo apt-get remove -y azure-cli hhvm powershell monodoc-manual msbuild nuget snapd humanity-icon-theme p7zip-full
 sudo apt-get autoremove -y
 sudo apt-get clean
 df -h

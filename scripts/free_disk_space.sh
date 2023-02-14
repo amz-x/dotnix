@@ -25,8 +25,6 @@
 # Free: 17 GB
 # This script frees up 28 GB of disk space by deleting unneeded packages and 
 # large directories.
-# The Flink end to end tests download and generate more than 17 GB of files,
-# causing unpredictable behavior and build failures.
 #
 echo "=============================================================================="
 echo "Freeing up disk space on CI system"
@@ -47,11 +45,13 @@ sudo apt-get remove -y '^gfortran-.*'
 sudo apt-get remove -y '^ghc-8.*'
 sudo apt-get remove -y '^libclang-*'
 sudo apt-get remove -y '^liblldb.*'
-sudo apt-get remove -y '^libstdc++.*'
+sudo apt-get remove -y '^libpython.*'
 sudo apt-get remove -y '^libruby.*'
+sudo apt-get remove -y '^libstdc++.*'
 sudo apt-get remove -y '^llvm-.*'
 sudo apt-get remove -y '^mono-.*'
 sudo apt-get remove -y '^mysql-.*'
+sudo apt-get remove -y '^python.*'
 sudo apt-get remove -y '^temurin-.*'
 sudo apt-get remove -y 'php.*'
 sudo apt-get remove -y google-chrome-stable microsoft-edge-stable firefox

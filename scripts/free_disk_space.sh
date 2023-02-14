@@ -30,8 +30,8 @@ echo "==========================================================================
 echo "Freeing up disk space on CI system"
 echo "=============================================================================="
 
-echo "Listing 100 largest packages"
-dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n | tail -n 100
+echo "Listing 200 largest packages"
+dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n | tail -n 200
 df -h
 
 echo "Removing large packages"
@@ -51,7 +51,6 @@ sudo apt-get remove -y '^libstdc++.*'
 sudo apt-get remove -y '^llvm-.*'
 sudo apt-get remove -y '^mono-.*'
 sudo apt-get remove -y '^mysql-.*'
-sudo apt-get remove -y '^python.*'
 sudo apt-get remove -y '^temurin-.*'
 sudo apt-get remove -y 'php.*'
 sudo apt-get remove -y google-chrome-stable microsoft-edge-stable firefox

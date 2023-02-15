@@ -32,34 +32,53 @@ echo "==========================================================================
 echo "Removing 200 large packages"
 echo "=============================================================================="
 
-sudo apt-get remove -y '^libclang-*'
-sudo apt-get remove -y '^liblldb.*'
-sudo apt-get remove -y '^libruby.*'
-sudo apt-get remove -y '^libstdc++.*'
-sudo apt-get remove -y '^aspnet.*'
-sudo apt-get remove -y '^cpp-*'
-sudo apt-get remove -y '^dotnet-.*'
-sudo apt-get remove -y '^gcc-.*'
-sudo apt-get remove -y '^g++-.*'
-sudo apt-get remove -y '^gfortran-.*'
-sudo apt-get remove -y '^ghc-8.*'
-sudo apt-get remove -y '^llvm-.*'
-sudo apt-get remove -y '^ruby.*'
-sudo apt-get remove -y '^mono.*'
-sudo apt-get remove -y '^moby-.*'
-sudo apt-get remove -y '^mysql-.*'
-sudo apt-get remove -y '^postgresql-*'
-sudo apt-get remove -y '^temurin-.*'
-sudo apt-get remove -y 'php.*'
+sudo apt remove -y '^libclang-*'
+sudo apt remove -y '^liblldb.*'
+sudo apt remove -y '^libruby.*'
+sudo apt remove -y '^libstdc++.*'
+sudo apt remove -y '^aspnet.*'
+sudo apt remove -y '^cpp-*'
+sudo apt remove -y '^dotnet-.*'
+sudo apt remove -y '^gcc-.*'
+sudo apt remove -y '^g++-.*'
+sudo apt remove -y '^gfortran-.*'
+sudo apt remove -y '^ghc-8.*'
+sudo apt remove -y '^llvm-.*'
+sudo apt remove -y '^ruby.*'
+sudo apt remove -y '^mono.*'
+sudo apt remove -y '^moby-.*'
+sudo apt remove -y '^mysql-.*'
+sudo apt remove -y '^postgresql-*'
+sudo apt remove -y '^temurin-.*'
+sudo apt remove -y '^r-*'
+sudo apt remove -y 'php.*'
 
-# Remove packages
-sudo apt-get remove -y ant azure-cli hhvm powershell msbuild snapd nuget google-cloud-sdk google-chrome-stable microsoft-edge-stable firefox fonts-lato fonts-liberation humanity-icon-theme podman p7zip-full
+# Remove Fonts & Icons
+sudo apt remove -y fonts-dejavu-extra libfreetype-dev humanity-icon-theme
+
+# Remove Browsers
+sudo apt remove -y google-chrome-stable microsoft-edge-stable firefox
+
+# Remove SDKs
+sudo apt remove -y google-cloud-sdk
+
+# Remove Podman & Moby
+sudo apt remove -y podman moby-engine moby-containerd
+
+# Remove Mono packages
+sudo apt remove -y mono-devel
+
+# Remove SQLite
+sudo apt remove -y sqlite3 libsqlite3-dev
+
+# Remove Ant package
+sudo apt remove -y ant azure-cli powershell msbuild nuget
+
+# Remove Misc packages
+sudo apt remove -y ant snapd hhvm p7zip-full
 
 # Autoclean & Autoremove
-sudo apt-get autoremove -y
-
-# Cleanup
-sudo apt-get clean
+sudo apt autoremove --purge -y && sudo apt clean -y
 
 # Disk space freed
 echo "=============================================================================="

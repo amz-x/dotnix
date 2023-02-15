@@ -1,4 +1,4 @@
-# Personal NixOS Configuration
+# Personal NixOS & MacOS Configurations
 
 ![Screenshot](./data/nixos-screenshot.png "NixOS - Pantheon Desktop")
 
@@ -147,6 +147,10 @@ ___
 
 ## Resources & Manuals
 
+### Guides
+
+- [Zero to Nix](https://zero-to-nix.com/)
+
 ### Manuals
 
 - [NixOS Manual](https://nixos.org/nixos/manual)
@@ -170,3 +174,5 @@ ___
 ### Projects Built With Nix
 
 - [Devenv - Developer Environments](https://devenv.sh)
+- [Cachix - CI/CD & Binary Cache](https://www.cachix.org/)
+- [Garnix - CI/CD & Binary Cache](https://garnix.io/)

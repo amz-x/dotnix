@@ -50,8 +50,13 @@ sudo apt remove -y '^moby-.*'
 sudo apt remove -y '^mysql-.*'
 sudo apt remove -y '^postgresql-*'
 sudo apt remove -y '^temurin-.*'
-sudo apt remove -y '^r-*'
 sudo apt remove -y 'php.*'
+
+# Remove SDK packages
+sudo apt remove -y google-cloud-sdk
+
+# Remove Microsoft packages
+sudo apt remove -y azure-cli powershell msbuild nuget
 
 # Remove Fonts & Icons
 sudo apt remove -y fonts-dejavu-extra libfreetype-dev humanity-icon-theme
@@ -59,11 +64,6 @@ sudo apt remove -y fonts-dejavu-extra libfreetype-dev humanity-icon-theme
 # Remove Browsers
 sudo apt remove -y google-chrome-stable microsoft-edge-stable firefox
 
-# Remove SDKs
-sudo apt remove -y google-cloud-sdk
-
-# Remove Podman & Moby
-sudo apt remove -y podman moby-engine moby-containerd
 
 # Remove Mono packages
 sudo apt remove -y mono-devel
@@ -71,11 +71,10 @@ sudo apt remove -y mono-devel
 # Remove SQLite
 sudo apt remove -y sqlite3 libsqlite3-dev
 
-# Remove Ant package
-sudo apt remove -y ant azure-cli powershell msbuild nuget
+
 
 # Remove Misc packages
-sudo apt remove -y ant snapd hhvm p7zip-full
+sudo apt remove -y ant snapd hhvm p7zip-full unixodbc
 
 # Autoclean & Autoremove
 sudo apt autoremove --purge -y && sudo apt clean -y

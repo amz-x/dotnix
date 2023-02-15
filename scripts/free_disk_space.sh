@@ -51,11 +51,8 @@ sudo apt-get remove -y '^libruby.*'
 sudo apt-get remove -y '^libstdc++.*'
 sudo apt-get remove -y 'php.*'
 
-
-sudo apt-get remove -y google-chrome-stable microsoft-edge-stable firefox \ # Browsers
-                       azure-cli powershell msbuild nuget \                 # Microsoft Packages
-                       fonts-lato humanity-icon-theme \                     # Fonts & Icons
-                       hhvm snapd r-base-core r-base-dev p7zip-full         # Other
+# Remove packages
+sudo apt-get remove -y azure-cli hhvm powershell msbuild snapd nuget google-cloud-sdk google-chrome-stable microsoft-edge-stable firefox fonts-lato fonts-liberation humanity-icon-theme p7zip-full
 
 # Autoclean & Autoremove
 sudo apt-get autoremove -y

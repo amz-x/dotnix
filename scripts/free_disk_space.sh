@@ -18,23 +18,19 @@
 # limitations under the License.
 
 
-#
-# The Azure provided machines typically have the following disk allocation:
-# Total space: 85GB
-# Allocated: 67 GB
-# Free: 17 GB
-# This script frees up 28 GB of disk space by deleting unneeded packages and 
-# large directories.
-#
 echo "=============================================================================="
 echo "Freeing up disk space on CI system"
 echo "=============================================================================="
-
-echo "Listing 200 largest packages"
-dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n | tail -n 200
 df -h
 
-echo "Removing large packages"
+echo "=============================================================================="
+echo "Listing 200 largest packages"
+echo "=============================================================================="
+dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n | tail -n 200
+
+echo "=============================================================================="
+echo "Removing 200 large packages"
+echo "=============================================================================="
 
 sudo apt-get remove -y '^aspnet.*'
 sudo apt-get remove -y '^cpp-*'
@@ -43,23 +39,37 @@ sudo apt-get remove -y '^gcc-.*'
 sudo apt-get remove -y '^g++-.*'
 sudo apt-get remove -y '^gfortran-.*'
 sudo apt-get remove -y '^ghc-8.*'
+sudo apt-get remove -y '^llvm-.*'
+sudo apt-get remove -y '^ruby.*'
+sudo apt-get remove -y '^mono.*'
+sudo apt-get remove -y '^moby-.*'
+sudo apt-get remove -y '^mysql-.*'
+sudo apt-get remove -y '^temurin-.*'
 sudo apt-get remove -y '^libclang-*'
 sudo apt-get remove -y '^liblldb.*'
 sudo apt-get remove -y '^libruby.*'
 sudo apt-get remove -y '^libstdc++.*'
-sudo apt-get remove -y '^llvm-.*'
-sudo apt-get remove -y '^mono-.*'
-sudo apt-get remove -y '^moby-.*'
-sudo apt-get remove -y '^mysql-.*'
-sudo apt-get remove -y '^temurin-.*'
 sudo apt-get remove -y 'php.*'
-sudo apt-get remove -y google-chrome-stable microsoft-edge-stable firefox
-sudo apt-get remove -y azure-cli hhvm powershell monodoc-manual msbuild nuget snapd humanity-icon-theme p7zip-full
+
+
+sudo apt-get remove -y google-chrome-stable microsoft-edge-stable firefox \ # Browsers
+                       azure-cli powershell msbuild nuget \                 # Microsoft Packages
+                       fonts-lato humanity-icon-theme \                     # Fonts & Icons
+                       hhvm snapd r-base-core r-base-dev p7zip-full         # Other
+
+# Autoclean & Autoremove
 sudo apt-get autoremove -y
+
+# Cleanup
 sudo apt-get clean
+
+# Disk space freed
+echo "=============================================================================="
+echo "Freed up disk space on CI system"
+echo "=============================================================================="
 df -h
 
-echo "Removing large directories"
-# deleting 15GB
-rm -rf /usr/share/dotnet/
-df -h
+echo "=============================================================================="
+echo "Listing 200 largest packages after removed packages"
+echo "=============================================================================="
+dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n | tail -n 200

@@ -64,14 +64,11 @@ sudo apt remove -y fonts-dejavu-extra libfreetype-dev humanity-icon-theme
 # Remove Browsers
 sudo apt remove -y google-chrome-stable microsoft-edge-stable firefox
 
-
 # Remove Mono packages
 sudo apt remove -y mono-devel
 
 # Remove SQLite
 sudo apt remove -y sqlite3 libsqlite3-dev
-
-
 
 # Remove Misc packages
 sudo apt remove -y ant snapd hhvm p7zip-full unixodbc
@@ -84,8 +81,3 @@ echo "==========================================================================
 echo "Freed up disk space on CI system"
 echo "=============================================================================="
 df -h
-
-echo "=============================================================================="
-echo "Listing 200 largest packages after removed packages"
-echo "=============================================================================="
-dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n | tail -n 200

@@ -27,7 +27,7 @@
   outputs = inputs @ { self, nixpkgs, home-manager, darwin, ... }:
     let 
       user = "amz";
-      location = "$HOME/Workspace/amz/nixos-config";
+      location = "$HOME/Workspace/amz/dotnix";
     in
     {
       # Nix OS

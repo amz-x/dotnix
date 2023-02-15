@@ -32,6 +32,10 @@ echo "==========================================================================
 echo "Removing 200 large packages"
 echo "=============================================================================="
 
+sudo apt-get remove -y '^libclang-*'
+sudo apt-get remove -y '^liblldb.*'
+sudo apt-get remove -y '^libruby.*'
+sudo apt-get remove -y '^libstdc++.*'
 sudo apt-get remove -y '^aspnet.*'
 sudo apt-get remove -y '^cpp-*'
 sudo apt-get remove -y '^dotnet-.*'
@@ -44,15 +48,12 @@ sudo apt-get remove -y '^ruby.*'
 sudo apt-get remove -y '^mono.*'
 sudo apt-get remove -y '^moby-.*'
 sudo apt-get remove -y '^mysql-.*'
+sudo apt-get remove -y '^postgresql-*'
 sudo apt-get remove -y '^temurin-.*'
-sudo apt-get remove -y '^libclang-*'
-sudo apt-get remove -y '^liblldb.*'
-sudo apt-get remove -y '^libruby.*'
-sudo apt-get remove -y '^libstdc++.*'
 sudo apt-get remove -y 'php.*'
 
 # Remove packages
-sudo apt-get remove -y azure-cli hhvm powershell msbuild snapd nuget google-cloud-sdk google-chrome-stable microsoft-edge-stable firefox fonts-lato fonts-liberation humanity-icon-theme p7zip-full
+sudo apt-get remove -y ant azure-cli hhvm powershell msbuild snapd nuget google-cloud-sdk google-chrome-stable microsoft-edge-stable firefox fonts-lato fonts-liberation humanity-icon-theme podman p7zip-full
 
 # Autoclean & Autoremove
 sudo apt-get autoremove -y

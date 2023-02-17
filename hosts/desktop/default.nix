@@ -127,7 +127,6 @@
       jq
       nano
       screenfetch
-      syncthing
       wget
       # Applications - GUI
       beekeeper-studio

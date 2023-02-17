@@ -26,7 +26,11 @@
       enable = true;
       nssmdns = true;
       ipv6 = false;
-      publish.enable = false;
+      openFirewall = true;
+      publish = {
+        enable = true;
+        userServices = true;
+      };
     };
 
     # Printing (CUPS)

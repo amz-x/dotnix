@@ -89,7 +89,6 @@
       # https://search.nixos.org/options?channel=unstable&show=services.xserver.videoDrivers
       videoDrivers = [ 
         "amdgpu"
-        "modesetting"
       ];
 
       # XServer - Modules

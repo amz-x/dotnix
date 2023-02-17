@@ -87,6 +87,10 @@
       # Networking - Resolvconf - DNS Single Request
       # https://search.nixos.org/options?channel=unstable&show=networking.resolvconf.dnsSingleRequest
       dnsSingleRequest = true;
+
+      # Networking - Resolvconf - DNS Single Request
+      # https://search.nixos.org/options?channel=unstable&show=networking.resolvconf.dnsExtensionMechanism
+      dnsExtensionMechanism = false;
     };
   };
 }

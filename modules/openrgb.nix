@@ -46,7 +46,7 @@
 
     # OpenRGB - Enable
     # https://search.nixos.org/options?channel=unstable&show=services.hardware.openrgb.enable
-    enable = true;
+    enable = false;
 
     # OpenRGB - Motherboard (AMD / Intel)
     # https://search.nixos.org/options?channel=unstable&show=services.hardware.openrgb.motherboard

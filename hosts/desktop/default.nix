@@ -81,6 +81,7 @@
       "adbusers"     
       "docker"
       "hass"
+      "jellyfin"
     ];
   };
 
@@ -121,10 +122,10 @@
       # Icons
       nixos-icons
       # Applications - CLI
-      cabextract
-      dcnnt
+      ffmpeg
       glxinfo
       jq
+      mpv
       nano
       screenfetch
       wget
@@ -139,7 +140,7 @@
       gimp
       google-chrome
       mailspring
-      onlyoffice-bin
+      libreoffice
       postman
       rustdesk
       simplenote
@@ -148,7 +149,6 @@
       vscode-fhs
       zoom-us
       # Applications - Gnome
-      gnome-network-displays
       gnome.dconf-editor
       gnome.simple-scan
       # Development - ROCm Stack

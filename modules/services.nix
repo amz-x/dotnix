@@ -57,6 +57,22 @@
       interval = "weekly";
     };
 
+    # Jellyfin
+    # https://search.nixos.org/options?channel=unstable&show=services.jellyfin
+    # jellyfin = {
+    #   # Jellyfin - Enable
+    #   # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.enable
+    #   enable = true;
+
+    #   # Jellyfin - Package
+    #   # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.package
+    #   package = pkgs.jellyfin-ffmpeg;
+
+    #   # Jellyfin - Open Firewall Ports
+    #   # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.openFirewall
+    #   openFirewall = true;
+    # };
+
     # RTSP Server
     # https://search.nixos.org/options?channel=unstable&show=services.rtsp-simple-server
     # rtsp-simple-server = {

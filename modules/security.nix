@@ -79,19 +79,11 @@
       
       # Networking - Firewall - TCP Ports
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.allowedTCPPorts
-      allowedTCPPorts = [
-        # Gnome Network Displays
-        7236
-        7250
-      ];
+      allowedTCPPorts = [ ];
 
       # Networking - Firewall - UDP Ports
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.allowedUDPPorts
-      allowedUDPPorts = [
-        # Gnome Network Displays
-        7236
-        5353
-      ];
+      allowedUDPPorts = [ ];
 
       # Networking - Firewall - Logging - Refused Connections (Enabled by default)
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.logRefusedConnections

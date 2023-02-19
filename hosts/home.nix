@@ -88,8 +88,8 @@
   };
 
   # Services
-  # services = {
-  #   # Firewall - Opensnitch UI
-  #   opensnitch-ui.enable = true;
-  # };
+  services = {
+    # Firewall - Opensnitch UI
+    opensnitch-ui.enable = true;
+  };
 }

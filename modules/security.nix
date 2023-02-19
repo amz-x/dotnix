@@ -109,18 +109,18 @@
       
       # Services - Opensnitch - Enable
       # https://search.nixos.org/options?channel=unstable&show=services.opensnitch.enable
-      enable = false;
+      enable = true;
 
       # Services - Opensnitch - Settings
       # https://search.nixos.org/options?channel=unstable&show=services.opensnitch.settings
       settings = {
-        DefaultAction = "deny";
-        DefaultDuration = "until restart";
-        LogLevel = 2;
+        DefaultAction     = "deny";
+        DefaultDuration   = "until restart";
+        LogLevel          = 2;
         ProcMonitorMethod = "ebpf";
         Stats = {
-          MaxEvents = 200;
-          MaxStats = 50;
+          MaxEvents       = 200;
+          MaxStats        = 50;
         };
       };
     };
@@ -160,6 +160,11 @@
         slack = {
           executable  = "${lib.getBin pkgs.slack}/bin/slack";
           profile     = "${pkgs.firejail}/etc/firejail/slack.profile";
+        };
+        
+        zoom = {
+          executable  = "${lib.getBin pkgs.zoom-us}/bin/zoom-us";
+          profile     = "${pkgs.zoom-us}/etc/firejail/zoom.profile";
         };
       };
     };

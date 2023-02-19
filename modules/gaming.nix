@@ -40,21 +40,59 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Steam
-  # https://search.nixos.org/options?channel=unstable&show=programs.steam
-  programs.steam = {
+  # Programs
+  # https://search.nixos.org/options?channel=unstable&show=programs
+  programs = {
+    
+    # Steam
+    # https://search.nixos.org/options?channel=unstable&show=programs.steam
+    steam = {
 
-    # Steam - Enable
-    # https://search.nixos.org/options?channel=unstable&show=programs.steam.enable
-    enable = true;
+      # Steam - Enable
+      # https://search.nixos.org/options?channel=unstable&show=programs.steam.enable
+      enable = true;
 
-    # Steam - Remote Play
-    # https://search.nixos.org/options?channel=unstable&show=programs.steam.remotePlay.openFirewall
-    remotePlay.openFirewall = true;
+      # Steam - Remote Play
+      # https://search.nixos.org/options?channel=unstable&show=programs.steam.remotePlay.openFirewall
+      remotePlay.openFirewall = true;
 
-    # Steam - Dedicated Server
-    # https://search.nixos.org/options?channel=unstable&show=programs.steam.dedicatedServer.openFirewall
-    dedicatedServer.openFirewall = true;
+      # Steam - Dedicated Server
+      # https://search.nixos.org/options?channel=unstable&show=programs.steam.dedicatedServer.openFirewall
+      dedicatedServer.openFirewall = true;
+    };
+
+    
+    # Gamemode
+    # https://search.nixos.org/options?channel=unstable&show=programs.gamemode
+    gamemode = {
+
+      # Gamemode - Enable
+      # https://search.nixos.org/options?channel=unstable&show=programs.gamemode.enable
+      enable = true;
+
+      # Gamemode - Settings
+      # https://search.nixos.org/options?channel=unstable&show=programs.gamemode.settings
+      settings = {
+        # General Configuration
+        general = {
+          renice = 10;
+          ioprio = 0;
+        };
+
+        # GPU Configuration
+        gpu = {
+          apply_gpu_optimisations = "accept-responsibility";
+          gpu_device              = 0;
+          amd_performance_level   = "high";
+        };
+
+        # Custom Script Configuration
+        custom = {
+          start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
+          end   = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
+        };
+      };
+    };
   };
 
   # Environment
@@ -68,6 +106,8 @@
     # System Packages
     # https://search.nixos.org/options?channel=unstable&show=environment.systemPackages
     systemPackages = with pkgs; [
+      # Gamemode
+      gamemode
       # Proton
       protonup-ng
       protontricks

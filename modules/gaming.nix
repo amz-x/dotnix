@@ -108,9 +108,6 @@
     systemPackages = with pkgs; [
       # Gamemode
       gamemode
-      # Proton
-      protonup-ng
-      protontricks
       # Vulkan
       vkbasalt
     ];

@@ -122,10 +122,8 @@
       # Icons
       nixos-icons
       # Applications - CLI
-      ffmpeg
       glxinfo
       jq
-      mpv
       nano
       screenfetch
       wget
@@ -194,8 +192,6 @@
       dig
       ldns
       traceroute
-      netbird
-      netbird-ui
       wireguard-tools
       # Tools - Security
       vulnix

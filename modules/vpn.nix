@@ -58,15 +58,14 @@
   # System Services
   # https://search.nixos.org/options?channel=unstable&show=services
   services = {
-
     # Netbird (https://netbird.io)
     # https://search.nixos.org/options?channel=unstable&show=services.netbird
     netbird = {
-
+      
       # Netbird - Enable
       # https://search.nixos.org/options?channel=unstable&show=services.netbird.enable
-      enable = true;
-
+      enable = false;
+      
       # Netbird - Package
       # https://search.nixos.org/options?channel=unstable&show=services.netbird.package
       package = pkgs.netbird;

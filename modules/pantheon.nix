@@ -89,6 +89,7 @@
       # https://search.nixos.org/options?channel=unstable&show=services.xserver.videoDrivers
       videoDrivers = [ 
         "amdgpu"
+        "modesetting"
       ];
 
       # XServer - Modules
@@ -156,9 +157,7 @@
 
   # Environment - Pantheon Excluded Packages
   # https://search.nixos.org/options?channel=unstable&show=environment.pantheon.excludePackages
-  environment.pantheon.excludePackages = with pkgs.pantheon; [
-    elementary-mail
-  ];
+  environment.pantheon.excludePackages = with pkgs.pantheon; [ ];
 
   # Enviroment - System Packages
   # https://search.nixos.org/options?channel=unstable&show=environment.systemPackages

@@ -81,7 +81,6 @@
       "adbusers"     
       "docker"
       "hass"
-      "jellyfin"
     ];
   };
 
@@ -137,8 +136,8 @@
       firefox
       gimp
       google-chrome
-      mailspring
       libreoffice
+      nextcloud-client
       postman
       rustdesk
       simplenote
@@ -154,9 +153,6 @@
       rocm-core
       rocm-device-libs
       rocm-runtime
-      # Development - LLVM
-      llvmPackages_rocm.clang
-      llvmPackages_rocm.llvm
       # Development - OpenCL
       opencl-info
       # Development - Vulkan
@@ -290,17 +286,6 @@
 
   # Nixpkgs
   nixpkgs = {
-
-    # Local System Optimizations
-    # localSystem = {
-    #   # GCC (GNU C Compiler)
-    #   # https://github.com/NixOS/nixpkgs/blob/master/lib/systems/architectures.nix
-    #   system = "x86_64-linux";
-    #   gcc = {
-    #     arch = "znver3";
-    #     tune = "znver3";
-    #   };
-    # };
 
     # Nixpkgs Configuration
     config = {

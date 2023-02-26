@@ -51,7 +51,10 @@
 
     # Home Packages
     packages = with pkgs; [
+      # AWS CLI
       awscli2
+      # Railway CLI
+      railway
     ];
   };
 

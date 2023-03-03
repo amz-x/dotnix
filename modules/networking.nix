@@ -62,6 +62,22 @@
       "9.9.9.11"  = [ "dns11.quad9.net"   ];
     };
 
+    # Networking - Wireguard
+    # https://search.nixos.org/options?channel=unstable&show=networking.wireguard 
+    wireguard = {
+      # Networking - Wireguard - Enable
+      # https://search.nixos.org/options?channel=unstable&show=networking.wireguard.enable
+      enable = true;
+    };
+
+    # # Networking - IP Route 2
+    # # https://search.nixos.org/options?channel=unstable&show=networking.iproute2
+    # iproute2 = {
+    #   # Networking - IP Route 2 - Enable
+    #   # https://search.nixos.org/options?channel=unstable&show=networking.iproute2.enable
+    #   enable = true;
+    # };
+
     # Networking - Network Manager
     # https://search.nixos.org/options?channel=unstable&show=networking.networkmanager
     networkmanager = {

@@ -127,7 +127,7 @@
     
     # Boot - Kernel Modules
     # https://search.nixos.org/options?channel=unstable&show=boot.kernelModules
-    kernelModules = [ "kvm-amd" ];
+    kernelModules = [ "kvm-amd" "tun" ];
     
     # Boot - Extra Module Packages
     # https://search.nixos.org/options?channel=unstable&show=boot.extraModulePackages

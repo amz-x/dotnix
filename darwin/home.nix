@@ -75,7 +75,7 @@
     # Firefox
     # firefox = {
     #   enable = true;
-    #   package = pkgs.firefox-unwrapped-bin;
+    #   package = pkgs.firefox;
     # };
 
     # Terminal

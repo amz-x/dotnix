@@ -91,6 +91,7 @@
       dbeaver
       gimp
       libreoffice-bin
+      openvpn
       slack
       transmission
       vscode
@@ -107,7 +108,7 @@
       direnv
 
       # Networking
-      netbird-ui
+      # netbird-ui
          
       # Development
       # docker
@@ -128,15 +129,15 @@
 
     # Netbird
     # https://mynixos.com/nix-darwin/option/services.netbird
-    netbird = {
-      # Netbird - Enable
-      # https://mynixos.com/nix-darwin/option/services.netbird.enable
-      enable = true;
+    # netbird = {
+    #   # Netbird - Enable
+    #   # https://mynixos.com/nix-darwin/option/services.netbird.enable
+    #   enable = true;
 
-      # Netbird - Package
-      # https://mynixos.com/nix-darwin/option/services.netbird.package
-      package = pkgs.netbird;
-    };
+    #   # Netbird - Package
+    #   # https://mynixos.com/nix-darwin/option/services.netbird.package
+    #   package = pkgs.netbird;
+    # };
 
     # Nix Deamon
     # https://mynixos.com/nix-darwin/option/services.nix-daemon.enable
@@ -205,10 +206,7 @@
 
       # System Global Configuration
       NSGlobalDomain = {
-
         # Locale Configuration
-        # AppleLanguages = [ "en" ];
-        # AppleLocale = "en_ZA";
         AppleMeasurementUnits = "Centimeters";
         AppleTemperatureUnit = "Celsius";
         AppleICUForce24HourTime = true;
@@ -217,9 +215,6 @@
         KeyRepeat = 1;
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticSpellingCorrectionEnabled = false;
-        
-        # Extended Configurations
-        # "com.apple.menuextra.battery".ShowPercent = "YES";
       };
     };
     

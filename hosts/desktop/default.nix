@@ -137,7 +137,6 @@
       gimp
       google-chrome
       libreoffice
-      nextcloud-client
       postman
       rustdesk
       simplenote
@@ -264,19 +263,26 @@
     # Settings
     # https://search.nixos.org/options?channel=unstable&show=nix.settings
     settings = {
-      # Trusted Users
-      trusted-users = [ "root" "${user}" ];
       # Optimise syslinks
       auto-optimise-store = true;
+
+      # Trusted Users
+      trusted-users = [
+        "root"
+        "${user}"
+      ];
+      
       # Enable nix flakes on system
       experimental-features = [
         "nix-command"
         "flakes"
       ];
+
       # Binary cache URLs
       substituters = [
         "https://cache.nixos.org"
       ];
+
       # Trusted Public Keys
       trusted-public-keys = [
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="

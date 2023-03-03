@@ -92,6 +92,18 @@
       };
     };
 
+    # Boot - Kernel
+    # https://search.nixos.org/options?channel=unstable&show=boot.kernel
+    kernel = {
+      # Boot - Kernel - Enable
+      # https://search.nixos.org/options?channel=unstable&show=boot.kernel.enable
+      enable = true;
+
+      # Boot - Kernel - Sysctl
+      # https://search.nixos.org/options?channel=unstable&show=boot.kernel.sysctl
+      sysctl = { "vm.swappiness" = 10; };
+    };
+
     # Boot - Plymouth
     # https://search.nixos.org/options?channel=unstable&show=boot.plymouth.enable
     plymouth.enable = true;

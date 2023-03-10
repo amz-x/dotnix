@@ -109,9 +109,11 @@
     systemPackages = with pkgs; [
       # System Tools & Utilities
       coreutils
+      gnupg
       gitFull
       ntfs3g
       pciutils
+      pinentry
       starship
       util-linux
       xdg-user-dirs
@@ -136,16 +138,19 @@
       firefox
       gimp
       google-chrome
+      librewolf
       libreoffice
       postman
       rustdesk
       simplenote
       slack
       spotify
+      thunderbird
       vscode-fhs
       zoom-us
       # Applications - Gnome
       gnome.dconf-editor
+      gnome.seahorse
       gnome.simple-scan
       # Development - ROCm Stack
       rocminfo

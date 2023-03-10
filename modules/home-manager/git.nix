@@ -58,6 +58,13 @@
     # https://mipmip.github.io/home-manager-option-search/?programs.git.package
     package = pkgs.git;
 
+    # GIT - GPG Signing
+    # https://mipmip.github.io/home-manager-option-search/?programs.git.signing
+    signing = {
+      key = "C547564DF2030C97";
+      signByDefault = true;
+    };
+
     # GIT - Default Ignores
     # https://mipmip.github.io/home-manager-option-search/?programs.git.ignores
     ignores = [

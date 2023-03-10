@@ -122,6 +122,19 @@
   # https://search.nixos.org/options?channel=unstable&show=programs
   programs = {
 
+    # GPG Agent
+    # https://search.nixos.org/options?channel=unstable&show=programs.gnupg.agent
+    gnupg.agent = {
+      
+      # GPG Agent - Enable
+      # https://search.nixos.org/options?channel=unstable&show=programs.gnupg.agent.enable
+      enable = true;
+
+      # GPG Agent - Pinentry Flavor
+      # https://search.nixos.org/options?channel=unstable&show=programs.gnupg.agent.pinentryFlavor
+      # pinentryFlavor = "gnome3";
+    };
+
     # Firejail
     # https://search.nixos.org/options?channel=unstable&show=programs.firejail
     firejail = {

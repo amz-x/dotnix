@@ -52,6 +52,7 @@
     [(import ../../modules/security.nix)] ++
     [(import ../../modules/services.nix)] ++
     [(import ../../modules/syncthing.nix)] ++
+    [(import ../../modules/video.nix)] ++
     [(import ../../modules/virtualisation.nix)] ++
     [(import ../../modules/vpn.nix)] ++
     [(import ../../modules/wine.nix)] ++
@@ -148,10 +149,6 @@
       thunderbird
       vscode-fhs
       zoom-us
-      # Applications - Gnome
-      gnome.dconf-editor
-      gnome.seahorse
-      gnome.simple-scan
       # Development - ROCm Stack
       rocminfo
       rocm-core

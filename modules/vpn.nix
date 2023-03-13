@@ -32,6 +32,7 @@
 #       ├─ ./security.nix
 #       ├─ ./services.nix
 #       ├─ ./syncthing.nix
+#       ├─ ./video.nix
 #       ├─ ./virtualisation.nix
 #       ├─ ./vpn.nix *
 #       ├─ ./wine.nix

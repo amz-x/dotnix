@@ -32,6 +32,7 @@
 #       ├─ ./security.nix
 #       ├─ ./services.nix
 #       ├─ ./syncthing.nix
+#       ├─ ./video.nix
 #       ├─ ./virtualisation.nix
 #       ├─ ./vpn.nix
 #       ├─ ./wine.nix
@@ -134,6 +135,10 @@
         };
       };
     };
+
+    # Flatpak
+    # https://search.nixos.org/options?channel=unstable&show=services.flatpak.enable
+    flatpak.enable = true;
 
     # Touchegg
     # https://search.nixos.org/options?channel=unstable&show=services.touchegg

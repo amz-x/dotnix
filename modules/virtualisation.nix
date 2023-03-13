@@ -31,7 +31,8 @@
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
-#       ├─ ./virtualisation.nix
+#       ├─ ./video.nix
+#       ├─ ./virtualisation.nix *
 #       ├─ ./syncthing.nix
 #       ├─ ./vpn.nix
 #       ├─ ./wine.nix
@@ -41,19 +42,58 @@
 
 {
   # Virtualisation
+  # https://search.nixos.org/options?channel=unstable&show=virtualisation
   virtualisation = {
-    # Docker (Rootless - Works similar to Podman)
+
+    # Virtualisation - Docker - Rootless
+    # https://search.nixos.org/options?channel=unstable&show=virtualisation.docker.rootless
     docker.rootless = {
+
+      # Virtualisation - Docker - Rootless - Enable
+      # https://search.nixos.org/options?channel=unstable&show=virtualisation.docker.rootless
       enable = true;
+
+      # Virtualisation - Docker - Rootless - Set Socket Variable
+      # https://search.nixos.org/options?channel=unstable&show=virtualisation.docker.rootless
       setSocketVariable = true;
+
+      # Docker - Rootless - Daemon Settings
+      # https://search.nixos.org/options?channel=unstable&show=virtualisation.docker.rootless.daemon.settings
+      daemon.settings = {
+        group = "docker";
+        ip    = "127.0.0.1";
+      };
     };
 
-    # Libvirt (KVM / QEMU)
+    # Virtualization - Libvirtd
+    # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd
     libvirtd = {
+      # Virtualization - Libvirtd - Enable
+      # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd.enable 
       enable = true;
+
+      # Virtualization - Libvirtd - QEMU
+      # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd.qemu
       qemu = {
+        # Virtualization - Libvirtd - QEMU - Package
+        # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd.qemu.package
+        package = pkgs.qemu_kvm;
+
+        # Virtualization - Libvirtd - QEMU - SWTPM
+        # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd.qemu.swtpm
         swtpm.enable = true;
-        ovmf.enable =  true;
+        
+        # Virtualization - Libvirtd - QEMU - OVMF
+        # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd.qemu.ovmf
+        ovmf = {
+          # Virtualization - Libvirtd - QEMU - OVMF - Enable
+          # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd.qemu.ovmf.enable
+          enable =  true;
+
+          # Virtualization - Libvirtd - QEMU - OVMF - Packages
+          # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd.qemu.ovmf.packages
+          packages = with pkgs; [ OVMFFull.fd ];
+        };
       };
     };
   };

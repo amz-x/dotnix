@@ -31,6 +31,7 @@
 #       ├─ ./security.nix
 #       ├─ ./services.nix
 #       ├─ ./syncthing.nix
+#       ├─ ./video.nix
 #       ├─ ./virtualisation.nix
 #       ├─ ./vpn.nix
 #       ├─ ./wine.nix
@@ -61,7 +62,13 @@
     # GIT - GPG Signing
     # https://mipmip.github.io/home-manager-option-search/?programs.git.signing
     signing = {
+
+      # GIT - GPG Signing Key Fingerprint
+      # https://mipmip.github.io/home-manager-option-search/?programs.git.signing.key
       key = "C547564DF2030C97";
+
+      # GIT - GPG Signing By Default
+      # https://mipmip.github.io/home-manager-option-search/?programs.git.signing.signByDefault
       signByDefault = true;
     };
 

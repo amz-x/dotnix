@@ -4,10 +4,6 @@
   # System Services
   services = {
 
-    # Flatpak
-    # https://search.nixos.org/options?channel=unstable&show=services.flatpak.enable
-    flatpak.enable = true;
-
     # FWUPD - Firmware Update Service
     # https://search.nixos.org/options?channel=unstable&show=services.fwupd
     fwupd = {

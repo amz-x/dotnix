@@ -19,6 +19,7 @@
 #       │    ├─ direnv.nix
 #       │    ├─ git.nix
 #       │    ├─ starship.nix
+#       │    ├─ vscode.nix
 #       │    └─ zsh.nix
 #       │
 #       ├─ ./android.nix
@@ -52,6 +53,7 @@
     # Font Packages
     # https://search.nixos.org/options?channel=unstable&show=fonts.fonts
     fonts = with pkgs; [
+      corefonts
       dejavu_fonts
       fira-code-symbols
       hack-font

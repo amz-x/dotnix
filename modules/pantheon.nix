@@ -19,6 +19,7 @@
 #       │    ├─ direnv.nix
 #       │    ├─ git.nix
 #       │    ├─ starship.nix
+#       │    ├─ vscode.nix
 #       │    └─ zsh.nix
 #       │
 #       ├─ ./android.nix
@@ -129,9 +130,7 @@
 
           # Pantheon - Extra Wingpanel Indicators
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.extraWingpanelIndicators
-          extraWingpanelIndicators = with pkgs; [
-            wingpanel-indicator-ayatana
-          ];
+          extraWingpanelIndicators = with pkgs; [ ];
         };
       };
     };

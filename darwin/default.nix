@@ -19,6 +19,7 @@
 #       │    ├─ direnv.nix
 #       │    ├─ git.nix
 #       │    ├─ starship.nix
+#       │    ├─ vscode.nix
 #       │    └─ zsh.nix
 #       │
 #       ├─ ./android.nix
@@ -65,6 +66,7 @@ in
           imports = [(import ./home.nix)] ++
                     [(import ../modules/home-manager/direnv.nix)] ++
                     [(import ../modules/home-manager/git.nix)] ++
+                    [(import ../modules/home-manager/vscode.nix)] ++
                     [(import ../modules/home-manager/starship.nix)];
         };
       }

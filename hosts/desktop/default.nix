@@ -19,6 +19,7 @@
 #       │    ├─ direnv.nix
 #       │    ├─ git.nix
 #       │    ├─ starship.nix
+#       │    ├─ vscode.nix
 #       │    └─ zsh.nix
 #       │
 #       ├─ ./android.nix
@@ -148,7 +149,6 @@
       slack
       spotify
       thunderbird
-      vscode-fhs
       zoom-us
       # Development - ROCm Stack
       rocminfo
@@ -225,6 +225,13 @@
     # Font configuration
     fontconfig = {
       enable = true;
+      cache32Bit = true;
+      useEmbeddedBitmaps = true;
+      hinting = {
+        enable = true;
+        autohint = true;
+        style = "hintslight";
+      };
       defaultFonts = {
         emoji = [
          "Noto Color Emoji"

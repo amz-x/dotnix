@@ -19,6 +19,7 @@
 #       │    ├─ direnv.nix *
 #       │    ├─ git.nix
 #       │    ├─ starship.nix
+#       │    ├─ vscode.nix
 #       │    └─ zsh.nix
 #       │
 #       ├─ ./android.nix

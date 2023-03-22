@@ -19,6 +19,7 @@
 #       │    ├─ direnv.nix
 #       │    ├─ git.nix
 #       │    ├─ starship.nix
+#       │    ├─ vscode.nix
 #       │    └─ zsh.nix
 #       │
 #       ├─ ./android.nix
@@ -170,7 +171,7 @@
 
     # Video (high-resolution display)
     # https://search.nixos.org/options?channel=unstable&show=hardware.video.hidpi.enable
-    video.hidpi.enable = lib.mkDefault true;
+    video.hidpi.enable = lib.mkDefault false;
 
     # Hardware - Bluetooth
     bluetooth = {
@@ -214,6 +215,8 @@
         mesa
         rocm-opencl-icd
         rocm-opencl-runtime
+        libva
+        libva-utils
       ];
 
       # Hardware - OpenGL - Additional packages to add to 32-bit OpenGL drivers on 64-bit systems.

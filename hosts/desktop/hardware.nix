@@ -169,10 +169,6 @@
     # https://search.nixos.org/options?channel=unstable&show=hardware.cpu.amd.updateMicrocode
     cpu.amd.updateMicrocode = lib.mkDefault true;
 
-    # Video (high-resolution display)
-    # https://search.nixos.org/options?channel=unstable&show=hardware.video.hidpi.enable
-    video.hidpi.enable = lib.mkDefault false;
-
     # Hardware - Bluetooth
     bluetooth = {
       # Hardware - Bluetooth Enable

@@ -218,9 +218,10 @@
 
   # Font Configuration
   fonts = {
-    # Enable Defaults
+    # Defaults
     enableDefaultFonts = true;
     enableGhostscriptFonts = true;
+    optimizeForVeryHighDPI = false;
 
     # Font configuration
     fontconfig = {

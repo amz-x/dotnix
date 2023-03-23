@@ -138,7 +138,6 @@
       dconf
       discord
       drawio
-      firefox
       gimp
       google-chrome
       librewolf
@@ -287,16 +286,6 @@
       experimental-features = [
         "nix-command"
         "flakes"
-      ];
-
-      # Binary cache URLs
-      substituters = [
-        "https://cache.nixos.org"
-      ];
-
-      # Trusted Public Keys
-      trusted-public-keys = [
-        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       ];
     };
   };

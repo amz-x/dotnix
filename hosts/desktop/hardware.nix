@@ -170,7 +170,9 @@
     cpu.amd.updateMicrocode = lib.mkDefault true;
 
     # Hardware - Bluetooth
+    # https://search.nixos.org/options?channel=unstable&show=hardware.bluetooth
     bluetooth = {
+
       # Hardware - Bluetooth Enable
       # https://search.nixos.org/options?channel=unstable&show=hardware.bluetooth.enable
       enable = true;
@@ -195,6 +197,7 @@
     # Hardware - OpenGL
     # https://search.nixos.org/options?channel=unstable&show=hardware.opengl
     opengl = {
+
       # OpenGL - Enable
       # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.enable
       enable = true;

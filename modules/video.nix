@@ -64,7 +64,7 @@
 
   # # Default packages install system-wide
   # # https://search.nixos.org/packages?channel=unstable
-  # environment.systemPackages = with pkgs; [
-  #   obs-studio
-  # ];
+  environment.systemPackages = with pkgs; [
+    ffmpeg
+  ];
 }

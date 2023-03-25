@@ -173,6 +173,7 @@
     # Applications - Pantheon
     appeditor
     ciano
+    dippi
     monitor
     torrential
     # Applications - Gnome

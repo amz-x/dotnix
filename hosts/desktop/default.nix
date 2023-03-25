@@ -140,6 +140,7 @@
       drawio
       gimp
       google-chrome
+      lapce
       librewolf
       libreoffice
       postman
@@ -220,7 +221,6 @@
     # Defaults
     enableDefaultFonts = true;
     enableGhostscriptFonts = true;
-    optimizeForVeryHighDPI = false;
 
     # Font configuration
     fontconfig = {

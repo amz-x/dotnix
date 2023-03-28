@@ -129,6 +129,7 @@
       glxinfo
       jq
       nano
+      pdf2odt
       screenfetch
       wget
       # Applications - GUI
@@ -144,7 +145,7 @@
       librewolf
       libreoffice
       postman
-      rustdesk
+      # rustdesk
       simplenote
       slack
       spotify

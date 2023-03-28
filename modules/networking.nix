@@ -72,13 +72,13 @@
       enable = true;
     };
 
-    # # Networking - IP Route 2
-    # # https://search.nixos.org/options?channel=unstable&show=networking.iproute2
-    # iproute2 = {
-    #   # Networking - IP Route 2 - Enable
-    #   # https://search.nixos.org/options?channel=unstable&show=networking.iproute2.enable
-    #   enable = true;
-    # };
+    # Networking - IP Route 2
+    # https://search.nixos.org/options?channel=unstable&show=networking.iproute2
+    iproute2 = {
+      # Networking - IP Route 2 - Enable
+      # https://search.nixos.org/options?channel=unstable&show=networking.iproute2.enable
+      enable = true;
+    };
 
     # Networking - Network Manager
     # https://search.nixos.org/options?channel=unstable&show=networking.networkmanager

@@ -45,10 +45,10 @@
 
   # Default packages install system-wide
   # https://search.nixos.org/packages?channel=unstable
-  environment.systemPackages = with pkgs; [
-    ivpn
-    ivpn-service
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   ivpn
+  #   ivpn-service
+  # ];
 
   # System Services
   # https://search.nixos.org/options?channel=unstable&show=services

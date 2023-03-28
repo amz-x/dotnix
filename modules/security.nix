@@ -81,11 +81,15 @@
       
       # Networking - Firewall - TCP Ports
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.allowedTCPPorts
-      allowedTCPPorts = [ ];
+      # allowedTCPPorts = [ ];
 
       # Networking - Firewall - UDP Ports
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.allowedUDPPorts
-      allowedUDPPorts = [ ];
+      # allowedUDPPorts = [ ];
+
+      # Networking - Firewall - UDP Ports Ranges
+      # https://search.nixos.org/options?channel=unstable&show=networking.firewall.allowedUDPPortRanges
+      # allowedUDPPortRanges = [ ];
 
       # Networking - Firewall - Logging - Refused Connections
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.logRefusedConnections

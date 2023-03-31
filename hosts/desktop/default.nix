@@ -129,7 +129,6 @@
       glxinfo
       jq
       nano
-      pdf2odt
       screenfetch
       wget
       # Applications - GUI

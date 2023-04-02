@@ -92,6 +92,10 @@
       # DNS options: [ "default", "dnsmasq", "unbound", "systemd-resolved", "none" ]
       # https://search.nixos.org/options?channel=unstable&show=networking.networkmanager.dns
       # dns = "default";
+
+      # Networking - Network Manager - Firewall Backend
+      # https://search.nixos.org/options?channel=unstable&show=networking.networkmanager.firewallBackend
+      firewallBackend = "nftables";
     };
 
     # Networking - Resolvconf
@@ -108,7 +112,7 @@
 
       # Networking - Resolvconf - DNS Single Request
       # https://search.nixos.org/options?channel=unstable&show=networking.resolvconf.dnsExtensionMechanism
-      dnsExtensionMechanism = false;
+      dnsExtensionMechanism = true;
     };
   };
 }

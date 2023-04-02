@@ -53,6 +53,10 @@
     # Security - Rootkit
     # https://search.nixos.org/options?channel=unstable&show=security.rtkit
     rtkit.enable = true;
+
+    # Security - TPM2
+    # https://search.nixos.org/options?channel=unstable&show=security.tpm2
+    tpm2.enable = true;
   };
 
   # Networking
@@ -101,6 +105,24 @@
   # https://search.nixos.org/options?channel=unstable&show=services
   services = {
 
+    # Services - ClamAV
+    # https://search.nixos.org/options?channel=unstable&show=services.clamav
+    clamav = {
+      # Note: Download / Update ClamAV database if service fails to start
+      # https://discourse.nixos.org/t/how-to-use-clamav-in-nixos/19782/
+
+      # Services - ClamAV - Deamon
+      # https://search.nixos.org/options?channel=unstable&show=services.clamav.daemon
+      daemon.enable = true;
+
+      # Services - ClamAV - Updater
+      # https://search.nixos.org/options?channel=unstable&show=services.clamav.updater
+      updater = {
+        enable = true;
+        interval = "daily";
+      };
+    };
+
     # Services - Opensnitch
     # https://search.nixos.org/options?channel=unstable&show=services.opensnitch
     opensnitch = {
@@ -114,6 +136,7 @@
       settings = {
         DefaultAction     = "deny";
         DefaultDuration   = "until restart";
+        Firewall          = "nftables";
         LogLevel          = 2;
         ProcMonitorMethod = "ebpf";
         Stats = {

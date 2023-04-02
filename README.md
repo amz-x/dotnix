@@ -6,14 +6,15 @@
 
 - NixOS 23.05 (Stoat - Unstable)
 - Home Manager
-- Linux Kernel 6.1.6-zen1
+- Linux Kernel 6.2.9-zen1
+- Mesa 23.0.1
 - LightDM (Display Manager)
 - Pantheon Deskop Environment
 - Nushell
 - Starship Prompt
 - Nano CLI Editor
 - Visual Studio Code
-- Netbird
+- Adguard Home
 - Opensnitch
 - Firejail
 - Steam
@@ -28,14 +29,15 @@ System applications and their platform support comparison table:
 |-----------------------|---------------------------|---------------------------|
 | Beekeeper Studio      | ✅ Working                | ❓ Unknown Status         |
 | Bitwarden             | ✅ Working                | ❓ Unknown Status         |
+| Brave                 | ✅ Working                | ❓ Unknown Status         |
 | DBeaver CE            | ✅ Working                | ✅ Working                |
 | Discord               | ✅ Working                | ❓ Unknown Status         |
 | Docker                | ✅ Working                | ⚡ WIP                    |
-| Firefox               | ✅ Working                | ⚡ WIP                    |
 | Google Chrome (Stable)| ✅ Working                | ❓ Unknown Status         |
 | GIMP                  | ✅ Working                | ✅ Working                |
 | GIT                   | ✅ Working                | ✅ Working                |
 | Libre Office          | ✅ Working                | ✅ Working                |
+| LibreWolf             | ✅ Working                | ❓ Unknown Status         |
 | Mailspring            | ✅ Working                | ❓ Unknown Status         |
 | Nano                  | ✅ Working                | ✅ Working                |
 | Netbird               | ✅ Working                | ✅ Working                |

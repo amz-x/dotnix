@@ -134,6 +134,7 @@
       # Applications - GUI
       beekeeper-studio
       bitwarden
+      brave
       dbeaver
       dconf
       discord

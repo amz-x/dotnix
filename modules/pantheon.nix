@@ -140,8 +140,12 @@
     flatpak.enable = true;
 
     # Touchegg
-    # https://search.nixos.org/options?channel=unstable&show=services.touchegg
-    touchegg.enable = false;
+    # https://search.nixos.org/options?channel=unstable&show=services.touchegg.enable
+    touchegg.enable = true;
+
+    # UPower
+    # https://search.nixos.org/options?channel=unstable&show=services.upower.enable
+    upower.enable = true;
   };
 
   # Programs

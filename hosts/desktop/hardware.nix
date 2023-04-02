@@ -207,11 +207,15 @@
       driSupport = true;
       driSupport32Bit = true;
 
+      # Hardware - OpenGL - Mesa Package
+      # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.mesaPackage
+      mesaPackage = pkgs.mesa_23;
+      mesaPackage32 = pkgs.pkgsi686Linux.mesa_23;
+
       # Hardware - OpenGL - Additional packages to add to OpenGL drivers.
       # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.extraPackages
       extraPackages = with pkgs; [
         glxinfo
-        mesa
         rocm-opencl-icd
         rocm-opencl-runtime
         libva
@@ -223,7 +227,6 @@
       # https://search.nixos.org/packages?channel=unstable&show=driversi686Linux
       extraPackages32 = with pkgs.driversi686Linux; [
         glxinfo
-        mesa
       ];
     };
 

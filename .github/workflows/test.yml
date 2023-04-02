@@ -20,6 +20,10 @@ jobs:
     - run: nix build '.#nixosConfigurations.AMZ-Linux.config.system.build.toplevel' --print-out-paths
     - run: ls -l result*
     - run: (pipx run vulnix ./result || true) > report.json
+    - uses: actions/upload-artifact@v3
+      with:
+        name: vulnix-nixos-report
+        path: report.json
   
   # Nix Darwin
   Mac:
@@ -34,4 +38,8 @@ jobs:
     - run: nix build '.#darwinConfigurations.AMZ-MacBook.config.system.build.toplevel' --print-out-paths
     - run: ls -l result*
     - run: (pipx run vulnix ./result || true) > report.json
+    - uses: actions/upload-artifact@v3
+      with:
+        name: vulnix-darwin-report
+        path: report.json
    

@@ -113,7 +113,17 @@
 
       # Services - ClamAV - Deamon
       # https://search.nixos.org/options?channel=unstable&show=services.clamav.daemon
-      daemon.enable = true;
+      daemon = {
+        enable = true;
+        settings = {
+          ScanOnAccess = true;
+          MaxThreads = 4;
+          OnAccessExcludeRootUID = true;
+          OnAccessMountPath = "/";
+          OnAccessExcludePath = "/nix/store";
+          OnAccessExcludeUname = "clamav";
+        };
+      };
 
       # Services - ClamAV - Updater
       # https://search.nixos.org/options?channel=unstable&show=services.clamav.updater

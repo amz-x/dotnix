@@ -80,10 +80,8 @@
       "scanner"
       "sound"      
       "video"
-      # Addons
-      "adbusers"     
+      # Development   
       "docker"
-      "hass"
     ];
   };
 
@@ -128,6 +126,7 @@
       # Applications - CLI
       glxinfo
       jq
+      localsend
       nano
       screenfetch
       wget

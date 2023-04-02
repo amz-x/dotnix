@@ -56,7 +56,7 @@
 
       # Boot - Initrd - Kernel Modules
       # https://search.nixos.org/options?channel=unstable&show=boot.initrd.kernelModules
-      kernelModules = [ "amdgpu" ];
+      kernelModules = [ "amdgpu" ]; 
 
       # Boot - Initrd - Verbose
       # https://search.nixos.org/options?channel=unstable&show=boot.initrd.verbose
@@ -134,6 +134,10 @@
     # Boot - Extra Module Packages
     # https://search.nixos.org/options?channel=unstable&show=boot.extraModulePackages
     extraModulePackages = [ ];
+
+    # Boot - Clean Temporary Directory
+    # https://search.nixos.org/options?channel=unstable&show=boot.cleanTmpDir
+    cleanTmpDir = true;
   };
 
   # Root Parition

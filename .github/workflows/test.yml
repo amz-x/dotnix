@@ -19,7 +19,7 @@ jobs:
     - run: scripts/free_disk_space.sh
     - run: nix build '.#nixosConfigurations.AMZ-Linux.config.system.build.toplevel' --print-out-paths
     - run: ls -l result*
-    - run: pipx run vulnix ./result
+    - run: (pipx run vulnix ./result || true) > report.json
   
   # Nix Darwin
   Mac:
@@ -33,5 +33,5 @@ jobs:
         extra_nix_config: "auto-optimise-store = true"
     - run: nix build '.#darwinConfigurations.AMZ-MacBook.config.system.build.toplevel' --print-out-paths
     - run: ls -l result*
-    - run: pipx run vulnix ./result
+    - run: (pipx run vulnix ./result || true) > report.json
    

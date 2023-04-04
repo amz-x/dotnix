@@ -14,7 +14,6 @@
 - Starship Prompt
 - Nano CLI Editor
 - Visual Studio Code
-- Adguard Home
 - Opensnitch
 - Firejail
 - Steam
@@ -38,7 +37,6 @@ System applications and their platform support comparison table:
 | GIT                   | ✅ Working                | ✅ Working                |
 | Libre Office          | ✅ Working                | ✅ Working                |
 | LibreWolf             | ✅ Working                | ❓ Unknown Status         |
-| Mailspring            | ✅ Working                | ❓ Unknown Status         |
 | Nano                  | ✅ Working                | ✅ Working                |
 | Netbird               | ✅ Working                | ✅ Working                |
 | Nushell               | ✅ Working                | ✅ Working                |

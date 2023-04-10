@@ -84,7 +84,9 @@
       rebornix.ruby
       # Node.js / Javascript / Typescript
       dbaeumer.vscode-eslint
-
+      # Waka Time
+      wakatime.vscode-wakatime
+      
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         # Theme

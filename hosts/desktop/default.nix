@@ -96,7 +96,7 @@
       # EDITOR
       EDITOR = "nano";
       # TERMINAL
-      TERM = "io.elementary.terminal";
+      TERM = "xterm-256color";
     };
 
     # Shells

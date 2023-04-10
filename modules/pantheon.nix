@@ -185,7 +185,7 @@
     gnome.seahorse
     gnome.simple-scan
     # Applications - Other
-    bleachbit
+    baobab    
     soundux
   ];
 }

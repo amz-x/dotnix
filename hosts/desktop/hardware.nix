@@ -129,7 +129,7 @@
     
     # Boot - Kernel Modules
     # https://search.nixos.org/options?channel=unstable&show=boot.kernelModules
-    kernelModules = [ "kvm-amd" "tun" ];
+    kernelModules = [ "kvm-amd" ];
     
     # Boot - Extra Module Packages
     # https://search.nixos.org/options?channel=unstable&show=boot.extraModulePackages
@@ -210,11 +210,6 @@
       # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.driSupport
       driSupport = true;
       driSupport32Bit = true;
-
-      # Hardware - OpenGL - Mesa Package
-      # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.mesaPackage
-      mesaPackage = pkgs.mesa_23;
-      mesaPackage32 = pkgs.pkgsi686Linux.mesa_23;
 
       # Hardware - OpenGL - Additional packages to add to OpenGL drivers.
       # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.extraPackages

@@ -1,2 +1,5 @@
 # Nix Darwin - Generated Directories
 result
+
+# Nix Cloud
+hosts/cloud/*

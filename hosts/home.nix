@@ -60,6 +60,15 @@
     ];
   };
 
+  # Temporary Workaround
+  # Issue: https://github.com/nushell/nushell/issues/8804#issuecomment-1500742582
+  xdg.configFile."nushell/env.nu".text = ''
+    starship init nu
+    | str replace --string 'PROMPT_COMMAND = {' 'PROMPT_COMMAND = { ||'
+    | str replace --string 'PROMPT_COMMAND_RIGHT = {' 'PROMPT_COMMAND_RIGHT = { ||'
+    | save -f ~/.cache/starship/init.nu
+  '';
+
   # Programs
   programs = {
 

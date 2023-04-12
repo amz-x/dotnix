@@ -123,7 +123,7 @@
   programs = {
     # ZSH Shell - Enable
     # https://mynixos.com/nix-darwin/option/programs.zsh.enable
-    zsh.enable = true;
+    # zsh.enable = true;
 
     # GNUPG Agent - Enable
     # https://mynixos.com/nix-darwin/option/programs.gnupg.agent.enable
@@ -219,7 +219,7 @@
     };
     
     # Since it's not possible to declare default shell, run this command after build
-    activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.zsh}/bin/zsh'';
+    activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.nushell}/bin/nu ${user}'';
     
     # System Version
     stateVersion = 4;

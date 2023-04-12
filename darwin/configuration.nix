@@ -92,7 +92,7 @@
       nixos-icons
       # System Applications
       dbeaver
-      # gimp
+      gimp
       libreoffice-bin
       slack
       transmission
@@ -195,6 +195,10 @@
   nixpkgs = {
     config.allowUnfree = true;
   };
+
+  # Security
+  # https://mynixos.com/nix-darwin/option/security.pam.enableSudoTouchIdAuth
+  security.pam.enableSudoTouchIdAuth = true;
 
   # DawinOS System Settings
   system = {

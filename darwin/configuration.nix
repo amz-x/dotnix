@@ -79,6 +79,7 @@
       nano
       wget
       git
+      gnupg
       nushell
       starship
       jq   
@@ -93,7 +94,6 @@
       dbeaver
       gimp
       libreoffice-bin
-      openvpn
       slack
       transmission
       vscode
@@ -120,26 +120,22 @@
   };
 
   # System Programs
-  # programs = {
-  #   # ZSH Shell
-  #   # zsh.enable = true;
-  # };
+  programs = {
+    # ZSH Shell - Enable
+    # https://mynixos.com/nix-darwin/option/programs.zsh.enable
+    # zsh.enable = true;
+
+    # GNUPG Agent - Enable
+    # https://mynixos.com/nix-darwin/option/programs.gnupg.agent.enable
+    gnupg.agent.enable = true;
+  };
 
   # System Services
-  # # https://mynixos.com/nix-darwin/option/services
+  # https://mynixos.com/nix-darwin/option/services
   services = {
-
-    # Netbird
-    # https://mynixos.com/nix-darwin/option/services.netbird
-    # netbird = {
-    #   # Netbird - Enable
-    #   # https://mynixos.com/nix-darwin/option/services.netbird.enable
-    #   enable = true;
-
-    #   # Netbird - Package
-    #   # https://mynixos.com/nix-darwin/option/services.netbird.package
-    #   package = pkgs.netbird;
-    # };
+    # Activate System
+    # https://mynixos.com/nix-darwin/option/services.activate-system.enable
+    activate-system.enable = true;
 
     # Nix Deamon
     # https://mynixos.com/nix-darwin/option/services.nix-daemon.enable
@@ -200,12 +196,14 @@
     config.allowUnfree = true;
   };
 
+  # Security
+  # https://mynixos.com/nix-darwin/option/security.pam.enableSudoTouchIdAuth
+  security.pam.enableSudoTouchIdAuth = true;
+
   # DawinOS System Settings
   system = {
-
     # System Defaults
     defaults = {
-
       # System Global Configuration
       NSGlobalDomain = {
         # Locale Configuration
@@ -221,7 +219,7 @@
     };
     
     # Since it's not possible to declare default shell, run this command after build
-    activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.zsh}/bin/zsh'';
+    activationScripts.postActivation.text = ''sudo chsh -s ${pkgs.nushell}/bin/nu ${user}'';
     
     # System Version
     stateVersion = 4;

@@ -121,19 +121,17 @@
       # Libraries
       glib
       gst_all_1.gstreamer
+      jq
       # Icons
       nixos-icons
       # Applications - CLI
       glxinfo
-      jq
-      localsend
       nano
       screenfetch
       wget
       # Applications - GUI
       beekeeper-studio
       bitwarden
-      brave
       dbeaver
       dconf
       discord
@@ -144,7 +142,7 @@
       librewolf
       libreoffice
       postman
-      # rustdesk
+      rustdesk
       simplenote
       slack
       spotify
@@ -155,16 +153,6 @@
       rocm-core
       rocm-device-libs
       rocm-runtime
-      # Development - OpenCL
-      opencl-info
-      # Development - Vulkan
-      vulkan-headers
-      vulkan-loader
-      vulkan-tools
-      vulkan-tools-lunarg
-      # Development - Vulkan Extensions & Layers
-      vulkan-extension-layer
-      vulkan-validation-layers
       # Development - Nix
       rnix-lsp
       nix-direnv
@@ -176,14 +164,7 @@
       docker-buildx
       # Development - Databases
       pgcli
-      postgresql
-      # Development - Terraform
-      terraform
-      terraform-docs
-      terraform-landscape
-      terraform-ls
-      terrascan
-      tflint
+      postgresql    
       # Development - OpenAI
       openai
       # Tools - Networking

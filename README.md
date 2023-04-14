@@ -28,7 +28,6 @@ System applications and their platform support comparison table:
 |-----------------------|---------------------------|---------------------------|
 | Beekeeper Studio      | ✅ Working                | ❓ Unknown Status         |
 | Bitwarden             | ✅ Working                | ❓ Unknown Status         |
-| Brave                 | ✅ Working                | ❓ Unknown Status         |
 | DBeaver CE            | ✅ Working                | ✅ Working                |
 | Discord               | ✅ Working                | ❓ Unknown Status         |
 | Docker                | ✅ Working                | ⚡ WIP                    |
@@ -129,6 +128,9 @@ Inside the root of the project directory execute the following:
 ```bash
 # Updates flake.lock
 nix flake update
+
+# Updates flake.lock with refreshed cache
+nix flake update --refresh
 ```
 
 ## Nix Store Maintenance

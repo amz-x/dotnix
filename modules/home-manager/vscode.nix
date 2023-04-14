@@ -80,21 +80,14 @@
       ms-azuretools.vscode-docker
       # C#
       ms-dotnettools.csharp
+      # Theme
+      nonylene.dark-molokai-theme
       # Ruby
       rebornix.ruby
       # Node.js / Javascript / Typescript
       dbaeumer.vscode-eslint
       # Waka Time
       wakatime.vscode-wakatime
-      
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      {
-        # Theme
-        name = "dark-molokai-theme";
-        publisher = "nonylene";
-        version = "1.0.5";
-        sha256 = "2qjV6iSz8DDU1yP1II9sxGSgiETmEtotFvfNjm+cTuI=";
-      }
     ];
 
     # Visual Studio Code - User Settings

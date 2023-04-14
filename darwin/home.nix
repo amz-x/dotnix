@@ -54,6 +54,7 @@
     packages = with pkgs; [
       awscli2
       coreutils
+      nushell
       wget
       jq
     ];

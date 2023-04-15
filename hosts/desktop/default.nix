@@ -154,7 +154,7 @@
       rocm-device-libs
       rocm-runtime
       # Development - Nix
-      rnix-lsp
+      nil
       nix-direnv
       nixfmt
       nixpkgs-fmt

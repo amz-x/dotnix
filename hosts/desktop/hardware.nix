@@ -135,9 +135,13 @@
     # https://search.nixos.org/options?channel=unstable&show=boot.extraModulePackages
     extraModulePackages = [ ];
 
-    # Boot - Clean Temporary Directory
-    # https://search.nixos.org/options?channel=unstable&show=boot.cleanTmpDir
-    cleanTmpDir = true;
+    # Boot - Temporary Directory
+    # https://search.nixos.org/options?channel=unstable&show=boot.tmp
+    tmp = {
+      # Boot - Temporary Directory - Clean On Boot
+      # https://search.nixos.org/options?channel=unstable&show=boot.tmp.cleanOnBoot
+      cleanOnBoot = true;
+    };
   };
 
   # Root Parition

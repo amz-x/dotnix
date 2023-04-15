@@ -75,7 +75,7 @@
       # DirEnv
       mkhl.direnv
       # Nushell
-      thenuprojectcontributors.vscode-nushell-lang    
+      thenuprojectcontributors.vscode-nushell-lang
       # Docker
       ms-azuretools.vscode-docker
       # C#
@@ -108,6 +108,15 @@
 
       # Nix
       "nix.enableLanguageServer" = true;
+      "nix.serverPath" = "${pkgs.nil}/bin/nil";
+      "nix.formatterPath" = "${pkgs.nixfmt}/bin/nixfmt";
+      "nix.serverSettings" = {
+        "nil" = {
+          "formatting" = {
+            "command" = [ "nixfmt" ];
+          };
+        };
+      };
 
       # Javascript
       "javascript.updateImportsOnFileMove.enabled" = "always";

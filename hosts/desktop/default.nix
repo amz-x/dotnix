@@ -138,7 +138,6 @@
       drawio
       gimp
       google-chrome
-      lapce
       librewolf
       libreoffice
       postman

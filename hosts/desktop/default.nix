@@ -141,6 +141,7 @@
       jellyfin-media-player
       librewolf
       libreoffice
+      localsend
       postman
       rustdesk
       simplenote

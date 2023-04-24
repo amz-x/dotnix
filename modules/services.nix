@@ -30,14 +30,28 @@
     };
 
     # Printing (CUPS)
+    # https://search.nixos.org/options?channel=unstable&show=services.printing
     printing = {
+
+      # Printing - Enable
+      # https://search.nixos.org/options?channel=unstable&show=services.printing.enable
       enable = true;
+
+      # Printing - Drivers
+      # https://search.nixos.org/options?channel=unstable&show=services.printing.drivers
       drivers = with pkgs; [ gutenprint hplip ];
+
+      # Printing - Start when needed
+      # https://search.nixos.org/options?channel=unstable&show=services.printing.startWhenNeeded
       startWhenNeeded = true;
+      
+      # Printing - Web interface
+      # https://search.nixos.org/options?channel=unstable&show=services.printing.webInterface
       webInterface = false; 
     };
 
     # Scanning
+    # https://search.nixos.org/options?channel=unstable&show=services.saned.enable
     saned.enable = true;
 
     # FSTRIM (SSD TRIM)
@@ -55,19 +69,19 @@
 
     # Jellyfin
     # https://search.nixos.org/options?channel=unstable&show=services.jellyfin
-    # jellyfin = {
-    #   # Jellyfin - Enable
-    #   # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.enable
-    #   enable = true;
+    jellyfin = {
+      # Jellyfin - Enable
+      # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.enable
+      enable = false;
 
-    #   # Jellyfin - Package
-    #   # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.package
-    #   package = pkgs.jellyfin-ffmpeg;
+      # Jellyfin - Package
+      # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.package
+      package = pkgs.jellyfin;
 
-    #   # Jellyfin - Open Firewall Ports
-    #   # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.openFirewall
-    #   openFirewall = true;
-    # };
+      # Jellyfin - Open Firewall Ports
+      # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.openFirewall
+      openFirewall = false;
+    };
 
     # RTSP Server
     # https://search.nixos.org/options?channel=unstable&show=services.rtsp-simple-server

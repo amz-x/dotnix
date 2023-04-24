@@ -107,31 +107,31 @@
 
     # Services - ClamAV
     # https://search.nixos.org/options?channel=unstable&show=services.clamav
-    clamav = {
-      # Note: Download / Update ClamAV database if service fails to start
-      # https://discourse.nixos.org/t/how-to-use-clamav-in-nixos/19782/
+    # clamav = {
+    #   # Note: Download / Update ClamAV database if service fails to start
+    #   # https://discourse.nixos.org/t/how-to-use-clamav-in-nixos/19782/
 
-      # Services - ClamAV - Deamon
-      # https://search.nixos.org/options?channel=unstable&show=services.clamav.daemon
-      daemon = {
-        enable = true;
-        settings = {
-          ScanOnAccess = true;
-          MaxThreads = 4;
-          OnAccessExcludeRootUID = true;
-          OnAccessMountPath = "/";
-          OnAccessExcludePath = "/nix/store";
-          OnAccessExcludeUname = "clamav";
-        };
-      };
+    #   # Services - ClamAV - Deamon
+    #   # https://search.nixos.org/options?channel=unstable&show=services.clamav.daemon
+    #   daemon = {
+    #     enable = true;
+    #     settings = {
+    #       ScanOnAccess = true;
+    #       MaxThreads = 4;
+    #       OnAccessExcludeRootUID = true;
+    #       OnAccessMountPath = "/";
+    #       OnAccessExcludePath = "/nix/store";
+    #       OnAccessExcludeUname = "clamav";
+    #     };
+    #   };
 
-      # Services - ClamAV - Updater
-      # https://search.nixos.org/options?channel=unstable&show=services.clamav.updater
-      updater = {
-        enable = true;
-        interval = "daily";
-      };
-    };
+    #   # Services - ClamAV - Updater
+    #   # https://search.nixos.org/options?channel=unstable&show=services.clamav.updater
+    #   updater = {
+    #     enable = true;
+    #     interval = "daily";
+    #   };
+    # };
 
     # Services - Opensnitch
     # https://search.nixos.org/options?channel=unstable&show=services.opensnitch

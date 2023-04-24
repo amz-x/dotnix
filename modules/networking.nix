@@ -50,10 +50,6 @@
     # https://search.nixos.org/options?channel=unstable&show=networking.networkmanager.enable
     hostName = "${hostname}";
 
-    # Networking - Default Gateway
-    # https://search.nixos.org/options?channel=unstable&show=networking.defaultGateway
-    defaultGateway = "192.168.50.1";
-
     # Networking - Hosts
     # https://search.nixos.org/options?channel=unstable&show=networking.hosts
     hosts = {

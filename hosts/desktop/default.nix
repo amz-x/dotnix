@@ -138,6 +138,7 @@
       drawio
       gimp
       google-chrome
+      jellyfin-media-player
       librewolf
       libreoffice
       postman

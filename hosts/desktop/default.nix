@@ -132,6 +132,7 @@
       # Applications - GUI
       beekeeper-studio
       bitwarden
+      cryptomator
       dbeaver
       dconf
       discord
@@ -165,9 +166,7 @@
       docker-buildx
       # Development - Databases
       pgcli
-      postgresql    
-      # Development - OpenAI
-      openai
+      postgresql
       # Tools - Networking
       dig
       ldns

@@ -123,6 +123,9 @@
       
       # Typescript
       "typescript.updateImportsOnFileMove.enabled" = "always";
+
+      # Updates
+      "update.mode" = "none";
     };
   };
 }

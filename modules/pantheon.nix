@@ -167,9 +167,7 @@
 
   # Environment - Pantheon Excluded Packages
   # https://search.nixos.org/options?channel=unstable&show=environment.pantheon.excludePackages
-  environment.pantheon.excludePackages = with pkgs.pantheon; [
-    elementary-mail
-  ];
+  environment.pantheon.excludePackages = [];
 
   # Enviroment - System Packages
   # https://search.nixos.org/options?channel=unstable&show=environment.systemPackages

@@ -132,14 +132,12 @@
       # Applications - GUI
       beekeeper-studio
       bitwarden
-      cryptomator
       dbeaver
       dconf
       discord
       drawio
       gimp
       google-chrome
-      jellyfin-media-player
       librewolf
       libreoffice
       localsend

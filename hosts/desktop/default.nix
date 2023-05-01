@@ -141,6 +141,7 @@
       librewolf
       libreoffice
       localsend
+      mailspring
       postman
       rustdesk
       simplenote

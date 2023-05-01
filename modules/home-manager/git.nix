@@ -66,7 +66,7 @@
 
       # GIT - GPG Signing Key Fingerprint
       # https://mipmip.github.io/home-manager-option-search/?programs.git.signing.key
-      key = "C547564DF2030C97";
+      key = "4595 B547 83B6 9B6B 4678 BD5C 984E 2AC1 89D0 2E37";
 
       # GIT - GPG Signing By Default
       # https://mipmip.github.io/home-manager-option-search/?programs.git.signing.signByDefault

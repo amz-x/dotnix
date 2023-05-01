@@ -166,6 +166,8 @@
       # Development - Databases
       pgcli
       postgresql
+      # Tools - ChatGPT
+      shell-genie
       # Tools - Networking
       dig
       ldns

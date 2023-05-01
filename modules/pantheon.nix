@@ -182,6 +182,7 @@
     gnome.dconf-editor
     gnome.seahorse
     gnome.simple-scan
+    gnome-keysign
     # Applications - Other
     baobab    
     soundux

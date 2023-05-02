@@ -109,6 +109,9 @@
       # Development
       direnv
 
+      # Node.js
+      nodejs-18_x
+
       # Networking
       # netbird-ui
          

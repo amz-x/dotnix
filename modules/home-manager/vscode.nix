@@ -84,10 +84,13 @@
       nonylene.dark-molokai-theme
       # Ruby
       rebornix.ruby
+      # Rust
+      rust-lang.rust-analyzer
+      serayuzgur.crates
+      # LLDB
+      vadimcn.vscode-lldb
       # Node.js / Javascript / Typescript
       dbaeumer.vscode-eslint
-      # Waka Time
-      wakatime.vscode-wakatime
     ];
 
     # Visual Studio Code - User Settings
@@ -124,8 +127,11 @@
       # Typescript
       "typescript.updateImportsOnFileMove.enabled" = "always";
 
-      # Updates
+      # Updates - VS Code
       "update.mode" = "none";
+
+      # Updates - VS Code Extensions
+      "extensions.autoUpdate" = false;
     };
   };
 }

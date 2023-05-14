@@ -42,7 +42,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Pantheon DE - Service
+  # GNOME DE - Service
   services = {
 
     # X11 (X Server)
@@ -106,46 +106,50 @@
       # https://search.nixos.org/options?channel=unstable&show=services.xserver.excludePackages
       excludePackages = with pkgs; [ xterm ];
 
+      # XServer - Display Manager - GDM
+      # https://search.nixos.org/options?channel=unstable&show=services.xserver.displayManager
+      displayManager.gdm.enable = true;
+
       # XServer - Desktop Manager
       # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager
       desktopManager = {
 
-        #  XServer - Desktop Manager - Pantheon Desktop Environment (DE)
-        # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon
-        pantheon = {
-
-          # Pantheon - Enable
-          # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.enable
+        #  XServer - Desktop Manager - GNOME Desktop Environment (DE)
+        # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.gnome
+        gnome = {
+          # XServer - Desktop Manager - GNOME - Enable
+          # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.gnome.enable
           enable = true;
 
-          # XServer - Desktop Manager - Pantheon DE - Debugging
-          # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.debug
+          # XServer - Desktop Manager - GNOME - Debugging
+          # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.gnome.debug
           debug = false;
-
-          # Pantheon - Extra Switchboard Plugs
-          # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.extraSwitchboardPlugs
-          extraSwitchboardPlugs = with pkgs; [ 
-            pantheon-tweaks
-          ];
-
-          # Pantheon - Extra Wingpanel Indicators
-          # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.extraWingpanelIndicators
-          extraWingpanelIndicators = with pkgs; [ ];
         };
       };
+    };
+
+    # GNOME
+    # https://search.nixos.org/options?channel=unstable&show=services.gnome
+    gnome = {
+      core-developer-tools.enable = true;
+      core-os-services.enable = true;
+      core-shell.enable = true;
+      core-utilities.enable = true;
+      gnome-browser-connector.enable = true;
+      gnome-keyring.enable = true;
     };
 
     # Flatpak
     # https://search.nixos.org/options?channel=unstable&show=services.flatpak.enable
     flatpak.enable = true;
 
-    # Touchegg
-    # https://search.nixos.org/options?channel=unstable&show=services.touchegg.enable
-    touchegg.enable = true;
-
     # UPower
     # https://search.nixos.org/options?channel=unstable&show=services.upower.enable
     upower.enable = true;
+
+    # System76 Scheduler
+    # https://search.nixos.org/options?channel=unstable&show=services.system76-scheduler
+    system76-scheduler.settings.processScheduler.foregroundBoost.enable = true;
   };
 
   # Programs
@@ -155,36 +159,53 @@
     # Programs - Dconf
     # https://search.nixos.org/options?channel=unstable&show=programs.dconf.enable
     dconf.enable = true;
+    
+    # Programs - Evince
+    # https://search.nixos.org/options?channel=unstable&show=programs.evince.enable
+    evince.enable = true;
 
-    # Programs - Gnome Disks (UDisks2 graphical front-end)
+    # Programs - File-Roller
+    # https://search.nixos.org/options?channel=unstable&show=programs.file-roller.enable
+    file-roller.enable = true;
+
+    # Programs - GNOME Disks (UDisks2 graphical front-end)
     # https://search.nixos.org/options?channel=unstable&show=programs.gnome-disks.enable
     gnome-disks.enable = true;
 
-    # Programs - Pantheon Tweaks
-    # https://search.nixos.org/options?channel=unstable&show=programs.pantheon-tweaks
-    pantheon-tweaks.enable = true;
-  };
+    # Programs - Geary
+    # https://search.nixos.org/options?channel=unstable&show=programs.geary
+    geary.enable = true;
 
-  # Environment - Pantheon Excluded Packages
-  # https://search.nixos.org/options?channel=unstable&show=environment.pantheon.excludePackages
-  environment.pantheon.excludePackages = [ ];
+    # Programs - KDE Connect
+    # https://search.nixos.org/options?channel=unstable&show=programs.kdeconnect
+    kdeconnect.enable = true;
+
+    # Programs - XWayland
+    # https://search.nixos.org/options?channel=unstable&show=programs.xwayland
+    xwayland.enable = true;
+  };
 
   # Enviroment - System Packages
   # https://search.nixos.org/options?channel=unstable&show=environment.systemPackages
   environment.systemPackages = with pkgs; [
-    # Applications - Pantheon
-    appeditor
-    ciano
-    dippi
-    monitor
-    torrential
+    # Applications
+    gnome-extension-manager
+    gnome-keysign
     # Applications - Gnome
     gnome.dconf-editor
+    gnome.gnome-tweaks
     gnome.seahorse
     gnome.simple-scan
-    gnome-keysign
+    # Gnome Extensions
+    gnomeExtensions.arcmenu
+    gnomeExtensions.coverflow-alt-tab
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.gsconnect
+    gnomeExtensions.nextcloud-folder
+    gnomeExtensions.user-themes
     # Applications - Other
-    baobab    
+    baobab
+    dippi
     soundux
   ];
 }

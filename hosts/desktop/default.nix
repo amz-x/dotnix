@@ -48,9 +48,10 @@
     [(import ../../modules/audio.nix)] ++
     [(import ../../modules/fonts.nix)] ++
     [(import ../../modules/gaming.nix)] ++
+    [(import ../../modules/gnome.nix)] ++
     [(import ../../modules/homeassistant.nix)] ++
     [(import ../../modules/networking.nix)] ++
-    [(import ../../modules/pantheon.nix)] ++
+    # [(import ../../modules/pantheon.nix)] ++
     [(import ../../modules/security.nix)] ++
     [(import ../../modules/services.nix)] ++
     [(import ../../modules/syncthing.nix)] ++
@@ -142,6 +143,7 @@
       libreoffice
       localsend
       mailspring
+      nextcloud-client
       postman
       rustdesk
       simplenote

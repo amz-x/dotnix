@@ -77,9 +77,9 @@
 
       # XDG - Portal - Extra Portals
       # https://search.nixos.org/options?channel=unstable&show=xdg.portal.extraPortals
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-      ];
+      # extraPortals = with pkgs; [
+      #   xdg-desktop-portal-gtk
+      # ];
     };
   };
 }

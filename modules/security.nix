@@ -139,7 +139,7 @@
       
       # Services - Opensnitch - Enable
       # https://search.nixos.org/options?channel=unstable&show=services.opensnitch.enable
-      enable = false;
+      enable = true;
 
       # Services - Opensnitch - Settings
       # https://search.nixos.org/options?channel=unstable&show=services.opensnitch.settings

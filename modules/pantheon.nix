@@ -130,7 +130,7 @@
 
           # Pantheon - Extra Wingpanel Indicators
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.extraWingpanelIndicators
-          extraWingpanelIndicators = with pkgs; [ ];
+          # extraWingpanelIndicators = with pkgs; [ ];
         };
       };
     };

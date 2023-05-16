@@ -91,15 +91,8 @@
       vadimcn.vscode-lldb
       # Node.js / Javascript / Typescript
       dbaeumer.vscode-eslint
-    ] ++ 
-    pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      {
-        # CodeGPT
-        name = "dscodegpt";
-        publisher = "danielsanmedium";
-        version = "2.1.6";
-        sha256 = "b63f5ff7673202098b30a1ee3d0d0136a30b1de9750fbfecd8dba414b0aec0bd";
-      }
+      # ChatGPT
+      genieai.chatgpt-vscode
     ];
 
     # Visual Studio Code - User Settings

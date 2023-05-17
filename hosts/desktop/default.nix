@@ -144,12 +144,10 @@
       mailspring
       nextcloud-client
       postman
-      rustdesk
       simplenote
       slack
       spotify
       thunderbird
-      zoom-us
       # Development - ROCm Stack
       rocminfo
       rocm-core

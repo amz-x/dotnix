@@ -134,19 +134,10 @@
       bitwarden
       dbeaver
       dconf
-      discord
-      drawio
       gimp
-      google-chrome
       librewolf
       libreoffice
-      localsend
-      mailspring
       nextcloud-client
-      postman
-      simplenote
-      slack
-      spotify
       thunderbird
       # Development - ROCm Stack
       rocminfo

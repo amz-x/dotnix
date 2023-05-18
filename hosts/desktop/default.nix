@@ -57,8 +57,7 @@
     [(import ../../modules/video.nix)] ++
     [(import ../../modules/virtualisation.nix)] ++
     [(import ../../modules/vpn.nix)] ++
-    [(import ../../modules/wine.nix)] ++
-    [(import ../../modules/xdg.nix)];
+    [(import ../../modules/wine.nix)];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {

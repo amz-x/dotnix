@@ -91,19 +91,17 @@
 
     # Jellyfin
     # https://search.nixos.org/options?channel=unstable&show=services.jellyfin
-    jellyfin = {
-      # Jellyfin - Enable
-      # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.enable
-      enable = false;
-
-      # Jellyfin - Package
-      # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.package
-      package = pkgs.jellyfin;
-
-      # Jellyfin - Open Firewall Ports
-      # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.openFirewall
-      openFirewall = false;
-    };
+    # jellyfin = {
+    #   # Jellyfin - Enable
+    #   # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.enable
+    #   enable = false;
+    #   # Jellyfin - Package
+    #   # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.package
+    #   package = pkgs.jellyfin;
+    #   # Jellyfin - Open Firewall Ports
+    #   # https://search.nixos.org/options?channel=unstable&show=services.jellyfin.openFirewall
+    #   openFirewall = false;
+    # };
 
     # RTSP Server
     # https://search.nixos.org/options?channel=unstable&show=services.rtsp-simple-server

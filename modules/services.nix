@@ -18,13 +18,35 @@
     };
 
     # Avahi
+    # https://search.nixos.org/options?channel=unstable&show=services.avahi
     avahi = {
+
+      # Avahi - Enable
+      # https://search.nixos.org/options?channel=unstable&show=services.avahi
       enable = true;
+
+      # Avahi - mDNS NSS (Name Service Switch)
+      # https://search.nixos.org/options?channel=unstable&show=services.avahi.nssmdns
       nssmdns = true;
+      
+      # Avahi - IPV6
+      # https://search.nixos.org/options?channel=unstable&show=services.avahi.ipv6
       ipv6 = false;
+
+      # Avahi - Firewall
+      # https://search.nixos.org/options?channel=unstable&show=services.avahi.openFirewall
       openFirewall = true;
+
+      # Avahi - Publish
+      # https://search.nixos.org/options?channel=unstable&show=services.avahi.publish
       publish = {
+
+        # Avahi - Publish - Enable
+        # https://search.nixos.org/options?channel=unstable&show=services.avahi.publish.enable
         enable = true;
+
+        # Avahi - Publish - User Services
+        # https://search.nixos.org/options?channel=unstable&show=services.avahi.publish.userServices
         userServices = true;
       };
     };

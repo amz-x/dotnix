@@ -187,4 +187,48 @@
     baobab    
     soundux
   ];
+
+  # XDG - Freedesktop Specification Standard
+  # https://specifications.freedesktop.org/
+  # https://search.nixos.org/options?channel=unstable&show=xdg.autostart
+  xdg = {
+
+    # XDG - Autostart
+    # https://search.nixos.org/options?channel=unstable&show=xdg.autostart
+    autostart.enable = true;
+
+    # XDG - Icons
+    # https://search.nixos.org/options?channel=unstable&show=xdg.icons
+    icons.enable = true;
+
+    # XDG - Menus
+    # https://search.nixos.org/options?channel=unstable&show=xdg.menus
+    menus.enable = true;
+
+    # XDG - Mime
+    # https://search.nixos.org/options?channel=unstable&show=xdg.mime
+    mime.enable = true;
+
+    # XDG - Sounds
+    # https://search.nixos.org/options?channel=unstable&show=xdg.sounds
+    sounds.enable = true;
+
+    # XDG - Portal
+    # https://search.nixos.org/options?channel=unstable&show=xdg.portal
+    xdg.portal = {
+
+      # XDG - Portal - Enable
+      # https://search.nixos.org/options?channel=unstable&show=xdg.portal.enable      
+      enable = true;
+      
+      # XDG - Portal - Extra Portals
+      # https://search.nixos.org/options?channel=unstable&show=xdg.portal.extraPortals
+      extraPortals = with pkgs.pantheon; [
+        elementary-files
+        elementary-settings-daemon
+        xdg-desktop-portal-pantheon
+        xdg-desktop-portal-gtk
+      ];
+    };
+  };
 }

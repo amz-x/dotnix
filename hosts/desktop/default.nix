@@ -56,8 +56,7 @@
     [(import ../../modules/syncthing.nix)] ++
     [(import ../../modules/video.nix)] ++
     [(import ../../modules/virtualisation.nix)] ++
-    [(import ../../modules/vpn.nix)] ++
-    [(import ../../modules/wine.nix)];
+    [(import ../../modules/vpn.nix)];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {

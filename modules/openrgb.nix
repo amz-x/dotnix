@@ -45,15 +45,12 @@
   # OpenRGB
   # https://search.nixos.org/options?channel=unstable&show=services.hardware.openrgb
   # services.hardware.openrgb = {
-  #
   #   # OpenRGB - Enable
   #   # https://search.nixos.org/options?channel=unstable&show=services.hardware.openrgb.enable
   #   enable = false;
-  #
   #   # OpenRGB - Motherboard (AMD / Intel)
   #   # https://search.nixos.org/options?channel=unstable&show=services.hardware.openrgb.motherboard
   #   motherboard = "amd";
-  #
   #   # OpenRGB - Server Port
   #   # https://search.nixos.org/options?channel=unstable&show=services.hardware.openrgb.server.port
   #   server.port = 6742;

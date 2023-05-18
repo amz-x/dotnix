@@ -45,9 +45,9 @@
   # Enviroment - System Packages
   # https://search.nixos.org/options?channel=unstable&show=environment.systemPackages
   # https://search.nixos.org/packages?channel=unstable&show=wine
-  environment.systemPackages = with pkgs; [
-    # wine
-    # wine64
-    # winetricks
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   wine
+  #   wine64
+  #   winetricks
+  # ];
 }

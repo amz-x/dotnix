@@ -183,9 +183,8 @@
     gnome.seahorse
     gnome.simple-scan
     gnome-keysign
-    # Applications - Other
-    baobab    
-    soundux
+    # Applications - GTK
+    baobab
   ];
 
   # XDG - Freedesktop Specification Standard

@@ -214,7 +214,7 @@
 
     # XDG - Portal
     # https://search.nixos.org/options?channel=unstable&show=xdg.portal
-    xdg.portal = {
+    portal = {
 
       # XDG - Portal - Enable
       # https://search.nixos.org/options?channel=unstable&show=xdg.portal.enable      
@@ -222,10 +222,12 @@
       
       # XDG - Portal - Extra Portals
       # https://search.nixos.org/options?channel=unstable&show=xdg.portal.extraPortals
-      extraPortals = with pkgs.pantheon; [
-        elementary-files
-        elementary-settings-daemon
-        xdg-desktop-portal-pantheon
+      extraPortals = with pkgs; [
+        # Pantheon
+        pantheon.elementary-files
+        pantheon.elementary-settings-daemon
+        pantheon.xdg-desktop-portal-pantheon
+        # GTK
         xdg-desktop-portal-gtk
       ];
     };

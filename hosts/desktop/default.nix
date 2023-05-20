@@ -48,13 +48,10 @@
     [(import ../../modules/audio.nix)] ++
     [(import ../../modules/fonts.nix)] ++
     [(import ../../modules/gaming.nix)] ++
-    [(import ../../modules/homeassistant.nix)] ++
     [(import ../../modules/networking.nix)] ++
     [(import ../../modules/pantheon.nix)] ++
     [(import ../../modules/security.nix)] ++
     [(import ../../modules/services.nix)] ++
-    [(import ../../modules/syncthing.nix)] ++
-    [(import ../../modules/video.nix)] ++
     [(import ../../modules/virtualisation.nix)] ++
     [(import ../../modules/vpn.nix)];
 
@@ -108,8 +105,9 @@
     systemPackages = with pkgs; [
       # System Tools & Utilities
       coreutils
+      ffmpeg
       gnupg
-      gitFull
+      gitFull      
       ntfs3g
       pciutils
       pinentry
@@ -131,17 +129,14 @@
       beekeeper-studio
       bitwarden
       dbeaver
-      dconf
       gimp
+      lapce
       librewolf
       libreoffice
-      nextcloud-client
       thunderbird
-      # Development - ROCm Stack
-      rocminfo
-      rocm-core
-      rocm-device-libs
-      rocm-runtime
+      # Applications - Other
+      dconf
+      nextcloud-client
       # Development - Nix
       nil
       nix-direnv
@@ -154,8 +149,11 @@
       # Development - Databases
       pgcli
       postgresql
-      # Tools - AI / ChatGPT
-      aichat
+      # Development - AI / ROCm Stack
+      rocminfo
+      rocm-core
+      rocm-device-libs
+      rocm-runtime
       # Tools - Networking
       dig
       ldns
@@ -265,8 +263,14 @@
 
     # Nixpkgs Configuration
     config = {
+      
       # Allow proprietary software
       allowUnfree = true;
+      
+      # Permitted Insecure Packages
+      permittedInsecurePackages = [
+        "nodejs-16.20.0"
+      ];
     };
   };
 

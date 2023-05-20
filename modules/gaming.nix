@@ -61,6 +61,15 @@
       # Steam - Dedicated Server
       # https://search.nixos.org/options?channel=unstable&show=programs.steam.dedicatedServer.openFirewall
       dedicatedServer.openFirewall = true;
+      
+      # Steam - Gamescope Session
+      # https://search.nixos.org/options?channel=unstable&show=programs.steam.gamescopeSession
+      gamescopeSession = {
+
+        # Steam - Gamescope Session
+        # https://search.nixos.org/options?channel=unstable&show=programs.steam.gamescopeSession.enable
+        enable = true;
+      };
     };
 
     
@@ -108,6 +117,9 @@
     # System Packages
     # https://search.nixos.org/options?channel=unstable&show=environment.systemPackages
     systemPackages = with pkgs; [
+      # SDL2
+      SDL2
+      SDL2_image
       # Gamemode
       gamemode
       # Vulkan

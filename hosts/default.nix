@@ -44,9 +44,8 @@ let
   # Linux Architecture
   # System Options: [ "aarch64-linux" "x86_64-linux" ]
   system    = "x86_64-linux";
-
-  hostname  = "AMZ-Linux"; 
-  pkgs      = import nixpkgs { inherit system; config.allowUnfree = true; };
+  hostname  = "AMZ-Linux";
+  pkgs      = import nixpkgs { inherit system; config.allowUnfree = true; config.permittedInsecurePackages = ["nodejs-16.20.0"]; };
   lib       = nixpkgs.lib;
 in
 {

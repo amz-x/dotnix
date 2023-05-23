@@ -49,7 +49,7 @@
     homeDirectory = "/home/${user}";
 
     # State Version
-    stateVersion = "22.11";
+    stateVersion = "23.05";
 
     # Home Packages
     packages = with pkgs; [

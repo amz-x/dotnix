@@ -130,7 +130,7 @@
 
           # Pantheon - Extra Wingpanel Indicators
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.extraWingpanelIndicators
-          # extraWingpanelIndicators = with pkgs; [ ];
+          extraWingpanelIndicators = with pkgs; [ ];
         };
       };
     };
@@ -172,13 +172,13 @@
   # Enviroment - System Packages
   # https://search.nixos.org/options?channel=unstable&show=environment.systemPackages
   environment.systemPackages = with pkgs; [
-    # Applications - Pantheon
+    # Pantheon - Applications 
     appeditor
     ciano
     dippi
     monitor
     torrential
-    # Applications - Gnome
+    # Gnome - Applications
     gnome.dconf-editor
     gnome.seahorse
     gnome.simple-scan

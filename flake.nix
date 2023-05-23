@@ -8,7 +8,7 @@
   # Flake inputs
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/release-23.05";
 
     # Darwin
     darwin = {

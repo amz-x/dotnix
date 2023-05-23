@@ -1,0 +1,46 @@
+name: 'CI/CD'
+on:
+  pull_request:
+  push:
+    branches:
+     - 'master'
+     - 'release/*'
+
+jobs:
+  # NixOS
+  Linux:
+    name: 'NixOS (x86_64)'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: cachix/install-nix-action@v20
+      with:
+        nix_path: nixpkgs=channel:release-23.05
+        extra_nix_config: "auto-optimise-store = true"
+    - run: scripts/free_disk_space.sh
+    - run: nix build '.#nixosConfigurations.AMZ-Linux.config.system.build.toplevel' --print-out-paths
+    - run: ls -l result*
+    - run: (pipx run vulnix ./result || true) > report.json
+    - uses: actions/upload-artifact@v3
+      with:
+        name: vulnix-nixos-report
+        path: report.json
+  
+  # Nix Darwin
+  # Mac:
+  #   name: 'Nix Darwin (x86_64)'
+  #   runs-on: macos-latest
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #   - uses: cachix/install-nix-action@v20
+  #     with:
+  #       nix_path: nixpkgs=channel:release-23.05
+  #       extra_nix_config: "auto-optimise-store = true"
+  #   - run: nix build '.#darwinConfigurations.AMZ-MacBook.config.system.build.toplevel' --print-out-paths
+  #   - run: ls -l result*
+  #   - run: (pipx run vulnix ./result || true) > report.json
+  #   - uses: actions/upload-artifact@v3
+  #     with:
+  #       name: vulnix-darwin-report
+  #       path: report.json
+   

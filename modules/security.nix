@@ -173,6 +173,5 @@
       # https://search.nixos.org/options?channel=unstable&show=programs.gnupg.agent.pinentryFlavor
       # pinentryFlavor = "gnome3";
     };
-
   };
 }

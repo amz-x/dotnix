@@ -129,13 +129,14 @@
       beekeeper-studio
       bitwarden
       dbeaver
+      dconf
       gimp
       lapce
       librewolf
       libreoffice
       thunderbird
       # Applications - Other
-      dconf
+      activitywatch
       nextcloud-client
       # Development - Nix
       nil
@@ -157,6 +158,7 @@
       # Tools - Networking
       dig
       ldns
+      networkmanagerapplet
       traceroute
       wireguard-tools
       # Tools - Security
@@ -277,6 +279,6 @@
   # NixOS System Settings
   system = {
     # System Version
-    stateVersion = "22.11"; 
+    stateVersion = "23.05"; 
   };
 }

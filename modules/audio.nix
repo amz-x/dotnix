@@ -23,7 +23,6 @@
 #       │    └─ zsh.nix
 #       │
 #       ├─ ./android.nix
-#       ├─ ./asus.nix
 #       ├─ ./audio.nix *
 #       ├─ ./fonts.nix
 #       ├─ ./gaming.nix

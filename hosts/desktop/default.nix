@@ -23,7 +23,6 @@
 #       │    └─ zsh.nix
 #       │
 #       ├─ ./android.nix
-#       ├─ ./asus.nix
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix
 #       ├─ ./gaming.nix
@@ -45,7 +44,6 @@
   imports =
     [(import ./hardware.nix)] ++
     [(import ../../modules/android.nix)] ++
-    [(import ../../modules/asus.nix)] ++
     [(import ../../modules/audio.nix)] ++
     [(import ../../modules/fonts.nix)] ++
     [(import ../../modules/gaming.nix)] ++

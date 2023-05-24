@@ -43,46 +43,45 @@
 
 {
   # Programs
-  # https://search.nixos.org/options?channel=unstable&show=programs
+  # https://search.nixos.org/options?channel=nixos-23.05&show=programs
   programs = {
     
     # Steam
-    # https://search.nixos.org/options?channel=unstable&show=programs.steam
+    # https://search.nixos.org/options?channel=nixos-23.05&show=programs.steam
     steam = {
 
       # Steam - Enable
-      # https://search.nixos.org/options?channel=unstable&show=programs.steam.enable
+      # https://search.nixos.org/options?channel=nixos-23.05&show=programs.steam.enable
       enable = true;
 
       # Steam - Remote Play
-      # https://search.nixos.org/options?channel=unstable&show=programs.steam.remotePlay.openFirewall
+      # https://search.nixos.org/options?channel=nixos-23.05&show=programs.steam.remotePlay.openFirewall
       remotePlay.openFirewall = true;
 
       # Steam - Dedicated Server
-      # https://search.nixos.org/options?channel=unstable&show=programs.steam.dedicatedServer.openFirewall
+      # https://search.nixos.org/options?channel=nixos-23.05&show=programs.steam.dedicatedServer.openFirewall
       dedicatedServer.openFirewall = true;
       
       # Steam - Gamescope Session
-      # https://search.nixos.org/options?channel=unstable&show=programs.steam.gamescopeSession
+      # https://search.nixos.org/options?channel=nixos-23.05&show=programs.steam.gamescopeSession
       gamescopeSession = {
-
-        # Steam - Gamescope Session
-        # https://search.nixos.org/options?channel=unstable&show=programs.steam.gamescopeSession.enable
+        # Steam - Gamescope Session - Enable
+        # https://search.nixos.org/options?channel=nixos-23.05&show=programs.steam.gamescopeSession.enable
         enable = true;
       };
     };
 
     
     # Gamemode
-    # https://search.nixos.org/options?channel=unstable&show=programs.gamemode
+    # https://search.nixos.org/options?channel=nixos-23.05&show=programs.gamemode
     gamemode = {
 
       # Gamemode - Enable
-      # https://search.nixos.org/options?channel=unstable&show=programs.gamemode.enable
+      # https://search.nixos.org/options?channel=nixos-23.05&show=programs.gamemode.enable
       enable = true;
 
       # Gamemode - Settings
-      # https://search.nixos.org/options?channel=unstable&show=programs.gamemode.settings
+      # https://search.nixos.org/options?channel=nixos-23.05&show=programs.gamemode.settings
       settings = {
         # General Configuration
         general = {

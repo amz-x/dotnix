@@ -23,12 +23,12 @@
 #       │    └─ zsh.nix
 #       │
 #       ├─ ./android.nix
+#       ├─ ./asus.nix
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix
 #       ├─ ./gaming.nix
 #       ├─ ./homeassistant.nix
 #       ├─ ./networking.nix
-#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
@@ -45,6 +45,7 @@
   imports =
     [(import ./hardware.nix)] ++
     [(import ../../modules/android.nix)] ++
+    [(import ../../modules/asus.nix)] ++
     [(import ../../modules/audio.nix)] ++
     [(import ../../modules/fonts.nix)] ++
     [(import ../../modules/gaming.nix)] ++
@@ -278,8 +279,5 @@
   };
 
   # NixOS System Settings
-  system = {
-    # System Version
-    stateVersion = "23.05"; 
-  };
+  system.stateVersion = "23.05";
 }

@@ -4,9 +4,9 @@
 
 ## NixOS Features
 
-- NixOS 23.05 (Stoat - Unstable)
+- NixOS 23.05 (Stoat)
 - Home Manager
-- Linux Kernel 6.2.12-zen1
+- Linux Kernel 6.3.1-zen1
 - Mesa 23.0.3
 - LightDM (Display Manager)
 - Pantheon Deskop Environment

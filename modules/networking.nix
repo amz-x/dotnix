@@ -23,12 +23,12 @@
 #       │    └─ zsh.nix
 #       │
 #       ├─ ./android.nix
+#       ├─ ./asus.nix
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix
 #       ├─ ./gaming.nix
 #       ├─ ./homeassistant.nix
 #       ├─ ./networking.nix *
-#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix

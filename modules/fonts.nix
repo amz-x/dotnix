@@ -65,10 +65,10 @@
       noto-fonts-emoji
       open-dyslexic
       open-sans
-      source-sans
-      source-serif
       roboto
       roboto-mono
+      source-sans
+      source-serif
     ];
   };
 }

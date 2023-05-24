@@ -42,26 +42,21 @@
 { config, lib, pkgs, user, ... }:
 
 {
-
-  # Default packages install system-wide
-  # https://search.nixos.org/packages?channel=unstable
-  # environment.systemPackages = with pkgs; [
-  #   ivpn
-  #   ivpn-ui
-  #   ivpn-service
-  # ];
-
-  # System Services
-  # https://search.nixos.org/options?channel=unstable&show=services
+  # Services
+  # https://search.nixos.org/options?channel=23.05&show=services
   services = {
     
-    # IVPN
-    # https://search.nixos.org/options?channel=unstable&show=services.ivpn
-    ivpn = {
-
-      # IVPN - Enable
-      # https://search.nixos.org/options?channel=unstable&show=services.ivpn.enable
+    # Netbird
+    # https://search.nixos.org/options?channel=23.05&show=services.netbird
+    netbird = {
+      
+      # Netbird - Enable
+      # https://search.nixos.org/options?channel=23.05&show=services.netbird.enable
       enable = true;
+      
+      # Netbird - Package
+      # https://search.nixos.org/options?channel=23.05&show=services.netbird.enable
+      package = pkgs.netbird;
     };
   };
 }

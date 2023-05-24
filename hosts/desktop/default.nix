@@ -134,6 +134,7 @@
       lapce
       librewolf
       libreoffice
+      rustdesk
       thunderbird
       # Applications - Other
       activitywatch

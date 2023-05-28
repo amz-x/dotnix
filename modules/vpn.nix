@@ -54,7 +54,7 @@
       enable = true;
       
       # Netbird - Package
-      # https://search.nixos.org/options?channel=23.05&show=services.netbird.enable
+      # https://search.nixos.org/options?channel=23.05&show=services.netbird.package
       package = pkgs.netbird;
     };
   };

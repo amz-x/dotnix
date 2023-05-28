@@ -106,12 +106,16 @@
       coreutils
       ffmpeg
       gnupg
-      gitFull      
+      gitFull  
+      glxinfo
+      nano
       ntfs3g
       pciutils
       pinentry
+      screenfetch
       starship
       util-linux
+      wget
       xdg-user-dirs
       # Libraries
       glib
@@ -119,25 +123,19 @@
       jq
       # Icons
       nixos-icons
-      # Applications - CLI
-      glxinfo
-      nano
-      screenfetch
-      wget
       # Applications - GUI
       beekeeper-studio
       bitwarden
+      bitwarden-cli
       dbeaver
       dconf
       gimp
       lapce
       librewolf
       libreoffice
-      rustdesk
-      thunderbird
-      # Applications - Other
-      activitywatch
       nextcloud-client
+      rustdesk
+      thunderbird      
       # Development - Nix
       nil
       nix-direnv
@@ -162,6 +160,7 @@
       traceroute
       wireguard-tools
       # Tools - Security
+      crowdsec
       vulnix
     ];
 
@@ -262,17 +261,10 @@
 
   # Nixpkgs
   nixpkgs = {
-
     # Nixpkgs Configuration
     config = {
-      
       # Allow proprietary software
       allowUnfree = true;
-      
-      # Permitted Insecure Packages
-      permittedInsecurePackages = [
-        "nodejs-16.20.0"
-      ];
     };
   };
 

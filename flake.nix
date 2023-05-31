@@ -21,16 +21,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-    # Lollypops
-    lollypops = {
-      url = "github:pinpox/lollypops";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   # Flake outputs
-  outputs = inputs @ { self, nixpkgs, home-manager, darwin, lollypops, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, darwin, ... }:
     let 
       user = "amz";
       location = "$HOME/Workspace/amz/dotnix";

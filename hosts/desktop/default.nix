@@ -160,7 +160,6 @@
       traceroute
       wireguard-tools
       # Tools - Security
-      crowdsec
       vulnix
     ];
 

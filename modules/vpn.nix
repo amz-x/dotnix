@@ -43,8 +43,7 @@
 {
   # Services
   # https://search.nixos.org/options?channel=23.05&show=services
-  services = {
-    
+  services = {    
     # Netbird
     # https://search.nixos.org/options?channel=23.05&show=services.netbird
     netbird = {

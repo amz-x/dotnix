@@ -54,8 +54,6 @@
     packages = with pkgs; [
       # AWS CLI
       awscli2
-      # Netbird UI
-      netbird-ui
     ];
   };
 
@@ -74,7 +72,7 @@
     # Nushell
     # https://www.nushell.sh/
     nushell = {
-      
+
       # Nushell - Enable
       enable = true;
 

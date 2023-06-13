@@ -64,7 +64,7 @@
       "wheel"
       "networkmanager"
       "pipewire"
-      "tty"    
+      "tty"
       "users"
       # Recommended
       "audio"
@@ -72,9 +72,9 @@
       "input"
       "lp"
       "scanner"
-      "sound"      
+      "sound"
       "video"
-      # Development   
+      # Development
       "docker"
     ];
   };
@@ -104,23 +104,26 @@
     systemPackages = with pkgs; [
       # System Tools & Utilities
       coreutils
-      ffmpeg
       gnupg
-      gitFull  
+      gitFull
       glxinfo
       nano
       ntfs3g
       pciutils
       pinentry
+      sbctl
       screenfetch
       starship
       util-linux
       wget
       xdg-user-dirs
       # Libraries
+      ffmpeg
       glib
+      glibc
       gst_all_1.gstreamer
       jq
+      libnotify
       # Icons
       nixos-icons
       # Applications - GUI
@@ -128,6 +131,7 @@
       bitwarden
       bitwarden-cli
       dbeaver
+      discord
       dconf
       gimp
       lapce
@@ -135,7 +139,7 @@
       libreoffice
       nextcloud-client
       rustdesk
-      thunderbird      
+      thunderbird
       # Development - Nix
       nil
       nix-direnv
@@ -169,7 +173,7 @@
       sqlite
       msodbcsql17
     ];
-  };  
+  };
 
   # Timezone
   time.timeZone = "Africa/Johannesburg";
@@ -249,7 +253,7 @@
         "root"
         "${user}"
       ];
-      
+
       # Enable nix flakes on system
       experimental-features = [
         "nix-command"

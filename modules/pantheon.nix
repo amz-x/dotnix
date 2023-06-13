@@ -79,7 +79,7 @@
           # XServer - LibInput - Mouse - Enable Horizontal Scrolling
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.libinput.mouse.horizontalScrolling
           horizontalScrolling = true;
-          
+
           # XServer - LibInput - Mouse - Disable Left Handed Configuration
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.libinput.mouse.leftHanded
           leftHanded = false;
@@ -162,6 +162,7 @@
     # Programs - Pantheon Tweaks
     # https://search.nixos.org/options?channel=unstable&show=programs.pantheon-tweaks
     pantheon-tweaks.enable = true;
+
   };
 
   # Environment - Pantheon Excluded Packages
@@ -218,7 +219,7 @@
       # XDG - Portal - Enable
       # https://search.nixos.org/options?channel=unstable&show=xdg.portal.enable      
       enable = true;
-      
+
       # XDG - Portal - Extra Portals
       # https://search.nixos.org/options?channel=unstable&show=xdg.portal.extraPortals
       extraPortals = with pkgs; [

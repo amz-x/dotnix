@@ -45,7 +45,7 @@
   # Programs
   # https://search.nixos.org/options?channel=nixos-23.05&show=programs
   programs = {
-    
+
     # Steam
     # https://search.nixos.org/options?channel=nixos-23.05&show=programs.steam
     steam = {
@@ -61,17 +61,9 @@
       # Steam - Dedicated Server
       # https://search.nixos.org/options?channel=nixos-23.05&show=programs.steam.dedicatedServer.openFirewall
       dedicatedServer.openFirewall = true;
-      
-      # Steam - Gamescope Session
-      # https://search.nixos.org/options?channel=nixos-23.05&show=programs.steam.gamescopeSession
-      gamescopeSession = {
-        # Steam - Gamescope Session - Enable
-        # https://search.nixos.org/options?channel=nixos-23.05&show=programs.steam.gamescopeSession.enable
-        enable = true;
-      };
     };
 
-    
+
     # Gamemode
     # https://search.nixos.org/options?channel=nixos-23.05&show=programs.gamemode
     gamemode = {
@@ -112,7 +104,7 @@
     # MESA AMD's RADV
     # https://search.nixos.org/options?channel=unstable&show=environment.variables
     variables.AMD_VULKAN_ICD = "RADV";
-    
+
     # System Packages
     # https://search.nixos.org/options?channel=unstable&show=environment.systemPackages
     systemPackages = with pkgs; [

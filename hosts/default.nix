@@ -54,6 +54,9 @@ in
     inherit system;
     specialArgs = { inherit inputs pkgs user hostname location; };
     modules = [
+      # Bootspect Secure Boot
+      # bootspec-secureboot.nixosModules.bootspec-secureboot
+      
       # System / Desktop
       ./desktop
 

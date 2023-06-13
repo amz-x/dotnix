@@ -10,12 +10,12 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
 
-    # Darwin
-    darwin = {
-      url = "github:lnl7/nix-darwin/master";
+    # Bootspec Secure Boot
+    bootspec-secureboot = {
+      url = "github:DeterminateSystems/bootspec-secureboot";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    
     # Home Manager
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -24,7 +24,7 @@
   };
 
   # Flake outputs
-  outputs = inputs @ { self, nixpkgs, home-manager, darwin, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, bootspec-secureboot, ... }:
     let 
       user = "amz";
       location = "$HOME/Workspace/amz/dotnix";
@@ -39,11 +39,11 @@
       );
 
       # Nix Darwin
-      darwinConfigurations = (
-        import ./darwin {
-          inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager user location darwin;
-        }
-      );
+      # darwinConfigurations = (
+      #   import ./darwin {
+      #     inherit (nixpkgs) lib;
+      #     inherit inputs nixpkgs home-manager user location darwin;
+      #   }
+      # );
     };    
 }

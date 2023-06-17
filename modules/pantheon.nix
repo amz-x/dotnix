@@ -227,6 +227,8 @@
         pantheon.elementary-files
         pantheon.elementary-settings-daemon
         pantheon.xdg-desktop-portal-pantheon
+        # GNOME
+        xdg-desktop-portal-gnome
         # GTK
         xdg-desktop-portal-gtk
       ];

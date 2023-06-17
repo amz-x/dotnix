@@ -50,7 +50,7 @@
       
       # Netbird - Enable
       # https://search.nixos.org/options?channel=23.05&show=services.netbird.enable
-      enable = true;
+      enable = false;
       
       # Netbird - Package
       # https://search.nixos.org/options?channel=23.05&show=services.netbird.package

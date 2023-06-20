@@ -1,4 +1,4 @@
-# Personal NixOS & MacOS Configurations
+# Personal NixOS System Configuration
 
 ![Screenshot](./data/nixos-screenshot.png "NixOS - Pantheon Desktop")
 
@@ -15,79 +15,35 @@
 - Nano CLI Editor
 - Visual Studio Code
 - Opensnitch
-- Firejail
 - Steam
-
-___
-
-## Setup
-
-### Nix Package Manager
-
-Installing the Nix Package Manager (standalone), needed for Mac setup.
-
-```bash
-# Linux (non-NixOS)
-sh <(curl -L https://nixos.org/nix/install) --daemon
-
-# Mac
-sh <(curl -L https://nixos.org/nix/install)
-
-# Windows (run NixOS in WSL - following line is for non-NixOS distros)
-sh <(curl -L https://nixos.org/nix/install) --no-daemon
-```
-
-[The official nix package manager installation guide](https://nixos.org/download.html#download-nix)
-
-### Enabling Nix Flakes
-
-Edit **/etc/nix/nix.conf** and add/modify the following line:
-
-```bash
-experimental-features = nix-command flakes
-```
 
 ___
 
 ## NixOS
 
-NixOS comes preinstalled with the Nix package manager, execute the following within the project directory:
+NixOS comes preinstalled with the Nix package manager, update the nix package manager configuration to enable the `nix-command` & `flakes` experimental features.
+
+### Enabling Nix Flakes
+
+Edit **/etc/nix/nix.conf** and add/modify the following line:
+
+```conf
+experimental-features = nix-command flakes
+```
+
+### Setup
+
+Execute the following within the project directory:
 
 ```bash
 # Basic switch
-sudo nixos-rebuild switch --flake ./#<hostname>
+sudo nixos-rebuild switch --flake ./#machine-hostname
 
 # Switch with upgrade
-sudo nixos-rebuild switch --flake ./#<hostname> --upgrade
+sudo nixos-rebuild switch --flake ./#machine-hostname --upgrade
 
 # Example
 sudo nixos-rebuild switch --flake ./#AMZ-Linux
-```
-
-___
-
-## Mac (Nix Darwin)
-
-[Nix Darwin](https://github.com/LnL7/nix-darwin) is similar to NixOS. This project aims to bring the convenience of a declarative system approach to macOS.
-
-An additional installation step is required:
-
-```bash
-# Nix Package Manager is needed for this step
-nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
-
-# Run the installer
-./result/bin/darwin-installer
-```
-
-After Nix Darwin has been installed, execute the following within the project directory:
-
-```bash
-# Basic switch
-darwin-rebuild switch --flake ./#<hostname>
-
-# Example (inside root of project)
-darwin-rebuild switch --flake ./#AMZ-MacBook
 ```
 
 ___
@@ -109,11 +65,7 @@ nix flake update --refresh
 Execute the following, if you would like to run garbage collection:
 
 ```bash
-# NixOS
 sudo nix-collect-garbage -d
-
-# Nix Darwin
-nix-collect-garbage -d 
 ```
 
 ___
@@ -123,6 +75,10 @@ ___
 ### Guides
 
 - [Zero to Nix](https://zero-to-nix.com/)
+
+### Installers
+
+- [The Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer)
 
 ### Manuals
 

@@ -28,7 +28,6 @@
 #       ├─ ./gaming.nix
 #       ├─ ./homeassistant.nix
 #       ├─ ./networking.nix
-#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
@@ -42,26 +41,20 @@
 { config, lib, pkgs, user, ... }:
 
 {
-
-  # Default packages install system-wide
-  # https://search.nixos.org/packages?channel=unstable
-  # environment.systemPackages = with pkgs; [
-  #   ivpn
-  #   ivpn-ui
-  #   ivpn-service
-  # ];
-
-  # System Services
-  # https://search.nixos.org/options?channel=unstable&show=services
-  services = {
-    
-    # IVPN
-    # https://search.nixos.org/options?channel=unstable&show=services.ivpn
-    ivpn = {
-
-      # IVPN - Enable
-      # https://search.nixos.org/options?channel=unstable&show=services.ivpn.enable
-      enable = true;
+  # Services
+  # https://search.nixos.org/options?channel=23.05&show=services
+  services = {    
+    # Netbird
+    # https://search.nixos.org/options?channel=23.05&show=services.netbird
+    netbird = {
+      
+      # Netbird - Enable
+      # https://search.nixos.org/options?channel=23.05&show=services.netbird.enable
+      enable = false;
+      
+      # Netbird - Package
+      # https://search.nixos.org/options?channel=23.05&show=services.netbird.package
+      package = pkgs.netbird;
     };
   };
 }

@@ -28,7 +28,6 @@
 #       ├─ ./gaming.nix
 #       ├─ ./homeassistant.nix
 #       ├─ ./networking.nix
-#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
@@ -65,10 +64,10 @@
       noto-fonts-emoji
       open-dyslexic
       open-sans
-      source-sans
-      source-serif
       roboto
       roboto-mono
+      source-sans
+      source-serif
     ];
   };
 }

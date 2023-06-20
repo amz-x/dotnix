@@ -28,7 +28,6 @@
 #       ├─ ./gaming.nix
 #       ├─ ./homeassistant.nix
 #       ├─ ./networking.nix
-#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
@@ -48,13 +47,10 @@
     [(import ../../modules/audio.nix)] ++
     [(import ../../modules/fonts.nix)] ++
     [(import ../../modules/gaming.nix)] ++
-    [(import ../../modules/homeassistant.nix)] ++
     [(import ../../modules/networking.nix)] ++
     [(import ../../modules/pantheon.nix)] ++
     [(import ../../modules/security.nix)] ++
     [(import ../../modules/services.nix)] ++
-    [(import ../../modules/syncthing.nix)] ++
-    [(import ../../modules/video.nix)] ++
     [(import ../../modules/virtualisation.nix)] ++
     [(import ../../modules/vpn.nix)];
 
@@ -68,7 +64,7 @@
       "wheel"
       "networkmanager"
       "pipewire"
-      "tty"    
+      "tty"
       "users"
       # Recommended
       "audio"
@@ -76,9 +72,9 @@
       "input"
       "lp"
       "scanner"
-      "sound"      
+      "sound"
       "video"
-      # Development   
+      # Development
       "docker"
     ];
   };
@@ -110,38 +106,40 @@
       coreutils
       gnupg
       gitFull
+      glxinfo
+      nano
       ntfs3g
       pciutils
       pinentry
+      sbctl
+      screenfetch
       starship
       util-linux
+      wget
       xdg-user-dirs
       # Libraries
+      ffmpeg
       glib
+      glibc
       gst_all_1.gstreamer
       jq
+      libnotify
       # Icons
       nixos-icons
-      # Applications - CLI
-      glxinfo
-      nano
-      screenfetch
-      wget
       # Applications - GUI
       beekeeper-studio
       bitwarden
+      bitwarden-cli
       dbeaver
+      discord
       dconf
       gimp
+      lapce
       librewolf
       libreoffice
       nextcloud-client
+      rustdesk
       thunderbird
-      # Development - ROCm Stack
-      rocminfo
-      rocm-core
-      rocm-device-libs
-      rocm-runtime
       # Development - Nix
       nil
       nix-direnv
@@ -154,11 +152,15 @@
       # Development - Databases
       pgcli
       postgresql
-      # Tools - AI / ChatGPT
-      aichat
+      # Development - AI / ROCm Stack
+      rocminfo
+      rocm-core
+      rocm-device-libs
+      rocm-runtime
       # Tools - Networking
       dig
       ldns
+      networkmanagerapplet
       traceroute
       wireguard-tools
       # Tools - Security
@@ -171,7 +173,7 @@
       sqlite
       msodbcsql17
     ];
-  };  
+  };
 
   # Timezone
   time.timeZone = "Africa/Johannesburg";
@@ -251,7 +253,7 @@
         "root"
         "${user}"
       ];
-      
+
       # Enable nix flakes on system
       experimental-features = [
         "nix-command"
@@ -262,7 +264,6 @@
 
   # Nixpkgs
   nixpkgs = {
-
     # Nixpkgs Configuration
     config = {
       # Allow proprietary software
@@ -271,8 +272,5 @@
   };
 
   # NixOS System Settings
-  system = {
-    # System Version
-    stateVersion = "22.11"; 
-  };
+  system.stateVersion = "23.05";
 }

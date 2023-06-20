@@ -91,8 +91,6 @@
       vadimcn.vscode-lldb
       # Node.js / Javascript / Typescript
       dbaeumer.vscode-eslint
-      # ChatGPT
-      genieai.chatgpt-vscode
     ];
 
     # Visual Studio Code - User Settings

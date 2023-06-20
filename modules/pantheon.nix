@@ -28,7 +28,6 @@
 #       ├─ ./gaming.nix
 #       ├─ ./homeassistant.nix
 #       ├─ ./networking.nix
-#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix *
 #       ├─ ./security.nix
 #       ├─ ./services.nix
@@ -80,7 +79,7 @@
           # XServer - LibInput - Mouse - Enable Horizontal Scrolling
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.libinput.mouse.horizontalScrolling
           horizontalScrolling = true;
-          
+
           # XServer - LibInput - Mouse - Disable Left Handed Configuration
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.libinput.mouse.leftHanded
           leftHanded = false;
@@ -130,7 +129,7 @@
 
           # Pantheon - Extra Wingpanel Indicators
           # https://search.nixos.org/options?channel=unstable&show=services.xserver.desktopManager.pantheon.extraWingpanelIndicators
-          # extraWingpanelIndicators = with pkgs; [ ];
+          extraWingpanelIndicators = with pkgs; [ ];
         };
       };
     };
@@ -163,6 +162,7 @@
     # Programs - Pantheon Tweaks
     # https://search.nixos.org/options?channel=unstable&show=programs.pantheon-tweaks
     pantheon-tweaks.enable = true;
+
   };
 
   # Environment - Pantheon Excluded Packages
@@ -172,13 +172,13 @@
   # Enviroment - System Packages
   # https://search.nixos.org/options?channel=unstable&show=environment.systemPackages
   environment.systemPackages = with pkgs; [
-    # Applications - Pantheon
+    # Pantheon - Applications 
     appeditor
     ciano
     dippi
     monitor
     torrential
-    # Applications - Gnome
+    # Gnome - Applications
     gnome.dconf-editor
     gnome.seahorse
     gnome.simple-scan
@@ -219,7 +219,7 @@
       # XDG - Portal - Enable
       # https://search.nixos.org/options?channel=unstable&show=xdg.portal.enable      
       enable = true;
-      
+
       # XDG - Portal - Extra Portals
       # https://search.nixos.org/options?channel=unstable&show=xdg.portal.extraPortals
       extraPortals = with pkgs; [
@@ -227,6 +227,8 @@
         pantheon.elementary-files
         pantheon.elementary-settings-daemon
         pantheon.xdg-desktop-portal-pantheon
+        # GNOME
+        xdg-desktop-portal-gnome
         # GTK
         xdg-desktop-portal-gtk
       ];

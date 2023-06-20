@@ -43,37 +43,37 @@
 
 {
   # Programs
-  # https://search.nixos.org/options?channel=unstable&show=programs
+  # https://search.nixos.org/options?channel=nixos-23.05&show=programs
   programs = {
-    
+
     # Steam
-    # https://search.nixos.org/options?channel=unstable&show=programs.steam
+    # https://search.nixos.org/options?channel=nixos-23.05&show=programs.steam
     steam = {
 
       # Steam - Enable
-      # https://search.nixos.org/options?channel=unstable&show=programs.steam.enable
+      # https://search.nixos.org/options?channel=nixos-23.05&show=programs.steam.enable
       enable = true;
 
       # Steam - Remote Play
-      # https://search.nixos.org/options?channel=unstable&show=programs.steam.remotePlay.openFirewall
+      # https://search.nixos.org/options?channel=nixos-23.05&show=programs.steam.remotePlay.openFirewall
       remotePlay.openFirewall = true;
 
       # Steam - Dedicated Server
-      # https://search.nixos.org/options?channel=unstable&show=programs.steam.dedicatedServer.openFirewall
+      # https://search.nixos.org/options?channel=nixos-23.05&show=programs.steam.dedicatedServer.openFirewall
       dedicatedServer.openFirewall = true;
     };
 
-    
+
     # Gamemode
-    # https://search.nixos.org/options?channel=unstable&show=programs.gamemode
+    # https://search.nixos.org/options?channel=nixos-23.05&show=programs.gamemode
     gamemode = {
 
       # Gamemode - Enable
-      # https://search.nixos.org/options?channel=unstable&show=programs.gamemode.enable
+      # https://search.nixos.org/options?channel=nixos-23.05&show=programs.gamemode.enable
       enable = true;
 
       # Gamemode - Settings
-      # https://search.nixos.org/options?channel=unstable&show=programs.gamemode.settings
+      # https://search.nixos.org/options?channel=nixos-23.05&show=programs.gamemode.settings
       settings = {
         # General Configuration
         general = {
@@ -104,10 +104,13 @@
     # MESA AMD's RADV
     # https://search.nixos.org/options?channel=unstable&show=environment.variables
     variables.AMD_VULKAN_ICD = "RADV";
-    
+
     # System Packages
     # https://search.nixos.org/options?channel=unstable&show=environment.systemPackages
     systemPackages = with pkgs; [
+      # SDL2
+      SDL2
+      SDL2_image
       # Gamemode
       gamemode
       # Vulkan

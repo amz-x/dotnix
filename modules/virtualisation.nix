@@ -28,7 +28,6 @@
 #       ├─ ./gaming.nix
 #       ├─ ./homeassistant.nix
 #       ├─ ./networking.nix
-#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
@@ -43,23 +42,23 @@
 
 {
   # Virtualisation
-  # https://search.nixos.org/options?channel=unstable&show=virtualisation
+  # https://search.nixos.org/options?channel=nixos-23.05&show=virtualisation
   virtualisation = {
 
     # Virtualisation - Docker - Rootless
-    # https://search.nixos.org/options?channel=unstable&show=virtualisation.docker.rootless
+    # https://search.nixos.org/options?channel=nixos-23.05&show=virtualisation.docker.rootless
     docker.rootless = {
 
       # Virtualisation - Docker - Rootless - Enable
-      # https://search.nixos.org/options?channel=unstable&show=virtualisation.docker.rootless
+      # https://search.nixos.org/options?channel=nixos-23.05&show=virtualisation.docker.rootless
       enable = true;
 
       # Virtualisation - Docker - Rootless - Set Socket Variable
-      # https://search.nixos.org/options?channel=unstable&show=virtualisation.docker.rootless
+      # https://search.nixos.org/options?channel=nixos-23.05&show=virtualisation.docker.rootless
       setSocketVariable = true;
 
       # Docker - Rootless - Daemon Settings
-      # https://search.nixos.org/options?channel=unstable&show=virtualisation.docker.rootless.daemon.settings
+      # https://search.nixos.org/options?channel=nixos-23.05&show=virtualisation.docker.rootless.daemon.settings
       daemon.settings = {
         group = "docker";
         ip    = "127.0.0.1";
@@ -67,35 +66,40 @@
     };
 
     # Virtualization - Libvirtd
-    # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd
+    # https://search.nixos.org/options?channel=nixos-23.05&show=virtualisation.libvirtd
     libvirtd = {
       # Virtualization - Libvirtd - Enable
-      # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd.enable 
+      # https://search.nixos.org/options?channel=nixos-23.05&show=virtualisation.libvirtd.enable 
       enable = true;
 
       # Virtualization - Libvirtd - QEMU
-      # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd.qemu
+      # https://search.nixos.org/options?channel=nixos-23.05&show=virtualisation.libvirtd.qemu
       qemu = {
         # Virtualization - Libvirtd - QEMU - Package
-        # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd.qemu.package
+        # https://search.nixos.org/options?channel=nixos-23.05&show=virtualisation.libvirtd.qemu.package
         package = pkgs.qemu_kvm;
 
         # Virtualization - Libvirtd - QEMU - SWTPM
-        # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd.qemu.swtpm
+        # https://search.nixos.org/options?channel=nixos-23.05&show=virtualisation.libvirtd.qemu.swtpm
         swtpm.enable = true;
         
         # Virtualization - Libvirtd - QEMU - OVMF
-        # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd.qemu.ovmf
+        # https://search.nixos.org/options?channel=nixos-23.05&show=virtualisation.libvirtd.qemu.ovmf
         ovmf = {
           # Virtualization - Libvirtd - QEMU - OVMF - Enable
-          # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd.qemu.ovmf.enable
+          # https://search.nixos.org/options?channel=nixos-23.05&show=virtualisation.libvirtd.qemu.ovmf.enable
           enable =  true;
 
           # Virtualization - Libvirtd - QEMU - OVMF - Packages
-          # https://search.nixos.org/options?channel=unstable&show=virtualisation.libvirtd.qemu.ovmf.packages
+          # https://search.nixos.org/options?channel=nixos-23.05&show=virtualisation.libvirtd.qemu.ovmf.packages
           packages = with pkgs; [ OVMFFull.fd ];
         };
       };
     };
+    
+    # LXD / LXC
+    # lxd = {
+    #   enable = true;
+    # };
   };
 }

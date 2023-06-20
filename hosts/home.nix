@@ -27,7 +27,6 @@
 #       ├─ ./fonts.nix
 #       ├─ ./gaming.nix
 #       ├─ ./networking.nix
-#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
@@ -49,14 +48,12 @@
     homeDirectory = "/home/${user}";
 
     # State Version
-    stateVersion = "22.11";
+    stateVersion = "23.05";
 
     # Home Packages
     packages = with pkgs; [
       # AWS CLI
       awscli2
-      # Railway CLI
-      railway
     ];
   };
 
@@ -75,7 +72,7 @@
     # Nushell
     # https://www.nushell.sh/
     nushell = {
-      
+
       # Nushell - Enable
       enable = true;
 

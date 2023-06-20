@@ -27,7 +27,6 @@
 #       ├─ ./fonts.nix
 #       ├─ ./gaming.nix
 #       ├─ ./networking.nix
-#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
@@ -44,8 +43,7 @@ let
   # Linux Architecture
   # System Options: [ "aarch64-linux" "x86_64-linux" ]
   system    = "x86_64-linux";
-
-  hostname  = "AMZ-Linux"; 
+  hostname  = "AMZ-Linux";
   pkgs      = import nixpkgs { inherit system; config.allowUnfree = true; };
   lib       = nixpkgs.lib;
 in
@@ -56,6 +54,9 @@ in
     inherit system;
     specialArgs = { inherit inputs pkgs user hostname location; };
     modules = [
+      # Bootspect Secure Boot
+      # bootspec-secureboot.nixosModules.bootspec-secureboot
+      
       # System / Desktop
       ./desktop
 

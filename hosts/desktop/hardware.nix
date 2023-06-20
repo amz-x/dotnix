@@ -27,7 +27,6 @@
 #       ├─ ./fonts.nix
 #       ├─ ./gaming.nix
 #       ├─ ./networking.nix
-#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
@@ -62,11 +61,19 @@
       # https://search.nixos.org/options?channel=unstable&show=boot.initrd.verbose
       verbose = false;
     };
+    
+    # Boot - Bootspec
+    bootspec.enable = true;
 
     # Boot - Loader
     # https://search.nixos.org/options?channel=unstable&show=boot.loader
     loader = {
-      
+      # Systemd Boot
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 5;
+      };
+
       # Boot - Loader - EFI
       # https://search.nixos.org/options?channel=unstable&show=boot.loader.efi
       efi = {
@@ -74,24 +81,12 @@
         # Boot - Loader - EFI - Allow installation process to modify EFI boot variables
         # https://search.nixos.org/options?channel=unstable&show=boot.loader.efi.canTouchEfiVariables
         canTouchEfiVariables = true;
-        
+
         # Boot - Loader - EFI - Partition Mount Point
         # https://search.nixos.org/options?channel=unstable&show=boot.loader.efi.efiSysMountPoint
-        efiSysMountPoint = "/boot/efi";
-      };
-
-      # Boot - Loader - EFI Boot Manager (systemd-boot)
-      # https://search.nixos.org/options?channel=unstable&show=boot.loader.systemd-boot
-      systemd-boot = {
-
-        # Boot - Loader - EFI Boot Manager - Enable
-        # https://search.nixos.org/options?channel=unstable&show=boot.loader.systemd-boot.enable
-        enable = true;
-
-        # Boot - Loader - EFI Boot Manager - Maximum Number Of Latest Generations Entries
-        # https://search.nixos.org/options?channel=unstable&show=boot.loader.systemd-boot.configurationLimit
-        configurationLimit = 5;
-      };
+        efiSysMountPoint = "/boot";
+        
+      };     
     };
 
     # Boot - Kernel
@@ -126,11 +121,11 @@
     # # Boot - Kernel Packages
     # https://search.nixos.org/options?channel=unstable&show=boot.kernelPackages
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-    
+
     # Boot - Kernel Modules
     # https://search.nixos.org/options?channel=unstable&show=boot.kernelModules
     kernelModules = [ "kvm-amd" ];
-    
+
     # Boot - Extra Module Packages
     # https://search.nixos.org/options?channel=unstable&show=boot.extraModulePackages
     extraModulePackages = [ ];
@@ -147,21 +142,21 @@
   # Root Parition
   # https://search.nixos.org/options?channel=unstable&show=fileSystems
   fileSystems."/" = { 
-    device = "/dev/disk/by-uuid/4e8f9cfc-9a2c-40e7-ad01-00a575e85c77";
+    device = "/dev/disk/by-uuid/93240c10-521a-4016-a3b6-8c9c66af7f11";
     fsType = "ext4";
   };
 
   # ESP Partition
   # https://search.nixos.org/options?channel=unstable&show=fileSystems
-  fileSystems."/boot/efi" = {
-    device = "/dev/disk/by-uuid/140D-841F";
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/61A0-B73C";
     fsType = "vfat";
   };
 
   # Swap Device(s) / Parition(s)
   # https://search.nixos.org/options?channel=unstable&show=swapDevices
   swapDevices = [{
-    device = "/dev/disk/by-uuid/961d33dc-893a-4661-b8eb-77528d78f022";
+    device = "/dev/disk/by-uuid/fd3b8dd5-5475-4e8d-8406-3c027850cce2";
   }];
 
 
@@ -209,7 +204,7 @@
       # OpenGL - Enable
       # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.enable
       enable = true;
-      
+
       # Hardware - OpenGL - Enable accelerated OpenGL rendering through the Direct Rendering Interface (DRI)
       # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.driSupport
       driSupport = true;

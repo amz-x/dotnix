@@ -27,7 +27,6 @@
 #       ├─ ./fonts.nix
 #       ├─ ./gaming.nix
 #       ├─ ./networking.nix
-#       ├─ ./openrgb.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
@@ -64,7 +63,7 @@
 
   # # Default packages install system-wide
   # # https://search.nixos.org/packages?channel=unstable
-  environment.systemPackages = with pkgs; [
-    ffmpeg
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   ffmpeg
+  # ];
 }

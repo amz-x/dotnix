@@ -86,9 +86,7 @@
         # https://search.nixos.org/options?channel=unstable&show=boot.loader.efi.efiSysMountPoint
         efiSysMountPoint = "/boot";
         
-      };
-
-     
+      };     
     };
 
     # Boot - Kernel

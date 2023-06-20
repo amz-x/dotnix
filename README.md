@@ -4,10 +4,10 @@
 
 ## NixOS Features
 
-- NixOS 23.05 (Stoat)
+- NixOS 23.11 (Tapir)
 - Home Manager
-- Linux Kernel 6.3.1-zen1
-- Mesa 23.0.3
+- Linux Kernel 6.3.4-zen1
+- Mesa 23.1.1
 - LightDM (Display Manager)
 - Pantheon Deskop Environment
 - Nushell
@@ -18,35 +18,6 @@
 - Firejail
 - Steam
 
-___
-
-## Applications - NixOS vs Nix Darwin
-
-System applications and their platform support comparison table:
-
-| Application           | NixOS 23.05 (Stoat)       | Nix Darwin                |
-|-----------------------|---------------------------|---------------------------|
-| Beekeeper Studio      | ✅ Working                | ❓ Unknown Status         |
-| Bitwarden             | ✅ Working                | ❓ Unknown Status         |
-| DBeaver CE            | ✅ Working                | ✅ Working                |
-| Discord               | ✅ Working                | ❓ Unknown Status         |
-| Docker                | ✅ Working                | ⚡ WIP                    |
-| Google Chrome (Stable)| ✅ Working                | ❓ Unknown Status         |
-| GIMP                  | ✅ Working                | ✅ Working                |
-| GIT                   | ✅ Working                | ✅ Working                |
-| Libre Office          | ✅ Working                | ✅ Working                |
-| LibreWolf             | ✅ Working                | ❓ Unknown Status         |
-| Nano                  | ✅ Working                | ✅ Working                |
-| Netbird               | ✅ Working                | ✅ Working                |
-| Nushell               | ✅ Working                | ✅ Working                |
-| Starship              | ✅ Working                | ✅ Working                |
-| Simplenote            | ✅ Working                | ❓ Unknown Status         |
-| Slack                 | ✅ Working                | ✅ Working                |
-| Spotify               | ✅ Working                | ❓ Unknown Status         |
-| Visual Studio Code    | ✅ Working                | ✅ Working                |
-| Zoom                  | ✅ Working                | ✅ Working                |
-
-[Looking for more applications / packages?](https://search.nixos.org/packages?channel=unstable)
 ___
 
 ## Setup

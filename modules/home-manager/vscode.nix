@@ -100,7 +100,7 @@
       "workbench.colorTheme" = "Dark (Molokai)";
       
       # Editor
-      "editor.fontSize" = if pkgs.stdenv.isDarwin then 14 else 15;
+      "editor.fontSize" = 14;
       "editor.fontVariations" = false;
 
       # Explorer
@@ -111,12 +111,18 @@
 
       # Nix
       "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "${pkgs.nil}/bin/nil";
-      "nix.formatterPath" = "${pkgs.nixfmt}/bin/nixfmt";
+      "nix.serverPath" = "nixd";
       "nix.serverSettings" = {
-        "nil" = {
+        "nixd" = {
           "formatting" = {
-            "command" = [ "nixfmt" ];
+            "command" = [ "nixpkgs-fmt" ];
+          };
+          "options" = {
+            "enable" = true;
+            "target" = {
+              "args" = [];
+              "installable" = "<flakeref>#nixosConfigurations.<name>.options";
+            };
           };
         };
       };

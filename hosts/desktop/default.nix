@@ -107,6 +107,7 @@
       gnupg
       gitFull
       glxinfo
+      jq
       nano
       ntfs3g
       pciutils
@@ -122,7 +123,6 @@
       glib
       glibc
       gst_all_1.gstreamer
-      jq
       libnotify
       # Icons
       nixos-icons
@@ -141,10 +141,10 @@
       rustdesk
       thunderbird
       # Development - Nix
-      nil
-      nix-direnv
+      nixd
       nixfmt
       nixpkgs-fmt
+      nix-direnv      
       # Development - Docker
       docker
       docker-compose

@@ -5,6 +5,7 @@ on:
     branches:
      - 'master'
      - 'release/*'
+     - 'feature/*'
 
 jobs:
   # NixOS
@@ -13,34 +14,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: cachix/install-nix-action@v20
-      with:
-        nix_path: nixpkgs=channel:release-23.05
-        extra_nix_config: "auto-optimise-store = true"
-    - run: scripts/free_disk_space.sh
-    - run: nix build '.#nixosConfigurations.AMZ-Linux.config.system.build.toplevel' --print-out-paths
-    - run: ls -l result*
-    - run: (pipx run vulnix ./result || true) > report.json
-    - uses: actions/upload-artifact@v3
+    
+    - name: Check Nix Flake Inputs
+      uses: DeterminateSystems/flake-checker-action@v4
+    
+    - name: Install Nix
+      uses: DeterminateSystems/nix-installer-action@v3
+
+    - name: Free VM Disk Space
+      run: scripts/free_disk_space.sh
+    
+    - name: Build NixOS Flake
+      run: nix build '.#nixosConfigurations.AMZ-Linux.config.system.build.toplevel'
+    
+    - name: Show Build Ouput
+      run: ls -l result*
+
+    - name: Vulnix Report
+      run: (pipx run vulnix ./result || true) > report.json
+    
+    - name: Upload Vulnix Report Artifact
+      uses: actions/upload-artifact@v3
       with:
         name: vulnix-nixos-report
         path: report.json
-  
-  # Nix Darwin
-  # Mac:
-  #   name: 'Nix Darwin (x86_64)'
-  #   runs-on: macos-latest
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #   - uses: cachix/install-nix-action@v20
-  #     with:
-  #       nix_path: nixpkgs=channel:release-23.05
-  #       extra_nix_config: "auto-optimise-store = true"
-  #   - run: nix build '.#darwinConfigurations.AMZ-MacBook.config.system.build.toplevel' --print-out-paths
-  #   - run: ls -l result*
-  #   - run: (pipx run vulnix ./result || true) > report.json
-  #   - uses: actions/upload-artifact@v3
-  #     with:
-  #       name: vulnix-darwin-report
-  #       path: report.json
-   

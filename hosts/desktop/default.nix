@@ -128,7 +128,6 @@
       nixos-icons
       # Applications - GUI
       chromium
-      beekeeper-studio
       bitwarden
       bitwarden-cli
       dbeaver

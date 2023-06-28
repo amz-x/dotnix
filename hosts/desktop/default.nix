@@ -32,11 +32,8 @@
 #       ├─ ./security.nix
 #       ├─ ./services.nix
 #       ├─ ./syncthing.nix
-#       ├─ ./video.nix
 #       ├─ ./virtualisation.nix
-#       ├─ ./vpn.nix
-#       ├─ ./wine.nix
-#       └─ ./xdg.nix
+#       └─ ./vpn.nix
 
 { lib, pkgs, user, hostname, ... }:
 
@@ -127,24 +124,27 @@
       # Icons
       nixos-icons
       # Applications - GUI
-      beekeeper-studio
+      chromium
       bitwarden
       bitwarden-cli
       dbeaver
       discord
       dconf
       gimp
+      homebank
       lapce
       librewolf
       libreoffice
       nextcloud-client
       rustdesk
+      rustscan
+      spotify
       thunderbird
       # Development - Nix
       nixd
       nixfmt
       nixpkgs-fmt
-      nix-direnv      
+      nix-direnv
       # Development - Docker
       docker
       docker-compose
@@ -202,7 +202,7 @@
       hinting = {
         enable = true;
         autohint = true;
-        style = "hintslight";
+        style = "slight";
       };
       defaultFonts = {
         emoji = [

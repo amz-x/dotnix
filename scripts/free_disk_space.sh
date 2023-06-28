@@ -33,6 +33,7 @@ echo "Removing 200 large packages"
 echo "=============================================================================="
 
 sudo apt remove -y '^libclang-*'
+sudo apt remove -y '^libgcc-.*-dev'
 sudo apt remove -y '^liblldb.*'
 sudo apt remove -y '^libruby.*'
 sudo apt remove -y '^libstdc++.*'
@@ -50,7 +51,7 @@ sudo apt remove -y '^moby-.*'
 sudo apt remove -y '^mysql-.*'
 sudo apt remove -y '^postgresql-*'
 sudo apt remove -y '^temurin-.*'
-sudo apt remove -y 'php.*'
+sudo apt remove -y '^php.*'
 
 # Remove SDK packages
 sudo apt remove -y google-cloud-sdk

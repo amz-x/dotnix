@@ -20,12 +20,15 @@ jobs:
     
     - name: Install Nix
       uses: DeterminateSystems/nix-installer-action@v3
+      
+    - name: Magic Nix Cache
+      uses: DeterminateSystems/magic-nix-cache-action@v2
 
     - name: Free VM Disk Space
       run: scripts/free_disk_space.sh
     
     - name: Build NixOS Flake
-      run: nix build '.#nixosConfigurations.AMZ-Linux.config.system.build.toplevel'
+      run: nix build '.#nixosConfigurations.AMZ-Linux.config.system.build.toplevel' --auto-optimise-store
     
     - name: Show Build Ouput
       run: ls -l result*

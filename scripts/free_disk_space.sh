@@ -33,6 +33,7 @@ echo "Removing 200 large packages"
 echo "=============================================================================="
 
 sudo apt remove -y '^libclang-*'
+sudo apt remove -y '^libgcc-*-dev'
 sudo apt remove -y '^liblldb.*'
 sudo apt remove -y '^libruby.*'
 sudo apt remove -y '^libstdc++.*'

@@ -7,7 +7,7 @@
 - NixOS 23.11 (Tapir)
 - Home Manager
 - Linux Kernel 6.3.4-zen1
-- Mesa 23.1.1
+- Mesa 23.1.3
 - LightDM (Display Manager)
 - Pantheon Deskop Environment
 - Nushell

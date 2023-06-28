@@ -177,7 +177,6 @@
     ciano
     dippi
     monitor
-    torrential
     # Gnome - Applications
     gnome.dconf-editor
     gnome.seahorse

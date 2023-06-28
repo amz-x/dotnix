@@ -127,6 +127,7 @@
       # Icons
       nixos-icons
       # Applications - GUI
+      chromium
       beekeeper-studio
       bitwarden
       bitwarden-cli
@@ -134,17 +135,20 @@
       discord
       dconf
       gimp
+      homebank
       lapce
       librewolf
       libreoffice
       nextcloud-client
       rustdesk
+      rustscan
+      spotify
       thunderbird
       # Development - Nix
       nixd
       nixfmt
       nixpkgs-fmt
-      nix-direnv      
+      nix-direnv
       # Development - Docker
       docker
       docker-compose
@@ -202,7 +206,7 @@
       hinting = {
         enable = true;
         autohint = true;
-        style = "hintslight";
+        style = "slight";
       };
       defaultFonts = {
         emoji = [

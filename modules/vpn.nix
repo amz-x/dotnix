@@ -42,18 +42,28 @@
 
 {
   # Services
-  # https://search.nixos.org/options?channel=23.05&show=services
-  services = {    
+  # https://search.nixos.org/options?channel=unstable&show=services
+  services = {
+    
+    # IVPN
+    # https://search.nixos.org/options?channel=unstable&show=services.ivpn
+    ivpn = {
+
+      # IVPN - Enable
+      # https://search.nixos.org/options?channel=unstable&show=services.ivpn.enable
+      enable = true;
+    };
+
     # Netbird
-    # https://search.nixos.org/options?channel=23.05&show=services.netbird
+    # https://search.nixos.org/options?channel=unstable&show=services.netbird
     netbird = {
       
       # Netbird - Enable
-      # https://search.nixos.org/options?channel=23.05&show=services.netbird.enable
+      # https://search.nixos.org/options?channel=unstable&show=services.netbird.enable
       enable = false;
       
       # Netbird - Package
-      # https://search.nixos.org/options?channel=23.05&show=services.netbird.package
+      # https://search.nixos.org/options?channel=unstable&show=services.netbird.package
       package = pkgs.netbird;
     };
   };

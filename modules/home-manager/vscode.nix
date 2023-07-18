@@ -34,9 +34,7 @@
 #       ├─ ./syncthing.nix
 #       ├─ ./video.nix
 #       ├─ ./virtualisation.nix
-#       ├─ ./vpn.nix
-#       ├─ ./wine.nix
-#       └─ ./xdg.nix
+#       └─ ./vpn.nix
 
 { config, lib, pkgs, ... }:
 
@@ -51,11 +49,15 @@
 
     # Visual Studio Code - Enable Update Check
     # https://mipmip.github.io/home-manager-option-search/?programs.vscode.enableUpdateCheck
-    enableUpdateCheck = pkgs.stdenv.isDarwin;
+    enableUpdateCheck = false;
 
     # Visual Studio Code - Package
     # https://mipmip.github.io/home-manager-option-search/?programs.vscode.package
-    package = if pkgs.stdenv.isDarwin then pkgs.vscode else pkgs.vscode.fhs;
+    package = pkgs.vscode;
+
+    # Visual Studio Code - Mutable Extensions Directory
+    # https://mipmip.github.io/home-manager-option-search/?programs.vscode.extensions
+    mutableExtensionsDir = false;
 
     # Visual Studio Code - Extensions
     # https://mipmip.github.io/home-manager-option-search/?programs.vscode.extensions
@@ -111,21 +113,7 @@
 
       # Nix
       "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nixd";
-      "nix.serverSettings" = {
-        "nixd" = {
-          "formatting" = {
-            "command" = [ "nixpkgs-fmt" ];
-          };
-          "options" = {
-            "enable" = true;
-            "target" = {
-              "args" = [];
-              "installable" = "<flakeref>#nixosConfigurations.<name>.options";
-            };
-          };
-        };
-      };
+      "nix.serverPath" = "nil";
 
       # Javascript
       "javascript.updateImportsOnFileMove.enabled" = "always";

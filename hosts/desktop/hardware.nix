@@ -94,7 +94,7 @@
     kernel = {
       # Boot - Kernel - Enable
       # https://search.nixos.org/options?channel=unstable&show=boot.kernel.enable
-      enable = true;
+      enable = lib.mkDefault true;
 
       # Boot - Kernel - Sysctl
       # https://search.nixos.org/options?channel=unstable&show=boot.kernel.sysctl
@@ -116,6 +116,7 @@
       "udev.log_level=3"
       "video=DP-1:2560x1440@120"
       "video=DP-2:2560x1440@120"
+      "amd_pstate=active"
     ];
 
     # # Boot - Kernel Packages
@@ -124,7 +125,7 @@
 
     # Boot - Kernel Modules
     # https://search.nixos.org/options?channel=unstable&show=boot.kernelModules
-    kernelModules = [ "kvm-amd" ];
+    kernelModules = [ "amd-pstate" "kvm-amd" ];
 
     # Boot - Extra Module Packages
     # https://search.nixos.org/options?channel=unstable&show=boot.extraModulePackages
@@ -135,7 +136,7 @@
     tmp = {
       # Boot - Temporary Directory - Clean On Boot
       # https://search.nixos.org/options?channel=unstable&show=boot.tmp.cleanOnBoot
-      cleanOnBoot = true;
+      cleanOnBoot = lib.mkDefault true;
     };
   };
 
@@ -166,7 +167,7 @@
 
     # Hardware - Enable all the firmware with a license allowing redistribution.
     # https://search.nixos.org/options?channel=unstable&show=hardware.enableRedistributableFirmware
-    enableRedistributableFirmware = true;
+    enableRedistributableFirmware = lib.mkDefault true;
 
     # Hardware - CPU - AMD Microcode
     # https://search.nixos.org/options?channel=unstable&show=hardware.cpu.amd.updateMicrocode
@@ -178,15 +179,15 @@
 
       # Hardware - Bluetooth Enable
       # https://search.nixos.org/options?channel=unstable&show=hardware.bluetooth.enable
-      enable = true;
+      enable = lib.mkDefault true;
 
       # Hardware - Bluetooth Package
       # https://search.nixos.org/options?channel=unstable&show=hardware.bluetooth.package
       package = pkgs.bluezFull;
 
-      # Hardware - Bluetooth Power On The Controller At Boot
+      # Hardware - Bluetooth Power Up The Default Controller On Boot
       # https://search.nixos.org/options?channel=unstable&show=hardware.bluetooth.powerOnBoot 
-      powerOnBoot = true;
+      powerOnBoot = lib.mkDefault true;
 
       # Hardware - Bluetooth Settings
       # https://search.nixos.org/options?channel=unstable&show=hardware.bluetooth.settings
@@ -203,12 +204,12 @@
 
       # OpenGL - Enable
       # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.enable
-      enable = true;
+      enable = lib.mkDefault true;
 
       # Hardware - OpenGL - Enable accelerated OpenGL rendering through the Direct Rendering Interface (DRI)
       # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.driSupport
-      driSupport = true;
-      driSupport32Bit = true;
+      driSupport = lib.mkDefault true;
+      driSupport32Bit = lib.mkDefault true;
 
       # Hardware - OpenGL - Additional packages to add to OpenGL drivers.
       # https://search.nixos.org/options?channel=unstable&show=hardware.opengl.extraPackages
@@ -238,7 +239,7 @@
 
       # Hardware - Pulseaudio - Support for 32-bit on 64-bit systems.
       # https://search.nixos.org/options?channel=unstable&show=hardware.pulseaudio.support32Bit
-      support32Bit = true;
+      support32Bit = lib.mkDefault true;
 
       # Hardware - Pulseaudio - Package
       # https://search.nixos.org/options?channel=unstable&show=hardware.pulseaudio.package

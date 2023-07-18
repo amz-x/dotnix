@@ -53,7 +53,7 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {
-    isNormalUser = true;
+    isNormalUser = lib.mkDefault true;
     description = "AMZ";
     shell = pkgs.nushell;
     extraGroups = [
@@ -102,7 +102,7 @@
       # System Tools & Utilities
       coreutils
       gnupg
-      gitFull
+      git
       glxinfo
       jq
       nano
@@ -112,6 +112,7 @@
       sbctl
       screenfetch
       starship
+      tree
       util-linux
       wget
       xdg-user-dirs
@@ -131,24 +132,19 @@
       discord
       dconf
       gimp
-      homebank
       lapce
       librewolf
       libreoffice
+      localsend
       nextcloud-client
       rustdesk
       rustscan
       spotify
-      thunderbird
       # Development - Nix
-      nixd
+      nil
       nixfmt
       nixpkgs-fmt
       nix-direnv
-      # Development - Docker
-      docker
-      docker-compose
-      docker-buildx
       # Development - Databases
       pgcli
       postgresql
@@ -157,6 +153,10 @@
       rocm-core
       rocm-device-libs
       rocm-runtime
+      # Virtualisation - Docker
+      docker
+      docker-compose
+      docker-buildx
       # Tools - Networking
       dig
       ldns
@@ -176,9 +176,11 @@
   };
 
   # Timezone
+  # https://search.nixos.org/options?channel=unstable&show=time.timeZone
   time.timeZone = "Africa/Johannesburg";
 
   # Internationalisation
+  # https://search.nixos.org/options?channel=unstable&show=i18n
   i18n = {
     defaultLocale = "en_US.UTF-8";
     supportedLocales = [ "en_US.UTF-8/UTF-8" "en_ZA.UTF-8/UTF-8" ];
@@ -189,6 +191,7 @@
   };
 
   # Font Configuration
+  # https://search.nixos.org/options?channel=unstable&show=fonts
   fonts = {
     # Defaults
     enableDefaultFonts = true;
@@ -263,6 +266,7 @@
   };
 
   # Nixpkgs
+  # https://search.nixos.org/options?channel=unstable&show=nixpkgs
   nixpkgs = {
     # Nixpkgs Configuration
     config = {

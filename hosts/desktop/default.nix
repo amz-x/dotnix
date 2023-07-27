@@ -8,11 +8,13 @@
 #   │   └─ ./home.nix
 #   │
 #   ├─ ./hosts
-#   │   ├─ ./default.nix
+#   │   ├─ ./default.nix *
 #   │   ├─ ./home.nix
 #   │   └─ ./desktop
+#   │        ├─ configuration.nix
 #   │        ├─ default.nix *
-#   │        └─ hardware.nix
+#   │        ├─ hardware.nix
+#   │        └─ home.nix
 #   │
 #   └─ ./modules
 #       ├─ ./home-manager
@@ -26,255 +28,51 @@
 #       ├─ ./audio.nix
 #       ├─ ./fonts.nix
 #       ├─ ./gaming.nix
-#       ├─ ./homeassistant.nix
 #       ├─ ./networking.nix
 #       ├─ ./pantheon.nix
 #       ├─ ./security.nix
 #       ├─ ./services.nix
 #       ├─ ./syncthing.nix
+#       ├─ ./video.nix
 #       ├─ ./virtualisation.nix
 #       └─ ./vpn.nix
 
-{ lib, pkgs, user, hostname, ... }:
+{ inputs, nixpkgs, lanzaboote, home-manager, user, location, ... }:
 
+let
+  # Linux Architecture
+  # System Options: [ "aarch64-linux" "x86_64-linux" ]
+  system    = "x86_64-linux";
+  hostname  = "AMZ-Linux";
+  pkgs      = import nixpkgs { inherit system; config.allowUnfree = true; };
+  lib       = nixpkgs.lib;
+in
 {
-  imports =
-    [(import ./hardware.nix)] ++
-    [(import ../../modules/android.nix)] ++
-    [(import ../../modules/audio.nix)] ++
-    [(import ../../modules/fonts.nix)] ++
-    [(import ../../modules/gaming.nix)] ++
-    [(import ../../modules/networking.nix)] ++
-    [(import ../../modules/pantheon.nix)] ++
-    [(import ../../modules/security.nix)] ++
-    [(import ../../modules/services.nix)] ++
-    [(import ../../modules/virtualisation.nix)] ++
-    [(import ../../modules/vpn.nix)];
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${user} = {
-    isNormalUser = lib.mkDefault true;
-    description = "AMZ";
-    shell = pkgs.nushell;
-    extraGroups = [
-      # Default
-      "wheel"
-      "networkmanager"
-      "pipewire"
-      "tty"
-      "users"
-      # Recommended
-      "audio"
-      "camera"
-      "input"
-      "lp"
-      "scanner"
-      "sound"
-      "video"
-      # Development
-      "docker"
+  # Linux Desktop
+  "${hostname}" = lib.nixosSystem {
+    # Linux Architecture
+    inherit system;
+    specialArgs = { inherit inputs pkgs user hostname location; };
+    modules = [
+      # Secure Boot (Lanzeboote)
+      lanzaboote.nixosModules.lanzaboote
+      
+      # System / Desktop
+      ./configuration.nix
+      
+      # Home Manager
+      home-manager.nixosModules.home-manager {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { inherit user; };
+        home-manager.users.${user} = {
+          imports = [(import ./home.nix)] ++
+                    [(import ./modules/home-manager/direnv.nix)] ++
+                    [(import ./modules/home-manager/git.nix)] ++
+                    [(import ./modules/home-manager/vscode.nix)] ++
+                    [(import ./modules/home-manager/starship.nix)];
+        };
+      }
     ];
   };
-
-  # Environment settings
-  environment = {
-
-    # Include ~/.local/bin/ in $PATH
-    localBinInPath = true;
-
-    # Variables
-    variables = {
-      # EDITOR
-      EDITOR = "nano";
-      # TERMINAL
-      TERM = "xterm-256color";
-    };
-
-    # Shells
-    shells = with pkgs; [
-      bashInteractive
-      nushell
-    ];
-
-    # Default packages install system-wide
-    # https://search.nixos.org/packages?channel=unstable
-    systemPackages = with pkgs; [
-      # System Tools & Utilities
-      coreutils
-      gnupg
-      git
-      glxinfo
-      jq
-      nano
-      ntfs3g
-      pciutils
-      pinentry
-      sbctl
-      screenfetch
-      starship
-      tree
-      util-linux
-      wget
-      xdg-user-dirs
-      # Libraries
-      ffmpeg
-      glib
-      glibc
-      gst_all_1.gstreamer
-      libnotify
-      # Icons
-      nixos-icons
-      # Applications - GUI
-      chromium
-      bitwarden
-      bitwarden-cli
-      dbeaver
-      discord
-      dconf
-      gimp
-      lapce
-      librewolf
-      libreoffice
-      localsend
-      nextcloud-client
-      rustdesk
-      rustscan
-      spotify
-      # Development - Nix
-      nil
-      nixfmt
-      nixpkgs-fmt
-      nix-direnv
-      # Development - Databases
-      pgcli
-      postgresql
-      # Development - AI / ROCm Stack
-      rocminfo
-      rocm-core
-      rocm-device-libs
-      rocm-runtime
-      # Virtualisation - Docker
-      docker
-      docker-compose
-      docker-buildx
-      # Tools - Networking
-      dig
-      ldns
-      networkmanagerapplet
-      traceroute
-      wireguard-tools
-      # Tools - Security
-      vulnix
-    ];
-
-    # Unix ODBC Drivers
-    unixODBCDrivers = with pkgs.unixODBCDrivers; [ 
-      psql
-      sqlite
-      msodbcsql17
-    ];
-  };
-
-  # Timezone
-  # https://search.nixos.org/options?channel=unstable&show=time.timeZone
-  time.timeZone = "Africa/Johannesburg";
-
-  # Internationalisation
-  # https://search.nixos.org/options?channel=unstable&show=i18n
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    supportedLocales = [ "en_US.UTF-8/UTF-8" "en_ZA.UTF-8/UTF-8" ];
-    extraLocaleSettings = {
-      LC_TIME = "en_ZA.UTF-8";
-      LC_MONETARY = "en_ZA.UTF-8";
-    };
-  };
-
-  # Font Configuration
-  # https://search.nixos.org/options?channel=unstable&show=fonts
-  fonts = {
-    # Defaults
-    enableDefaultFonts = true;
-    enableGhostscriptFonts = true;
-
-    # Font configuration
-    fontconfig = {
-      enable = true;
-      cache32Bit = true;
-      useEmbeddedBitmaps = true;
-      hinting = {
-        enable = true;
-        autohint = true;
-        style = "slight";
-      };
-      defaultFonts = {
-        emoji = [
-         "Noto Color Emoji"
-        ];
-        monospace = [
-          "Hack"
-          "Inconsolata"
-          "Source Sans Mono"
-          "Liberation Mono"
-          "DejaVu Mono"
-        ];
-        sansSerif = [
-          "Inter"
-          "Liberation Sans"
-          "Source Sans"
-        ];
-        serif = [
-          "Liberation Serif"
-          "Source Serif"
-        ];
-      };
-    };
-  };
-
-  # Nix Package Manager
-  # https://search.nixos.org/options?channel=unstable&show=nix
-  nix = {
-    # Nix Package
-    package = pkgs.nix;
-
-    # Automatic garbage collection
-    # https://search.nixos.org/options?channel=unstable&show=nix.gc
-    gc = {
-      automatic = true;
-      dates     = "weekly";
-      options   = "--delete-older-than 2d";
-    };
-
-    # Settings
-    # https://search.nixos.org/options?channel=unstable&show=nix.settings
-    settings = {
-      # Optimise syslinks
-      auto-optimise-store = true;
-
-      # Trusted Users
-      trusted-users = [
-        "root"
-        "${user}"
-      ];
-
-      # Enable nix flakes on system
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-    };
-  };
-
-  # Nixpkgs
-  # https://search.nixos.org/options?channel=unstable&show=nixpkgs
-  nixpkgs = {
-    # Nixpkgs Configuration
-    config = {
-      # Allow proprietary software
-      allowUnfree = true;
-    };
-  };
-
-  # NixOS System Settings
-  system.stateVersion = "23.05";
 }

@@ -6,3 +6,6 @@ result
 
 # Nix Cloud
 hosts/cloud/*
+
+# NixOps
+nixops/*

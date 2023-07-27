@@ -34,11 +34,9 @@
 #       ├─ ./syncthing.nix
 #       ├─ ./video.nix
 #       ├─ ./virtualisation.nix
-#       ├─ ./vpn.nix *
-#       ├─ ./wine.nix
-#       └─ ./xdg.nix
+#       └─ ./vpn.nix *
 
-{ config, lib, pkgs, user, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   # Services
@@ -51,7 +49,7 @@
 
       # IVPN - Enable
       # https://search.nixos.org/options?channel=unstable&show=services.ivpn.enable
-      enable = true;
+      enable = false;
     };
 
     # Netbird

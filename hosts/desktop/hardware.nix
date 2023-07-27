@@ -64,13 +64,20 @@
     
     # Boot - Bootspec
     bootspec.enable = true;
+    
+    # Boot - Secure Boot (Lanzaboote)
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/etc/secureboot";
+    };
 
     # Boot - Loader
     # https://search.nixos.org/options?channel=unstable&show=boot.loader
     loader = {
+      
       # Systemd Boot
       systemd-boot = {
-        enable = true;
+        enable = lib.mkForce false;
         configurationLimit = 5;
       };
 
@@ -85,7 +92,6 @@
         # Boot - Loader - EFI - Partition Mount Point
         # https://search.nixos.org/options?channel=unstable&show=boot.loader.efi.efiSysMountPoint
         efiSysMountPoint = "/boot";
-        
       };     
     };
 

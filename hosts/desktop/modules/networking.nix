@@ -34,11 +34,9 @@
 #       ├─ ./syncthing.nix
 #       ├─ ./video.nix
 #       ├─ ./virtualisation.nix
-#       ├─ ./vpn.nix
-#       ├─ ./wine.nix
-#       └─ ./xdg.nix
+#       └─ ./vpn.nix
 
-{ config, lib, pkgs, hostname, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   # Networking
@@ -47,12 +45,12 @@
 
     # Networking - Hostname
     # https://search.nixos.org/options?channel=unstable&show=networking.networkmanager.enable
-    hostName = "${hostname}";
+    hostName = "AMZ-Linux";
 
     # Networking - Hosts
     # https://search.nixos.org/options?channel=unstable&show=networking.hosts
     hosts = {
-      "127.0.0.1" = [ "${hostname}"       ];
+      "127.0.0.1" = [ "AMZ-Linux"         ];
       "1.1.1.1"   = [ "one.one.one.one"   ];
       "1.0.0.1"   = [ "one.zero.zero.one" ];
       "9.9.9.9"   = [ "dns.quad9.net"     ];

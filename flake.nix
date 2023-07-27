@@ -10,9 +10,9 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    # Bootspec Secure Boot
-    bootspec-secureboot = {
-      url = "github:DeterminateSystems/bootspec-secureboot";
+    # Secure Boot (Lanzaboote)
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
@@ -24,26 +24,18 @@
   };
 
   # Flake outputs
-  outputs = inputs @ { self, nixpkgs, home-manager, bootspec-secureboot, ... }:
+  outputs = inputs @ { self, nixpkgs, lanzaboote, home-manager, ... }:
     let 
-      user = "amz";
+      user     = "amz";
       location = "$HOME/Workspace/amz/dotnix";
     in
     {
       # Nix OS
       nixosConfigurations = (
-        import ./hosts {
+        import ./hosts/desktop {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager user location;
+          inherit inputs nixpkgs lanzaboote home-manager user location;
         }
       );
-
-      # Nix Darwin
-      # darwinConfigurations = (
-      #   import ./darwin {
-      #     inherit (nixpkgs) lib;
-      #     inherit inputs nixpkgs home-manager user location darwin;
-      #   }
-      # );
     };    
 }

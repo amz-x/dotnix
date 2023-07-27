@@ -33,9 +33,7 @@
 #       ├─ ./syncthing.nix
 #       ├─ ./video.nix
 #       ├─ ./virtualisation.nix
-#       ├─ ./vpn.nix
-#       ├─ ./wine.nix
-#       └─ ./xdg.nix
+#       └─ ./vpn.nix
 
 { config, pkgs, user, ... }:
 
@@ -54,6 +52,8 @@
     packages = with pkgs; [
       # AWS CLI
       awscli2
+      # Utilities
+      localsend
     ];
   };
 

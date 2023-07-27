@@ -53,7 +53,7 @@
 
     # Visual Studio Code - Package
     # https://mipmip.github.io/home-manager-option-search/?programs.vscode.package
-    package = pkgs.vscode;
+    package = pkgs.vscodium;
 
     # Visual Studio Code - Mutable Extensions Directory
     # https://mipmip.github.io/home-manager-option-search/?programs.vscode.extensions

@@ -34,9 +34,7 @@
 #       ├─ ./syncthing.nix
 #       ├─ ./video.nix
 #       ├─ ./virtualisation.nix
-#       ├─ ./vpn.nix
-#       ├─ ./wine.nix
-#       └─ ./xdg.nix
+#       └─ ./vpn.nix
 
 { config, lib, pkgs, ... }:
 

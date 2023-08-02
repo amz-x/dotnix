@@ -1,39 +1,6 @@
 #
 #  Specific system configuration settings for desktop
 #
-#  flake.nix
-#   ├─ ./darwin
-#   │   ├─ ./configuration.nix
-#   │   ├─ ./default.nix
-#   │   └─ ./home.nix
-#   │
-#   ├─ ./hosts
-#   │   ├─ ./default.nix
-#   │   ├─ ./home.nix
-#   │   └─ ./desktop
-#   │        ├─ default.nix *
-#   │        └─ hardware.nix
-#   │
-#   └─ ./modules
-#       ├─ ./home-manager
-#       │    ├─ direnv.nix
-#       │    ├─ git.nix
-#       │    ├─ starship.nix
-#       │    ├─ vscode.nix
-#       │    └─ zsh.nix
-#       │
-#       ├─ ./android.nix
-#       ├─ ./audio.nix
-#       ├─ ./fonts.nix
-#       ├─ ./gaming.nix
-#       ├─ ./homeassistant.nix
-#       ├─ ./networking.nix
-#       ├─ ./pantheon.nix
-#       ├─ ./security.nix
-#       ├─ ./services.nix
-#       ├─ ./syncthing.nix
-#       ├─ ./virtualisation.nix
-#       └─ ./vpn.nix
 
 { lib, pkgs, user, ... }:
 
@@ -61,8 +28,6 @@
       "wheel"
       "networkmanager"
       "pipewire"
-      "tty"
-      "users"
       # Recommended
       "audio"
       "camera"
@@ -72,7 +37,7 @@
       "sound"
       "video"
       # Development
-      "docker"
+      "podman"
     ];
   };
 
@@ -80,7 +45,7 @@
   environment = {
 
     # Include ~/.local/bin/ in $PATH
-    localBinInPath = true;
+    # localBinInPath = true;
 
     # Variables
     variables = {
@@ -101,13 +66,13 @@
     systemPackages = with pkgs; [
       # System Tools & Utilities
       coreutils
-      firejail
       gnupg
       git
       glxinfo
       jq
       nano
       ntfs3g
+      nvme-cli
       pciutils
       pinentry
       sbctl
@@ -145,10 +110,6 @@
       nixfmt
       nixpkgs-fmt
       nix-direnv
-      nixops_unstable
-      # Development - LSP
-      rome
-      vala-language-server
       # Development - Databases
       pgcli
       postgresql
@@ -158,16 +119,15 @@
       rocm-device-libs
       rocm-runtime
       # Virtualisation - Docker
-      docker
-      docker-compose
-      docker-buildx
+      podman
+      podman-compose
       # Tools - Networking
       dig
       ldns
-      networkmanagerapplet
       traceroute
       wireguard-tools
       # Tools - Security
+      nikto
       vulnix
     ];
 
@@ -189,8 +149,15 @@
     defaultLocale = "en_US.UTF-8";
     supportedLocales = [ "en_US.UTF-8/UTF-8" "en_ZA.UTF-8/UTF-8" ];
     extraLocaleSettings = {
-      LC_TIME = "en_ZA.UTF-8";
+      LC_ADDRESS = "en_ZA.UTF-8";
+      LC_IDENTIFICATION = "en_ZA.UTF-8";
+      LC_MEASUREMENT = "en_ZA.UTF-8";
       LC_MONETARY = "en_ZA.UTF-8";
+      LC_NAME = "en_ZA.UTF-8";
+      LC_NUMERIC = "en_ZA.UTF-8";
+      LC_PAPER = "en_ZA.UTF-8";
+      LC_TELEPHONE = "en_ZA.UTF-8";
+      LC_TIME = "en_ZA.UTF-8";
     };
   };
 
@@ -271,6 +238,8 @@
   # Nixpkgs
   # https://search.nixos.org/options?channel=unstable&show=nixpkgs
   nixpkgs = {
+    # Hostplatform
+    hostPlatform = lib.mkDefault "x86_64-linux";
     # Nixpkgs Configuration
     config = {
       # Allow proprietary software
@@ -278,6 +247,11 @@
     };
   };
 
+  # NixOS Packages Documentation
+  # https://search.nixos.org/options?channel=unstable&show=documentation.enable
+  documentation.enable = lib.mkDefault true;
+
   # NixOS System Settings
-  system.stateVersion = "23.05";
+  # https://search.nixos.org/options?channel=unstable&show=system.stateVersion
+  system.stateVersion = "23.11";
 }

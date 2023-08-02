@@ -1,40 +1,6 @@
 #
 #  Specific system starship prompt configuration settings module for home manager
 #
-#  flake.nix
-#   ├─ ./darwin
-#   │   ├─ ./configuration.nix
-#   │   ├─ ./default.nix
-#   │   └─ ./home.nix
-#   │
-#   ├─ ./hosts
-#   │   ├─ ./default.nix
-#   │   ├─ ./home.nix
-#   │   └─ ./desktop
-#   │        ├─ default.nix
-#   │        └─ hardware.nix
-#   │
-#   └─ ./modules
-#       ├─ ./home-manager
-#       │    ├─ direnv.nix
-#       │    ├─ git.nix
-#       │    ├─ starship.nix *
-#       │    ├─ vscode.nix
-#       │    └─ zsh.nix
-#       │
-#       ├─ ./android.nix 
-#       ├─ ./audio.nix
-#       ├─ ./fonts.nix
-#       ├─ ./gaming.nix
-#       ├─ ./networking.nix
-#       ├─ ./openrgb.nix
-#       ├─ ./pantheon.nix
-#       ├─ ./security.nix
-#       ├─ ./services.nix
-#       ├─ ./syncthing.nix
-#       ├─ ./video.nix
-#       ├─ ./virtualisation.nix
-#       └─ ./vpn.nix
 
 { config, lib, pkgs, ... }:
 
@@ -53,7 +19,7 @@
 
     # Starship - Nushell Integration
     # https://nix-community.github.io/home-manager/options.html#opt-programs.starship.enableNushellIntegration
-    enableNushellIntegration = true; 
+    enableNushellIntegration = lib.mkForce false; 
 
     # Starship - ZSH Integration
     # https://nix-community.github.io/home-manager/options.html#opt-programs.starship.enableZshIntegration

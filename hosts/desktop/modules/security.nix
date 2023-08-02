@@ -1,40 +1,6 @@
 #
 #  Specific system security configuration settings module
 #
-#  flake.nix
-#   ├─ ./darwin
-#   │   ├─ ./configuration.nix
-#   │   ├─ ./default.nix
-#   │   └─ ./home.nix
-#   │
-#   ├─ ./hosts
-#   │   ├─ ./default.nix
-#   │   ├─ ./home.nix
-#   │   └─ ./desktop
-#   │        ├─ default.nix
-#   │        └─ hardware.nix
-#   │
-#   └─ ./modules
-#       ├─ ./home-manager
-#       │    ├─ direnv.nix
-#       │    ├─ git.nix
-#       │    ├─ starship.nix
-#       │    ├─ vscode.nix
-#       │    └─ zsh.nix
-#       │
-#       ├─ ./android.nix
-#       ├─ ./audio.nix
-#       ├─ ./fonts.nix
-#       ├─ ./gaming.nix
-#       ├─ ./homeassistant.nix
-#       ├─ ./networking.nix
-#       ├─ ./pantheon.nix
-#       ├─ ./security.nix *
-#       ├─ ./services.nix
-#       ├─ ./syncthing.nix
-#       ├─ ./video.nix
-#       ├─ ./virtualisation.nix
-#       └─ ./vpn.nix
 
 { config, lib, pkgs, ... }:
 
@@ -113,31 +79,31 @@
 
     # Services - ClamAV
     # https://search.nixos.org/options?channel=unstable&show=services.clamav
-    # clamav = {
-    #   # Note: Download / Update ClamAV database if service fails to start
-    #   # https://discourse.nixos.org/t/how-to-use-clamav-in-nixos/19782/
+    clamav = {
+      # Note: Download / Update ClamAV database if service fails to start
+      # https://discourse.nixos.org/t/how-to-use-clamav-in-nixos/19782/
 
-    #   # Services - ClamAV - Deamon
-    #   # https://search.nixos.org/options?channel=unstable&show=services.clamav.daemon
-    #   daemon = {
-    #     enable = true;
-    #     settings = {
-    #       ScanOnAccess = true;
-    #       MaxThreads = 4;
-    #       OnAccessExcludeRootUID = true;
-    #       OnAccessMountPath = "/";
-    #       OnAccessExcludePath = "/nix/store";
-    #       OnAccessExcludeUname = "clamav";
-    #     };
-    #   };
+      # Services - ClamAV - Deamon
+      # https://search.nixos.org/options?channel=unstable&show=services.clamav.daemon
+      daemon = {
+        enable = true;
+        settings = {
+          ScanOnAccess = true;
+          MaxThreads = 4;
+          OnAccessExcludeRootUID = true;
+          OnAccessMountPath = "/";
+          OnAccessExcludePath = "/nix/store";
+          OnAccessExcludeUname = "clamav";
+        };
+      };
 
-    #   # Services - ClamAV - Updater
-    #   # https://search.nixos.org/options?channel=unstable&show=services.clamav.updater
-    #   updater = {
-    #     enable = true;
-    #     interval = "daily";
-    #   };
-    # };
+      # Services - ClamAV - Updater
+      # https://search.nixos.org/options?channel=unstable&show=services.clamav.updater
+      updater = {
+        enable = true;
+        interval = "daily";
+      };
+    };
 
     # Services - Opensnitch
     # https://search.nixos.org/options?channel=unstable&show=services.opensnitch
@@ -166,38 +132,6 @@
   # Programs
   # https://search.nixos.org/options?channel=unstable&show=programs
   programs = {
-
-    # Firejail
-    # https://search.nixos.org/options?channel=unstable&show=programs.firejail
-    firejail = {
-
-      # Firejail - Enable
-      # https://search.nixos.org/options?channel=unstable&show=programs.firejail.enable
-      enable = true;
-
-      # Firejail - Wrapped Binaries
-      # https://search.nixos.org/options?channel=unstable&show=programs.firejail.wrappedBinaries
-      wrappedBinaries = {
-        # Firefox
-        firefox = {
-          executable = "${lib.getBin pkgs.firefox}/bin/firefox";
-          profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
-        };
-
-        # Google Chrome
-        google-chrome = {
-          executable = "${lib.getBin pkgs.google-chrome}/bin/google-chrome-stable";
-          profile = "${pkgs.firejail}/etc/firejail/google-chrome-stable.profile";
-        };
-
-        # Spotify
-        spotify = {
-          executable = "${lib.getBin pkgs.spotify}/bin/spotify";
-          profile = "${pkgs.firejail}/etc/firejail/spotify.profile";
-        };
-      };
-    };
-
     # GPG Agent
     # https://search.nixos.org/options?channel=unstable&show=programs.gnupg.agent
     gnupg.agent = {

@@ -1,43 +1,8 @@
 #
 #  Specific system configuration settings for desktop
 #
-#  flake.nix
-#   ├─ ./darwin
-#   │   ├─ ./configuration.nix
-#   │   ├─ ./default.nix
-#   │   └─ ./home.nix
-#   │
-#   ├─ ./hosts
-#   │   ├─ ./default.nix *
-#   │   ├─ ./home.nix
-#   │   └─ ./desktop
-#   │        ├─ configuration.nix
-#   │        ├─ default.nix *
-#   │        ├─ hardware.nix
-#   │        └─ home.nix
-#   │
-#   └─ ./modules
-#       ├─ ./home-manager
-#       │    ├─ direnv.nix
-#       │    ├─ git.nix
-#       │    ├─ starship.nix
-#       │    ├─ vscode.nix
-#       │    └─ zsh.nix
-#       │
-#       ├─ ./android.nix
-#       ├─ ./audio.nix
-#       ├─ ./fonts.nix
-#       ├─ ./gaming.nix
-#       ├─ ./networking.nix
-#       ├─ ./pantheon.nix
-#       ├─ ./security.nix
-#       ├─ ./services.nix
-#       ├─ ./syncthing.nix
-#       ├─ ./video.nix
-#       ├─ ./virtualisation.nix
-#       └─ ./vpn.nix
 
-{ inputs, nixpkgs, lanzaboote, home-manager, user, location, ... }:
+{ inputs, nixpkgs, home-manager, user, location, ... }:
 
 let
   # Linux Architecture
@@ -55,7 +20,7 @@ in
     specialArgs = { inherit inputs pkgs user hostname location; };
     modules = [
       # Secure Boot (Lanzeboote)
-      lanzaboote.nixosModules.lanzaboote
+      # lanzaboote.nixosModules.lanzaboote
       
       # System / Desktop
       ./configuration.nix

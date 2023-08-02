@@ -1,39 +1,6 @@
 #
 #  Specific system Virtualisation configuration settings module
 #
-#  flake.nix
-#   ├─ ./darwin
-#   │   ├─ ./configuration.nix
-#   │   ├─ ./default.nix
-#   │   └─ ./home.nix
-#   │
-#   ├─ ./hosts
-#   │   ├─ ./default.nix
-#   │   ├─ ./home.nix
-#   │   └─ ./desktop
-#   │        ├─ default.nix
-#   │        └─ hardware.nix
-#   │
-#   └─ ./modules
-#       ├─ ./home-manager
-#       │    ├─ direnv.nix
-#       │    ├─ git.nix
-#       │    ├─ starship.nix
-#       │    ├─ vscode.nix
-#       │    └─ zsh.nix
-#       │
-#       ├─ ./android.nix
-#       ├─ ./audio.nix
-#       ├─ ./fonts.nix
-#       ├─ ./gaming.nix
-#       ├─ ./homeassistant.nix
-#       ├─ ./networking.nix
-#       ├─ ./pantheon.nix
-#       ├─ ./security.nix
-#       ├─ ./services.nix
-#       ├─ ./virtualisation.nix *
-#       ├─ ./syncthing.nix
-#       └─ ./vpn.nix
 
 { config, lib, pkgs, ... }:
 
@@ -41,25 +8,35 @@
   # Virtualisation
   # https://search.nixos.org/options?channel=unstable&show=virtualisation
   virtualisation = {
-
-    # Virtualisation - Docker - Rootless
-    # https://search.nixos.org/options?channel=unstable&show=virtualisation.docker.rootless
-    docker.rootless = {
-
-      # Virtualisation - Docker - Rootless - Enable
-      # https://search.nixos.org/options?channel=unstable&show=virtualisation.docker.rootless
+    
+    # Podman
+    # https://search.nixos.org/options?channel=unstable&show=virtualisation.podman
+    podman = {
+      
+      # Podman - Enable
+      # https://search.nixos.org/options?channel=23.05&show=virtualisation.podman.enable
       enable = true;
-
-      # Virtualisation - Docker - Rootless - Set Socket Variable
-      # https://search.nixos.org/options?channel=unstable&show=virtualisation.docker.rootless
-      setSocketVariable = true;
-
-      # Virtualisation - Docker - Rootless - Daemon Settings
-      # https://search.nixos.org/options?channel=unstable&show=virtualisation.docker.rootless.daemon.settings
-      daemon.settings = {
-        group = "docker";
-        ip    = "127.0.0.1";
+      
+      # Podman - Auto Prune
+      # https://search.nixos.org/options?channel=23.05&show=virtualisation.podman.autoPrune
+      autoPrune = {
+        
+        # Podman - Auto Prune - Enable
+        # https://search.nixos.org/options?channel=23.05&show=virtualisation.podman.autoPrune.enable
+        enable = true;
+        
+        # Podman - Auto Prune - Dates
+        # https://search.nixos.org/options?channel=23.05&show=virtualisation.podman.autoPrune.dates
+        dates = "daily";
+        
+        # Podman - Auto Prune - Flags
+        # https://search.nixos.org/options?channel=23.05&show=virtualisation.podman.autoPrune.flags
+        flags = [ "--all" ];
       };
+      
+      # Podman - Docker Compatibility
+      # https://search.nixos.org/options?channel=23.05&show=virtualisation.podman.dockerCompat
+      dockerCompat = true;
     };
 
     # Virtualisation - Libvirtd

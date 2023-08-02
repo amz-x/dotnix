@@ -1,41 +1,6 @@
 #
 #  Specific system configuration settings for desktop
 #
-#  flake.nix
-#   ├─ ./darwin
-#   │   ├─ ./configuration.nix
-#   │   ├─ ./default.nix
-#   │   └─ ./home.nix
-#   │
-#   ├─ ./hosts
-#   │   ├─ ./default.nix
-#   │   ├─ ./home.nix
-#   │   └─ ./desktop
-#   │        ├─ default.nix
-#   │        └─ hardware.nix *
-#   │
-#   └─ ./modules
-#       ├─ ./home-manager
-#       │    ├─ direnv.nix
-#       │    ├─ git.nix
-#       │    ├─ starship.nix
-#       │    ├─ vscode.nix
-#       │    └─ zsh.nix
-#       │
-#       ├─ ./android.nix
-#       ├─ ./audio.nix
-#       ├─ ./fonts.nix
-#       ├─ ./gaming.nix
-#       ├─ ./networking.nix
-#       ├─ ./pantheon.nix
-#       ├─ ./security.nix
-#       ├─ ./services.nix
-#       ├─ ./syncthing.nix
-#       ├─ ./video.nix
-#       ├─ ./virtualisation.nix
-#       ├─ ./vpn.nix
-#       ├─ ./wine.nix
-#       └─ ./xdg.nix
 
 { config, lib, pkgs, modulesPath, ... }:
 
@@ -51,7 +16,7 @@
     initrd = {
       # Boot - Initrd - Available Kernel Modules 
       # https://search.nixos.org/options?channel=unstable&show=boot.initrd.availableKernelModules
-      availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+      availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
 
       # Boot - Initrd - Kernel Modules
       # https://search.nixos.org/options?channel=unstable&show=boot.initrd.kernelModules
@@ -63,13 +28,14 @@
     };
     
     # Boot - Bootspec
+    # https://search.nixos.org/options?channel=unstable&show=boot.bootspec
     bootspec.enable = true;
     
-    # Boot - Secure Boot (Lanzaboote)
-    lanzaboote = {
-      enable = true;
-      pkiBundle = "/etc/secureboot";
-    };
+    # # Boot - Secure Boot (Lanzaboote)
+    # lanzaboote = {
+    #   enable = true;
+    #   pkiBundle = "/etc/secureboot";
+    # };
 
     # Boot - Loader
     # https://search.nixos.org/options?channel=unstable&show=boot.loader
@@ -77,7 +43,7 @@
       
       # Systemd Boot
       systemd-boot = {
-        enable = lib.mkForce false;
+        enable = true;
         configurationLimit = 5;
       };
 
@@ -92,7 +58,7 @@
         # Boot - Loader - EFI - Partition Mount Point
         # https://search.nixos.org/options?channel=unstable&show=boot.loader.efi.efiSysMountPoint
         efiSysMountPoint = "/boot";
-      };     
+      };
     };
 
     # Boot - Kernel
@@ -149,21 +115,21 @@
   # Root Parition
   # https://search.nixos.org/options?channel=unstable&show=fileSystems
   fileSystems."/" = { 
-    device = "/dev/disk/by-uuid/93240c10-521a-4016-a3b6-8c9c66af7f11";
+    device = "/dev/disk/by-uuid/c7c12587-5a0b-44da-b647-a3868259f228";
     fsType = "ext4";
   };
 
   # ESP Partition
   # https://search.nixos.org/options?channel=unstable&show=fileSystems
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/61A0-B73C";
+    device = "/dev/disk/by-uuid/3157-0C83";
     fsType = "vfat";
   };
 
   # Swap Device(s) / Parition(s)
   # https://search.nixos.org/options?channel=unstable&show=swapDevices
   swapDevices = [{
-    device = "/dev/disk/by-uuid/fd3b8dd5-5475-4e8d-8406-3c027850cce2";
+    device = "/dev/disk/by-uuid/cd93c3ab-8c9e-49aa-9455-5af361e5ad5a";
   }];
 
 
@@ -177,7 +143,7 @@
 
     # Hardware - CPU - AMD Microcode
     # https://search.nixos.org/options?channel=unstable&show=hardware.cpu.amd.updateMicrocode
-    cpu.amd.updateMicrocode = lib.mkDefault true;
+    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
     # Hardware - Bluetooth
     # https://search.nixos.org/options?channel=unstable&show=hardware.bluetooth
@@ -223,8 +189,6 @@
         glxinfo
         rocm-opencl-icd
         rocm-opencl-runtime
-        libva
-        libva-utils
       ];
 
       # Hardware - OpenGL - Additional packages to add to 32-bit OpenGL drivers on 64-bit systems.

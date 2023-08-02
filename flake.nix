@@ -11,11 +11,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Secure Boot (Lanzaboote)
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    
+    # lanzaboote = {
+    #   url = "github:nix-community/lanzaboote";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
     # Home Manager
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -24,7 +24,7 @@
   };
 
   # Flake outputs
-  outputs = inputs @ { self, nixpkgs, lanzaboote, home-manager, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, ... }:
     let 
       user     = "amz";
       location = "$HOME/Workspace/amz/dotnix";
@@ -34,8 +34,8 @@
       nixosConfigurations = (
         import ./hosts/desktop {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs lanzaboote home-manager user location;
+          inherit inputs nixpkgs home-manager user location;
         }
       );
-    };    
+    };
 }

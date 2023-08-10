@@ -19,7 +19,7 @@
 
     # Starship - Nushell Integration
     # https://nix-community.github.io/home-manager/options.html#opt-programs.starship.enableNushellIntegration
-    enableNushellIntegration = lib.mkForce false; 
+    enableNushellIntegration = true; 
 
     # Starship - ZSH Integration
     # https://nix-community.github.io/home-manager/options.html#opt-programs.starship.enableZshIntegration

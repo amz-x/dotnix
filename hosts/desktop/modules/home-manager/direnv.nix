@@ -19,7 +19,7 @@
 
     # Direnv - Nushell Integration
     # https://mipmip.github.io/home-manager-option-search/?programs.direnv.enableNushellIntegration
-    enableNushellIntegration = lib.mkForce false;
+    enableNushellIntegration = true;
 
     # Direnv - ZSH Integration
     # https://mipmip.github.io/home-manager-option-search/?programs.direnv.enableZshIntegration

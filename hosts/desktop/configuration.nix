@@ -102,6 +102,7 @@
       libreoffice
       librewolf
       nextcloud-client
+      onlyoffice-bin
       rustdesk
       rustscan
       spotify
@@ -126,6 +127,9 @@
       ldns
       traceroute
       wireguard-tools
+      # Tools - Firewall
+      opensnitch
+      opensnitch-ui
       # Tools - Security
       nikto
       vulnix

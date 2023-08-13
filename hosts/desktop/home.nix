@@ -36,17 +36,27 @@
     # Nix-Index
     nix-index.enable = true;
 
-    # Nushell
-    # https://www.nushell.sh/
+    # Nushell (https://www.nushell.sh/)
+    # https://nix-community.github.io/home-manager/options.html#opt-programs.nushell
     nushell = {
 
       # Nushell - Enable
+      # https://nix-community.github.io/home-manager/options.html#opt-programs.nushell.enable
       enable = true;
 
       # Nushell - Package
+      # https://nix-community.github.io/home-manager/options.html#opt-programs.nushell.package
       package = pkgs.nushell;
 
+      # Nushell - Shell Aliases
+      # https://nix-community.github.io/home-manager/options.html#opt-programs.nushell.shellAliases
+      shellAliases = {
+        code = "codium";
+        ls = "ls -a";
+      };
+
       # Nushell - Extra Configuration
+      # https://nix-community.github.io/home-manager/options.html#opt-programs.nushell.extraConfig
       extraConfig = ''
         # Nushell Configuration
         $env.config = ($env | default {} config).config

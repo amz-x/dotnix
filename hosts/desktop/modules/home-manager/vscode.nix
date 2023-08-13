@@ -32,8 +32,6 @@
       editorconfig.editorconfig
       # Markdown
       davidanson.vscode-markdownlint
-      # Git
-      eamodio.gitlens
       # Nix
       bbenoist.nix
       arrterian.nix-env-selector

@@ -10,12 +10,17 @@
   home = {
     # Username & Home Directory
     username = "${user}";
+
+    # Home Directory
+    # https://nix-community.github.io/home-manager/options.html#opt-home.homeDirectory
     homeDirectory = "/home/${user}";
 
     # State Version
+    # https://nix-community.github.io/home-manager/options.html#opt-home.stateVersion
     stateVersion = "23.11";
 
     # Home Packages
+    # https://nix-community.github.io/home-manager/options.html#opt-home.packages
     packages = with pkgs; [
       # AWS CLI
       awscli2
@@ -28,12 +33,15 @@
   programs = {
 
     # Home Manager
+    # https://nix-community.github.io/home-manager/options.html#opt-programs.home-manager.enable
     home-manager.enable = true;
 
-    # Info
+    # GNU Info
+    # https://nix-community.github.io/home-manager/options.html#opt-programs.info.enable
     info.enable = true;
 
-    # Nix-Index
+    # Nix Index
+    # https://nix-community.github.io/home-manager/options.html#opt-programs.nix-index
     nix-index.enable = true;
 
     # Nushell (https://www.nushell.sh/)
@@ -70,6 +78,7 @@
   # Services
   services = {
     # Firewall - Opensnitch UI
+    # https://nix-community.github.io/home-manager/options.html#opt-services.opensnitch-ui.enable
     opensnitch-ui.enable = true;
   };
 }

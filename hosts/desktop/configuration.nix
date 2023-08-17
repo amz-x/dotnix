@@ -92,7 +92,6 @@
       nixos-icons
       # Applications - GUI
       firefox
-      thunderbird
       bitwarden
       dbeaver
       discord

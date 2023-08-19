@@ -43,8 +43,19 @@
       
       # Networking - Firewall - Extra Packages
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.extraPackages
-      extraPackages = with pkgs; [ ipset ];
+      extraPackages = with pkgs; [ conntrack_tools ipset ];
 
+      # Networking - Firewall - Auto Load Connection Tracking Helpers
+      # https://search.nixos.org/options?channel=unstable&show=networking.firewall.autoLoadConnTrackHelpers
+      autoLoadConnTrackHelpers = true;
+
+      # Networking - Firewall - Connection Tracking Modules
+      # https://search.nixos.org/options?channel=unstable&show=networking.firewall.connectionTrackingModules
+      connectionTrackingModules = [ ];
+
+      # Networking - Firewall - Logging - Refused Connections
+      # https://search.nixos.org/options?channel=unstable&show=networking.firewall.logRefusedConnections
+      logRefusedConnections = true;
       
       # Networking - Firewall - TCP Ports
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.allowedTCPPorts
@@ -52,15 +63,14 @@
 
       # Networking - Firewall - UDP Ports
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.allowedUDPPorts
-      # allowedUDPPorts = [ ];
+      allowedUDPPorts = [ 
+        # Rygel / Sharing UPnP
+        1900
+      ];
 
       # Networking - Firewall - UDP Ports Ranges
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.allowedUDPPortRanges
-      # allowedUDPPortRanges = [ ];
-
-      # Networking - Firewall - Logging - Refused Connections
-      # https://search.nixos.org/options?channel=unstable&show=networking.firewall.logRefusedConnections
-      logRefusedConnections = true;
+      # allowedUDPPortRanges = [ ];      
     };
   };
 

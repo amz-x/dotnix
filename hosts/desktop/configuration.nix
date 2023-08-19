@@ -130,6 +130,8 @@
       # Tools - Firewall
       opensnitch
       opensnitch-ui
+      # Tools - VPN
+      mullvad-vpn
       # Tools - Security
       nikto
       vulnix

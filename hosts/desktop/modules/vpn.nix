@@ -9,13 +9,13 @@
   # https://search.nixos.org/options?channel=unstable&show=services
   services = {
     
-    # IVPN
-    # https://search.nixos.org/options?channel=unstable&show=services.ivpn
-    ivpn = {
+    # Mullvad VPN
+    # https://search.nixos.org/options?channel=unstable&show=services.mullvad
+    mullvad-vpn = {
 
-      # IVPN - Enable
-      # https://search.nixos.org/options?channel=unstable&show=services.ivpn.enable
-      enable = false;
+      # Mullvad VPN - Enable
+      # https://search.nixos.org/options?channel=unstable&show=services.mullvad.enable
+      enable = true;
     };
 
     # Netbird

@@ -43,7 +43,7 @@
       
       # Networking - Firewall - Extra Packages
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.extraPackages
-      extraPackages = with pkgs; [ conntrack-tools ipset ];
+      extraPackages = with pkgs; [ ipset ];
 
       # Networking - Firewall - Auto Load Connection Tracking Helpers
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.autoLoadConnTrackHelpers
@@ -63,10 +63,7 @@
 
       # Networking - Firewall - UDP Ports
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.allowedUDPPorts
-      allowedUDPPorts = [ 
-        # Rygel / Sharing UPnP
-        1900
-      ];
+      # allowedUDPPorts = [ ];
 
       # Networking - Firewall - UDP Ports Ranges
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.allowedUDPPortRanges

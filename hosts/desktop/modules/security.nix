@@ -47,11 +47,11 @@
 
       # Networking - Firewall - Auto Load Connection Tracking Helpers
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.autoLoadConnTrackHelpers
-      autoLoadConnTrackHelpers = true;
+      # autoLoadConnTrackHelpers = true;
 
       # Networking - Firewall - Connection Tracking Modules
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.connectionTrackingModules
-      connectionTrackingModules = [ ];
+      # connectionTrackingModules = [ ];
 
       # Networking - Firewall - Logging - Refused Connections
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.logRefusedConnections

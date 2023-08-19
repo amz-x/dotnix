@@ -43,7 +43,7 @@
       
       # Networking - Firewall - Extra Packages
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.extraPackages
-      extraPackages = with pkgs; [ conntrack_tools ipset ];
+      extraPackages = with pkgs; [ conntrack-tools ipset ];
 
       # Networking - Firewall - Auto Load Connection Tracking Helpers
       # https://search.nixos.org/options?channel=unstable&show=networking.firewall.autoLoadConnTrackHelpers

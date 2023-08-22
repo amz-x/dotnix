@@ -98,7 +98,6 @@
       dconf
       gimp
       google-chrome
-      lapce
       libreoffice
       librewolf
       nextcloud-client
@@ -106,6 +105,10 @@
       rustdesk
       rustscan
       spotify
+      # Development - Lapce IDE
+      lapce
+      # Development - Lapce IDE Plugins
+      rome
       # Development - Nix
       nil
       nixfmt

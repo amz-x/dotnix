@@ -18,7 +18,19 @@
 
       # Keyboard Layout
       # https://search.nixos.org/options?channel=unstable&show=services.xserver.layout
-      layout = "za";
+      layout = "us";
+      
+      # Keyboard Model
+      # https://search.nixos.org/options?channel=unstable&show=services.xserver.xkbModel
+      xkbModel = "pc104";
+
+      # Keyboard Options
+      # https://search.nixos.org/options?channel=unstable&show=services.xserver.xkbOptions
+      xkbOptions = "terminate:ctrl_alt_bksp";
+
+      # Keyboard Variant
+      # https://search.nixos.org/options?channel=unstable&show=services.xserver.xkbVariant
+      xkbVariant = "";
 
       # XServer - LibInput
       # https://search.nixos.org/options?channel=unstable&show=services.xserver.libinput

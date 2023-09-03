@@ -103,6 +103,7 @@
       nextcloud-client
       rustdesk
       rustscan
+      skypeforlinux
       spotify
       # Development - Lapce IDE
       lapce

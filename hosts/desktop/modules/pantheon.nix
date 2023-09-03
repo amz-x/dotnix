@@ -150,7 +150,6 @@
   environment.systemPackages = with pkgs; [
     # Pantheon - Applications 
     appeditor
-    ciano
     dippi
     monitor
     torrential

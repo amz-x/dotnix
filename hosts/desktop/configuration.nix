@@ -101,7 +101,6 @@
       libreoffice
       librewolf
       nextcloud-client
-      onlyoffice-bin
       rustdesk
       rustscan
       spotify

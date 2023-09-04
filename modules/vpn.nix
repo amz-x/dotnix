@@ -15,7 +15,7 @@
 
       # Mullvad VPN - Enable
       # https://search.nixos.org/options?channel=unstable&show=services.mullvad.enable
-      enable = true;
+      enable = false;
     };
 
     # Netbird

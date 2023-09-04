@@ -32,10 +32,10 @@ in
         home-manager.extraSpecialArgs = { inherit user; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++
-                    [(import ./modules/home-manager/direnv.nix)] ++
-                    [(import ./modules/home-manager/git.nix)] ++
-                    [(import ./modules/home-manager/vscode.nix)] ++
-                    [(import ./modules/home-manager/starship.nix)];
+                    [(import ../../modules/home-manager/direnv.nix)] ++
+                    [(import ../../modules/home-manager/git.nix)] ++
+                    [(import ../../modules/home-manager/vscode.nix)] ++
+                    [(import ../../modules/home-manager/starship.nix)];
         };
       }
     ];

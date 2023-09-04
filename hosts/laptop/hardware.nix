@@ -16,7 +16,7 @@
     initrd = {
       # Boot - Initrd - Available Kernel Modules 
       # https://search.nixos.org/options?channel=unstable&show=boot.initrd.availableKernelModules
-      availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+      availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
 
       # Boot - Initrd - Kernel Modules
       # https://search.nixos.org/options?channel=unstable&show=boot.initrd.kernelModules
@@ -90,7 +90,7 @@
 
     # # Boot - Kernel Packages
     # https://search.nixos.org/options?channel=unstable&show=boot.kernelPackages
-    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+    kernelPackages = pkgs.linuxKernel.packages.linux_6_4;
 
     # Boot - Kernel Modules
     # https://search.nixos.org/options?channel=unstable&show=boot.kernelModules
@@ -112,21 +112,21 @@
   # Root Parition
   # https://search.nixos.org/options?channel=unstable&show=fileSystems
   fileSystems."/" = { 
-    #device = "/dev/disk/by-uuid/c7c12587-5a0b-44da-b647-a3868259f228";
+    #device = "/dev/disk/by-uuid/xxxx";
     fsType = "ext4";
   };
 
   # ESP Partition
   # https://search.nixos.org/options?channel=unstable&show=fileSystems
   fileSystems."/boot" = {
-    #device = "/dev/disk/by-uuid/3157-0C83";
+    #device = "/dev/disk/by-uuid/xxxx";
     fsType = "vfat";
   };
 
   # Swap Device(s) / Parition(s)
   # https://search.nixos.org/options?channel=unstable&show=swapDevices
   swapDevices = [{
-    # device = "/dev/disk/by-uuid/cd93c3ab-8c9e-49aa-9455-5af361e5ad5a";
+    # device = "/dev/disk/by-uuid/xxxx";
   }];
 
 
@@ -138,9 +138,9 @@
     # https://search.nixos.org/options?channel=unstable&show=hardware.enableRedistributableFirmware
     enableRedistributableFirmware = lib.mkDefault true;
 
-    # Hardware - CPU - AMD Microcode
-    # https://search.nixos.org/options?channel=unstable&show=hardware.cpu.amd.updateMicrocode
-    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    # Hardware - CPU - Intel Microcode
+    # https://search.nixos.org/options?channel=unstable&show=hardware.cpu.intel.updateMicrocode
+    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
     # Hardware - Bluetooth
     # https://search.nixos.org/options?channel=unstable&show=hardware.bluetooth

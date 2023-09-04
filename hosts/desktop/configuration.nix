@@ -7,16 +7,16 @@
 {
   imports =
     [(import ./hardware.nix)] ++
-    [(import ./modules/android.nix)] ++
-    [(import ./modules/audio.nix)] ++
-    [(import ./modules/fonts.nix)] ++
-    [(import ./modules/gaming.nix)] ++
-    [(import ./modules/networking.nix)] ++
-    [(import ./modules/pantheon.nix)] ++
-    [(import ./modules/security.nix)] ++
-    [(import ./modules/services.nix)] ++
-    [(import ./modules/virtualisation.nix)] ++
-    [(import ./modules/vpn.nix)];
+    [(import ../../modules/android.nix)] ++
+    [(import ../../modules/audio.nix)] ++
+    [(import ../../modules/fonts.nix)] ++
+    [(import ../../modules/gaming.nix)] ++
+    [(import ../../modules/networking.nix)] ++
+    [(import ../../modules/pantheon.nix)] ++
+    [(import ../../modules/security.nix)] ++
+    [(import ../../modules/services.nix)] ++
+    [(import ../../modules/virtualisation.nix)] ++
+    [(import ../../modules/vpn.nix)];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {
@@ -37,7 +37,7 @@
       "sound"
       "video"
       # Development
-      "podman"
+      "docker"
     ];
   };
 

@@ -15,7 +15,7 @@
       
       # Podman - Enable
       # https://search.nixos.org/options?channel=23.05&show=virtualisation.podman.enable
-      enable = true;
+      enable = false;
       
       # Podman - Auto Prune
       # https://search.nixos.org/options?channel=23.05&show=virtualisation.podman.autoPrune

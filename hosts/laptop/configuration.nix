@@ -43,9 +43,6 @@
   # Environment settings
   environment = {
 
-    # Include ~/.local/bin/ in $PATH
-    # localBinInPath = true;
-
     # Variables
     variables = {
       # EDITOR
@@ -93,7 +90,6 @@
       firefox
       bitwarden
       dbeaver
-      discord
       dconf
       gimp
       google-chrome
